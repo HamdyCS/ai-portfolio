@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FiMenu, FiX, FiMoon, FiSun, FiDownload } from "react-icons/fi";
 import { LanguageToggle } from "../common/LanguageToggle";
-import { Button } from "../common/Button";
 import { personalInfo } from "../../data/personal";
 import DarkLogo from "../../assets/DarkLogo.png";
 import { useAtom } from "jotai";
@@ -47,7 +46,7 @@ export function Navbar() {
         </a>
 
         <nav
-          className="hidden items-center gap-8 text-sm md:flex"
+          className="hidden items-center gap-6 text-sm md:flex"
           aria-label="Main navigation"
         >
           {navItems.map((item) => (
@@ -61,14 +60,14 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <Button
+        <div className="flex items-center md:gap-2 sm:gap-0">
+          <a
             href={`mailto:${personalInfo.email}`}
-            className="hidden px-4 py-2 md:inline-flex"
+            className="hidden md:flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-4 py-2 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest text-[12px] "
           >
-            <FiDownload className="text-base" />
+            <FiDownload className="text-[14px]" />
             {t("hero.downloadCV")}
-          </Button>
+          </a>
           <button
             className="rounded-lg p-2 text-teal-700 transition-all duration-200 hover:bg-slate-200/50 active:scale-95 dark:text-primary dark:hover:bg-surface-highest/50"
             aria-label="Toggle dark mode"
@@ -113,14 +112,15 @@ export function Navbar() {
               {t(item.key)}
             </a>
           ))}
-          <a
-            href={`mailto:${personalInfo.email}`}
-            className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-bold text-on-primary transition-all hover:brightness-110 active:scale-95"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <FiDownload className="text-base" />
-            {t("hero.downloadCV")}
-          </a>
+          <div className="flex justify-center gap-4 mt-2">
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest"
+            >
+              <FiDownload className="text-[20px]" />
+              {t("hero.downloadCV")}
+            </a>
+          </div>
         </nav>
       )}
     </nav>
