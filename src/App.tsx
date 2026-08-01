@@ -3,12 +3,25 @@ import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Home } from "./pages/Home";
 import { useTranslation } from "react-i18next";
+import { useAtom } from "jotai";
+import themeAtom from "./atoms/themeAtom";
+import { useEffect } from "react";
 
 function App() {
   const { i18n } = useTranslation();
+  const [theme] = useAtom(themeAtom);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
     <div
-      className="min-h-screen bg-background overflow-x-hidden"
+      className="min-h-screen bg-slate-50 overflow-x-hidden dark:bg-background"
       dir={i18n.dir()}
     >
       <Navbar />

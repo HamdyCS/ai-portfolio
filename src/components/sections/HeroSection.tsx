@@ -23,10 +23,6 @@ export function HeroSection() {
     if (!container || !wrapper) return;
 
     const rect = container.getBoundingClientRect();
-    const localX = e.clientX - rect.left;
-    const localY = e.clientY - rect.top;
-    // container.style.setProperty("--hero-mouse-x", `${localX}px`);
-    // container.style.setProperty("--hero-mouse-y", `${localY}px`);
 
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
@@ -60,7 +56,7 @@ export function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-sm font-medium text-primary"
+            className="inline-flex items-center rounded-full border border-teal-300 bg-teal-50 px-3 py-1 text-sm font-medium text-teal-700 dark:border-primary/30 dark:bg-primary/5 dark:text-primary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -70,16 +66,16 @@ export function HeroSection() {
           </motion.div>
 
           <div className="space-y-4">
-            <h1 className="text-5xl font-extrabold tracking-tight text-text-primary md:text-7xl">
+            <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 md:text-7xl dark:text-text-primary">
               {t("hero.greeting")}
-              <span className="text-primary">
+              <span className="text-teal-600 dark:text-primary">
                 {i18n.language == "ar"
                   ? personalInfo.nameAr
                   : personalInfo.name}
               </span>
             </h1>
 
-            <h2 className="text-2xl font-semibold text-secondary md:text-3xl">
+            <h2 className="text-2xl font-semibold text-sky-700 md:text-3xl dark:text-secondary">
               {t("hero.title", {
                 title:
                   i18n.language == "ar"
@@ -88,7 +84,7 @@ export function HeroSection() {
               })}
             </h2>
 
-            <p className="max-w-lg text-lg leading-relaxed text-text-secondary">
+            <p className="max-w-lg text-lg leading-relaxed text-slate-500 dark:text-text-secondary">
               {t("hero.summary", {
                 summary:
                   i18n.language == "ar"
@@ -108,7 +104,7 @@ export function HeroSection() {
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="flex items-center justify-center gap-2 rounded-lg border border-outline px-8 py-4 font-bold text-text-primary transition-all hover:bg-surface-highest"
+              className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest"
             >
               <FiDownload className="text-[20px]" />
               {t("hero.downloadCV")}
@@ -136,19 +132,19 @@ export function HeroSection() {
             <div className="relative flex aspect-square w-full items-center justify-center">
               <div className="hero-magnetic-glow" />
 
-              <div className="hero-tilt-inner relative h-4/5 w-4/5 overflow-hidden rounded-2xl border border-outline-variant/30 shadow-2xl">
+              <div className="hero-tilt-inner relative h-4/5 w-4/5 overflow-hidden rounded-2xl border border-slate-200/70 shadow-2xl dark:border-outline-variant/30">
                 <img
                   alt="Hamdy Khaled Portrait"
                   className="h-full w-full object-cover transition-all duration-500 grayscale hover:grayscale-0"
                   src={HamdyBlackBG}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-50/80 to-transparent dark:from-background/80" />
               </div>
 
-              <div className="hero-tilt-inner glass-card absolute -left-8 -top-4 max-w-[200px] rounded-xl border border-primary/20 p-4 shadow-xl">
+              <div className="hero-tilt-inner glass-card absolute -left-8 -top-4 max-w-[200px] rounded-xl border border-teal-200 p-4 shadow-xl dark:border-primary/20">
                 <div className="mb-2 flex items-center gap-2">
-                  <FiTerminal className="text-xs text-primary" />
-                  <span className="text-[10px] uppercase tracking-wider text-primary/70">
+                  <FiTerminal className="text-xs text-teal-700 dark:text-primary" />
+                  <span className="text-[10px] uppercase tracking-wider text-teal-700/70 dark:text-primary/70">
                     {t("hero.techStack")}
                   </span>
                 </div>
@@ -165,7 +161,7 @@ export function HeroSection() {
                   ].map((tech) => (
                     <li
                       key={tech}
-                      className="flex items-center gap-2 text-[10px] text-text-secondary"
+                      className="flex items-center gap-2 text-[10px] text-slate-500 dark:text-text-secondary"
                     >
                       <span className="h-1 w-1 rounded-full bg-primary" />
                       {tech}
@@ -174,42 +170,42 @@ export function HeroSection() {
                 </ul>
               </div>
 
-              <div className="hero-tilt-inner glass-card absolute -right-4 top-0 rounded-xl border border-secondary/20 p-4 shadow-xl">
+              <div className="hero-tilt-inner glass-card absolute -right-4 top-0 rounded-xl border border-sky-200 p-4 shadow-xl dark:border-secondary/20">
                 <div className="mb-1 flex items-start justify-between">
                   <span className="text-[10px] uppercase tracking-wider opacity-60">
                     {t("hero.experience")}
                   </span>
-                  <FiClock className="text-sm text-secondary" />
+                  <FiClock className="text-sm text-sky-700 dark:text-secondary" />
                 </div>
-                <div className="text-2xl font-extrabold text-secondary">
+                <div className="text-2xl font-extrabold text-sky-700 dark:text-secondary">
                   {personalInfo.yearsOfExperience}+
                 </div>
-                <div className="mb-2 text-[10px] text-text-secondary">
+                <div className="mb-2 text-[10px] text-slate-500 dark:text-text-secondary">
                   {t("hero.yearsBuildingWebApplications")}
                 </div>
-                <div className="h-1 w-full overflow-hidden rounded-full bg-surface">
-                  <div className="h-full w-full bg-secondary" />
+                <div className="h-1 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-surface">
+                  <div className="h-full w-full bg-sky-500 dark:bg-secondary" />
                 </div>
               </div>
 
-              <div className="hero-tilt-inner glass-card absolute -left-12 bottom-12 rounded-xl border border-outline-variant/30 p-4 shadow-xl">
+              <div className="hero-tilt-inner glass-card absolute -left-12 bottom-12 rounded-xl border border-slate-200/70 p-4 shadow-xl dark:border-outline-variant/30">
                 <div className="mb-2 flex items-center gap-2">
-                  <FiZap className="text-xs text-primary" />
+                  <FiZap className="text-xs text-teal-700 dark:text-primary" />
                   <span className="text-[10px] uppercase tracking-wider opacity-60">
                     {t("hero.projects")}
                   </span>
                 </div>
-                <div className="text-2xl font-extrabold text-primary">
+                <div className="text-2xl font-extrabold text-teal-600 dark:text-primary">
                   {personalInfo.projectCount}+
                 </div>
-                <div className="text-[10px] text-text-secondary">
+                <div className="text-[10px] text-slate-500 dark:text-text-secondary">
                   {t("hero.completedFullStackProjects")}
                 </div>
               </div>
 
-              <div className="hero-tilt-inner glass-card absolute -bottom-4 -right-8 rounded-xl border border-tertiary/20 p-4 shadow-xl">
+              <div className="hero-tilt-inner glass-card absolute -bottom-4 -right-8 rounded-xl border border-orange-200 p-4 shadow-xl dark:border-tertiary/20">
                 <div className="mb-2 flex items-center gap-2">
-                  <FiCheckCircle className="text-sm text-tertiary" />
+                  <FiCheckCircle className="text-sm text-orange-700 dark:text-tertiary" />
                   <span className="text-[10px] uppercase tracking-wider opacity-60">
                     {t("hero.specialization")}
                   </span>
@@ -218,7 +214,7 @@ export function HeroSection() {
                   {personalInfo.specializations.map((spec) => (
                     <li
                       key={spec}
-                      className="flex items-center gap-2 text-[10px] text-text-secondary"
+                      className="flex items-center gap-2 text-[10px] text-slate-500 dark:text-text-secondary"
                     >
                       <span className="h-1 w-1 rounded-full bg-tertiary" />
                       {spec}

@@ -12,13 +12,13 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="w-full border-t border-outline-variant bg-surface-container-lowest py-12">
+    <footer className="w-full border-t border-slate-200 bg-slate-100 py-12 dark:border-outline-variant dark:bg-surface-container-lowest">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 md:px-0 md:flex-row md:justify-between">
         <div className="flex flex-col items-center gap-2 md:items-start">
-          <span className="text-lg font-bold text-text-primary">
+          <span className="text-lg font-bold text-slate-900 dark:text-text-primary">
             {personalInfo.name}
           </span>
-          <p className="text-xs text-text-secondary">
+          <p className="text-xs text-slate-500 dark:text-text-secondary">
             {t("footer.copyright", {
               year: new Date().getFullYear(),
               name: personalInfo.name,
@@ -33,7 +33,7 @@ export function Footer() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body text-xs text-text-secondary opacity-80 transition-all hover:text-primary hover:underline hover:opacity-100"
+              className="font-body text-xs text-slate-500 opacity-80 transition-all hover:text-teal-700 hover:underline hover:opacity-100 dark:text-text-secondary dark:hover:text-primary"
             >
               {link.platform}
             </a>
