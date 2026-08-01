@@ -52,7 +52,17 @@
     "title": "Certificates",
     "subtitle": "A selection of the most valuable courses and certifications that have strengthened my expertise in Full-Stack Web Development.",
     "viewAll": "View All Certificates",
-    "viewCertificate": "View Certificate"
+    "viewCertificate": "View Certificate",
+    "viewDetails": "View Details",
+    "verifiedCredential": "Verified Credential",
+    "instructor": "Instructor",
+    "category": "Category",
+    "issuedDate": "Issued Date",
+    "verificationId": "Verification ID",
+    "copyId": "Copy verification ID",
+    "copied": "Copied!",
+    "verifyCertificate": "Verify Certificate",
+    "closeViewer": "Close Viewer"
   },
   "contact": {
     "title": "CONTACT",

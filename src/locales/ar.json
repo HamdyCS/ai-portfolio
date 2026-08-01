@@ -53,7 +53,17 @@
     "title": "الشهادات",
     "subtitle": "اختيار من أكثر الدورات والشهادات قيمة التي عززت خبرتي في تطوير الويب المتكامل.",
     "viewAll": "عرض جميع الشهادات",
-    "viewCertificate": "عرض الشهادة"
+    "viewCertificate": "عرض الشهادة",
+    "viewDetails": "عرض التفاصيل",
+    "verifiedCredential": "بيان موثق",
+    "instructor": "المدرب",
+    "category": "التصنيف",
+    "issuedDate": "تاريخ الإصدار",
+    "verificationId": "معرف التحقق",
+    "copyId": "نسخ معرف التحقق",
+    "copied": "تم النسخ!",
+    "verifyCertificate": "التحقق من الشهادة",
+    "closeViewer": "إغلاق العارض"
   },
   "contact": {
     "title": "تواصل",

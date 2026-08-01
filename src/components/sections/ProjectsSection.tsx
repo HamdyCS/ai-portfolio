@@ -92,7 +92,7 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="bg-slate-100/50 py-24 transition-all duration-1000 dark:bg-surface-container-lowest/50"
+      className="bg-slate-100/50 py-24  dark:bg-surface-container-lowest/50"
     >
       <div className="mx-auto max-w-7xl px-6 md:px-0">
         <div className="mb-12 flex flex-col items-end justify-between gap-6 md:flex-row md:items-end">
@@ -100,7 +100,9 @@ export function ProjectsSection() {
             <h2 className="mb-2 text-2xl font-bold text-slate-900 md:text-3xl dark:text-text-primary">
               {t("projects.title")}
             </h2>
-            <p className="text-slate-500 dark:text-text-secondary">{t("projects.subtitle")}</p>
+            <p className="text-slate-500 dark:text-text-secondary">
+              {t("projects.subtitle")}
+            </p>
           </div>
           <div className="flex rounded-full border border-slate-200 bg-white p-1 dark:border-outline-variant dark:bg-surface">
             {filters.map((filter) => (

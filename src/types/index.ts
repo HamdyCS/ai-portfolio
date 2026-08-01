@@ -47,6 +47,8 @@ export interface Certificate {
   id: string;
   courseName: string;
   courseNameAr: string;
+  description?: string;
+  descriptionAr?: string;
   issuer: string;
   issuerAr: string;
   category: string;
@@ -54,6 +56,7 @@ export interface Certificate {
   dateIssued: string;
   image?: string;
   featured: boolean;
+  verifiyId: string;
 }
 
 export interface NavigationItem {

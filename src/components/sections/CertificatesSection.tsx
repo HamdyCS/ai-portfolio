@@ -7,12 +7,12 @@ import {
   FiBookOpen,
   FiDatabase,
   FiShield,
-  FiExternalLink,
   FiArrowRight,
 } from "react-icons/fi";
 import { certificates } from "../../data/certificates";
 import type { Certificate } from "../../types";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { CertificateViewerModal } from "../certificates/CertificateViewerModal";
 
 const certIcons: Record<string, React.ReactNode> = {
   "csharp-level2": <FiAward className="text-teal-700 dark:text-primary" />,
@@ -69,6 +69,7 @@ const getLocalizedName = (
 
 export function CertificatesSection() {
   const { t, i18n } = useTranslation();
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
   const featuredCertificates = useMemo(
     () => certificates.filter((cert) => cert.featured),
@@ -99,7 +100,18 @@ export function CertificatesSection() {
           return (
             <motion.div
               key={cert.id}
-              className="cert-card card-hover rounded-xl border border-slate-200 bg-white p-6 dark:border-outline-variant dark:bg-surface"
+              className="cert-card card-hover cursor-pointer rounded-xl border border-slate-200 bg-white p-6 dark:border-outline-variant dark:bg-surface"
+              role="button"
+              tabIndex={0}
+              onClick={() => setSelectedCert(cert)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setSelectedCert(cert);
+                }
+              }}
+              aria-haspopup="dialog"
+              aria-label={getLocalizedName(cert, "courseName", i18n.language)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -119,15 +131,13 @@ export function CertificatesSection() {
               <p className="mb-4 text-xs text-slate-500 dark:text-text-secondary">
                 {cert.category}
               </p>
-              <a
-                href={cert.verificationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-1 text-xs font-medium ${colors.link} hover:underline`}
+              <button
+                type="button"
+                onClick={() => setSelectedCert(cert)}
+                className={`flex cursor-pointer items-center gap-1 text-xs font-medium ${colors.link} hover:underline`}
               >
-                {t("certificates.viewCertificate")}{" "}
-                <FiExternalLink className="text-[14px]" />
-              </a>
+                {t("certificates.viewDetails")}
+              </button>
             </motion.div>
           );
         })}
@@ -141,6 +151,11 @@ export function CertificatesSection() {
           {t("certificates.viewAll")} <FiArrowRight />
         </a>
       </div>
+
+      <CertificateViewerModal
+        certificate={selectedCert}
+        onClose={() => setSelectedCert(null)}
+      />
     </section>
   );
 }

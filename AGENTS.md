@@ -4,124 +4,76 @@ Compact instructions for AI agents working in this repository.
 
 ## Project Overview
 
-Personal **Frontend Portfolio** showcasing Full Stack .NET Developer work. **No backend**.
+Personal **Frontend Portfolio** showcasing Full Stack .NET Developer work. **No backend.**
 
 ## Tech Stack
 
-- React 19, TypeScript (strict), Vite 8, Tailwind CSS, Framer Motion, React Router, React Icons, Jotai, i18next
+- React 19, TypeScript (strict), Vite 8, Tailwind CSS v4, Framer Motion, React Router, React Icons, Jotai, i18next
 - No other state libraries (Redux, Zustand, Context API, etc.) unless explicitly requested.
-- Future UI libraries (e.g., shadcn/ui) may be added.
 
 ## Commands
 
 - `npm run dev` – Start Vite dev server
-- `npm run build` – `tsc -b && vite build` (type‑check then bundle)
-- `npm run lint` – ESLint for all `.ts/.tsx` files
+- `npm run lint` – ESLint for all `.ts/.tsx` files (`eslint .`)
+- `npm run build` – `tsc -b && vite build` (type-check then bundle)
 - `npm run preview` – Preview production build
 
-**Order:** Run `lint` before `build` to catch issues early.
+**Order:** Run `lint` before `build` to catch issues early. **No test script exists.**
 
 ## Project Structure
 
 ```
 src/
-├── assets/
+├── main.tsx / App.tsx     # entry; BrowserRouter, theme class + RTL wiring
+├── atoms/                 # Jotai atoms (theme, language, project filter)
 ├── components/
-│   ├── common/
-│   ├── layout/
-│   ├── ui/
-│   └── sections/
-├── pages/
-│   ├── Home/
-│   ├── About/
-│   ├── Projects/
-│   ├── Certificates/
-│   ├── Archive/
-│   └── Contact/
-├── data/
-│   ├── projects.ts
-│   ├── certificates.ts
-│   ├── skills.ts
-│   └── ...
+│   ├── common/            # Button, Card, Chip, LanguageToggle
+│   ├── layout/            # Navbar, Footer, SectionWrapper
+│   └── sections/          # Hero, Skills, Projects, Certificates, Contact
+├── pages/Home.tsx         # only route is "/" (single-page so far)
+├── data/                  # projects.ts, certificates.ts, skills.ts, personal.ts
+├── locales/en.json, ar.json
 ├── hooks/
-├── routes/
-├── locales/
-├── constants/
-├── utils/
-├── types/
-└── i18n.ts
+├── types/index.ts
+└── i18n.ts                # inits i18next; imported in main.tsx
 ```
 
+Root `Screens/` + `specs/` hold the **Google Stitch design reference** (one markdown file per screen, with screen IDs). Reproduce that design faithfully. `.specify/` is speckit workflow tooling, not app code — leave it alone.
+
 Keep pages lightweight; extract sections into reusable components. Prefer composition over duplication.
+
+## Internationalization (high-signal)
+
+- Bilingual **English + Arabic**. Every user-visible string lives in `locales/en.json` **and** `ar.json` — always add both.
+- Data files carry paired fields: `title`/`titleAr`, `description`/`descriptionAr`, etc.
+- Language is persisted in `localStorage` key `language` (`src/i18n.ts`). Root `div` sets `dir={i18n.dir()}` for RTL.
+
+## Theming
+
+- Light/dark theme via Jotai `themeAtom` (`atoms/themeAtom.ts`), persisted in `localStorage` key `theme`. `App.tsx` toggles `.dark` on `<html>`; dark styles use Tailwind `dark:` variants.
+
+## Styling
+
+- **Tailwind v4, CSS-first.** Design tokens (colors, fonts) are defined in the `@theme` block in `src/index.css` — that is the source of truth, **not** `tailwind.config.js` (legacy). Custom dark variant: `@custom-variant dark`.
+- Shared visual utilities (`.glass-card`, `.hero-*`) also live in `src/index.css`.
 
 ## TypeScript
 
 - Strict mode. Never use `any`. Prefer explicit typing.
-- Create interfaces/types for component props. Place shared types in `types/`.
-- `tsconfig.app.json` enforces: `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch`.
-
-## Styling
-
-- Tailwind CSS is primary. Avoid unnecessary custom CSS.
-- For tiny custom animations or browser‑specific fixes, create a CSS file next to the component.
-
-## Animations
-
-- Use Framer Motion for most animations. CSS animations only for very small effects (keyframes, gradients).
-- Keep animations smooth, subtle, professional. Avoid excess.
+- `verbatimModuleSyntax` is on: type-only imports must use `import type { ... }`.
+- `tsconfig.app.json` enforces `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch`.
 
 ## Icons
 
 Use **react-icons** consistently.
 
-## Internationalization
+## Animations
 
-- Use **i18next**. Never hardcode user‑visible strings.
-- All visible text must support translation.
+Framer Motion for most animations; CSS only for very small effects.
 
-## Code Quality
+## General Conventions
 
-- Production‑quality code. Follow Clean Code/SOLID where applicable.
-- Small focused components, reusable logic, meaningful naming, no duplication, remove unused code.
-- Prefer readability over cleverness.
-
-## Performance
-
-- Lazy‑load pages when appropriate. Avoid unnecessary re‑renders.
-- Memoize only when it provides real value. Keep bundle lightweight.
-
-## Responsive Design
-
-Mobile‑first approach. Every component must work well on mobile, tablet, desktop, and large screens.
-
-## Accessibility
-
-- Semantic HTML, keyboard accessibility, proper heading hierarchy, alt text, accessible buttons/links.
-
-## Design Implementation
-
-The UI/UX design is prepared in **Google Stitch**. Reproduce that design as faithfully as possible. Only make improvements that clearly enhance maintainability, responsiveness, accessibility, or performance without changing the intended visual design.
-
-## General Behavior
-
-- Before creating new components, check if an existing reusable component can be used.
-- Before adding a new dependency, verify it is truly necessary.
-- Favor simple, maintainable solutions over complex abstractions.
-- Preserve existing architecture and coding conventions when implementing new features.
-
-## How to Investigate
-
-Read highest‑value sources first:
-- `README*`, root manifests, lockfiles
-- Build/lint/typecheck config (`package.json`, `tsconfig*.json`, `eslint.config.js`, `vite.config.ts`)
-- Existing instruction files (`AGENTS.md`, `CLAUDE.md`, `.cursor/rules/`, `.cursorrules`, `.github/copilot-instructions.md`)
-- Repo‑local OpenCode config (`opencode.json`)
-
-If architecture is unclear, inspect a few representative code files to find entrypoints and execution flow. Prefer executable sources of truth over prose.
-
-## Constraints
-
-- No backend.
-- No testing framework currently configured (no test script in `package.json`).
-- Use Jotai for state only.
-- All text must be translatable via i18next.
+- Mobile-first responsive. Semantic HTML, keyboard accessibility, proper heading hierarchy, alt text.
+- Before creating new components, check for an existing reusable one.
+- Before adding a dependency, verify it is truly necessary.
+- Memoize/lazy-load only where it provides real value.
