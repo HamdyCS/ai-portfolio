@@ -62,7 +62,8 @@
     "copyId": "Copy verification ID",
     "copied": "Copied!",
     "verifyCertificate": "Verify Certificate",
-    "closeViewer": "Close Viewer"
+    "closeViewer": "Close Viewer",
+    "issuer": "Issuer"
   },
   "contact": {
     "title": "CONTACT",

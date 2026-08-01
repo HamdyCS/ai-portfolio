@@ -49,6 +49,8 @@ export interface Certificate {
   courseNameAr: string;
   description?: string;
   descriptionAr?: string;
+  instructor: string;
+  instructorAr: string;
   issuer: string;
   issuerAr: string;
   category: string;

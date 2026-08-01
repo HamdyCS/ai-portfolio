@@ -12,6 +12,7 @@ import {
   MdOutlineClose,
 } from "react-icons/md";
 import type { Certificate } from "../../types";
+import { CgWebsite } from "react-icons/cg";
 
 interface CertificateViewerModalProps {
   certificate: Certificate | null;
@@ -25,15 +26,21 @@ export function CertificateViewerModal({
   const { t, i18n } = useTranslation();
   const [copied, setCopied] = useState(false);
 
-  const localized = (cert: Certificate, field: "courseName" | "issuer") => {
+  const localized = (
+    cert: Certificate,
+    field: "courseName" | "issuer" | "instructor",
+  ) => {
     const isAr = i18n.language === "ar";
-    return isAr
-      ? field === "courseName"
-        ? cert.courseNameAr
-        : cert.issuerAr
-      : field === "courseName"
-        ? cert.courseName
-        : cert.issuer;
+
+    if (isAr) {
+      if (field === "courseName") return cert.courseNameAr;
+      if (field === "issuer") return cert.issuerAr;
+      if (field === "instructor") return cert.instructorAr;
+    } else {
+      if (field === "courseName") return cert.courseName;
+      if (field === "issuer") return cert.issuer;
+      if (field === "instructor") return cert.instructor;
+    }
   };
 
   useEffect(() => {
@@ -159,6 +166,20 @@ export function CertificateViewerModal({
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:font-medium dark:text-text-secondary">
                         {t("certificates.instructor")}
+                      </p>
+                      <p className="text-base font-semibold text-slate-900 dark:text-text-primary">
+                        {localized(certificate, "instructor")}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-lg bg-slate-50 p-2 text-slate-600 dark:bg-surface-high dark:text-secondary">
+                      <CgWebsite className="text-2xl" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:font-medium dark:text-text-secondary">
+                        {t("certificates.issuer")}
                       </p>
                       <p className="text-base font-semibold text-slate-900 dark:text-text-primary">
                         {localized(certificate, "issuer")}

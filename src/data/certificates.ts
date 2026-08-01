@@ -39,6 +39,8 @@ export const certificates: Certificate[] = [
     image: cert1,
     featured: false,
     verifiyId: "cert_d00pzmkb",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "2",
@@ -56,6 +58,8 @@ export const certificates: Certificate[] = [
     image: cert2,
     featured: false,
     verifiyId: "cert_67npt6z2",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "3",
@@ -63,8 +67,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "البرمجة باستخدام ++C - المستوى الأول",
     description:
       "Getting started with C++ syntax, language fundamentals, and structured programming.",
-    descriptionAr:
-      "البدء مع بناء جملة ++C وأساسيات اللغة والبرمجة المنظمة.",
+    descriptionAr: "البدء مع بناء جملة ++C وأساسيات اللغة والبرمجة المنظمة.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "C++",
@@ -73,6 +76,8 @@ export const certificates: Certificate[] = [
     image: cert3,
     featured: false,
     verifiyId: "cert_96x4hwyl",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "4",
@@ -80,8 +85,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "حلول الخوارزميات وحل المشكلات - المستوى الأول",
     description:
       "Hands-on solutions and practical application of algorithmic problems.",
-    descriptionAr:
-      "حلول عملية وتطبيقات على المسائل الخوارزمية.",
+    descriptionAr: "حلول عملية وتطبيقات على المسائل الخوارزمية.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "Algorithms",
@@ -90,6 +94,8 @@ export const certificates: Certificate[] = [
     image: cert4,
     featured: false,
     verifiyId: "cert_b0ysmfkv",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "5",
@@ -107,6 +113,8 @@ export const certificates: Certificate[] = [
     image: cert5,
     featured: false,
     verifiyId: "cert_gf9dz943",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "6",
@@ -125,6 +133,8 @@ export const certificates: Certificate[] = [
     image: cert6,
     featured: false,
     verifiyId: "cert_wjbt8bzr",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "7",
@@ -132,8 +142,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "الخوارزميات وحل المشكلات - المستوى الثالث",
     description:
       "Advanced problem-solving strategies and analysis of algorithmic complexity.",
-    descriptionAr:
-      "استراتيجيات متقدمة لحل المشكلات وتحليل التعقيد الخوارزمي.",
+    descriptionAr: "استراتيجيات متقدمة لحل المشكلات وتحليل التعقيد الخوارزمي.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "Algorithms",
@@ -143,6 +152,8 @@ export const certificates: Certificate[] = [
     image: cert7,
     featured: false,
     verifiyId: "cert_4tynhwkk",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "8",
@@ -161,6 +172,8 @@ export const certificates: Certificate[] = [
     image: cert8,
     featured: false,
     verifiyId: "cert_761bjhpm",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "9",
@@ -179,6 +192,8 @@ export const certificates: Certificate[] = [
     image: cert10,
     featured: false,
     verifiyId: "cert_8r6jgqbb",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "10",
@@ -197,6 +212,8 @@ export const certificates: Certificate[] = [
     image: cert11,
     featured: false,
     verifiyId: "cert_fs4815lb",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "11",
@@ -215,6 +232,8 @@ export const certificates: Certificate[] = [
     image: cert12,
     featured: false,
     verifiyId: "cert_0zh7qtf0",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "12",
@@ -222,8 +241,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "الخوارزميات وحل المشكلات - المستوى الخامس",
     description:
       "Complex problem solving and performance-oriented algorithm design.",
-    descriptionAr:
-      "حل المشكلات المعقدة وتصميم الخوارزميات الموجهة نحو الأداء.",
+    descriptionAr: "حل المشكلات المعقدة وتصميم الخوارزميات الموجهة نحو الأداء.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "Algorithms",
@@ -233,6 +251,8 @@ export const certificates: Certificate[] = [
     image: cert13,
     featured: false,
     verifiyId: "cert_9w246j1m",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "13",
@@ -240,8 +260,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "سي شارب - المستوى الأول",
     description:
       "C# language fundamentals and modern .NET programming foundations.",
-    descriptionAr:
-      "أساسيات لغة C# وأسس البرمجة الحديثة بإطار .NET.",
+    descriptionAr: "أساسيات لغة C# وأسس البرمجة الحديثة بإطار .NET.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "C#",
@@ -250,6 +269,8 @@ export const certificates: Certificate[] = [
     image: cert14,
     featured: false,
     verifiyId: "cert_zwt02yhy",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "14",
@@ -268,6 +289,8 @@ export const certificates: Certificate[] = [
     image: cert15,
     featured: false,
     verifiyId: "cert_107zm845",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "15",
@@ -275,8 +298,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "البرمجة كائنية التوجه في C#",
     description:
       "Object-oriented design principles applied within the C# ecosystem.",
-    descriptionAr:
-      "تطبيق مبادئ التصميم كائني التوجه في بيئة C#.",
+    descriptionAr: "تطبيق مبادئ التصميم كائني التوجه في بيئة C#.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "C#",
@@ -285,6 +307,8 @@ export const certificates: Certificate[] = [
     image: cert16,
     featured: false,
     verifiyId: "cert_767yyjsv",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "16",
@@ -292,8 +316,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "مشاريع وتطبيقات SQL",
     description:
       "Practical SQL projects and hands-on database engineering practice.",
-    descriptionAr:
-      "مشاريع SQL عملية وتدريب عملي على هندسة قواعد البيانات.",
+    descriptionAr: "مشاريع SQL عملية وتدريب عملي على هندسة قواعد البيانات.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "SQL",
@@ -303,6 +326,8 @@ export const certificates: Certificate[] = [
     image: cert17,
     featured: true,
     verifiyId: "cert_bxtl9khx",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "17",
@@ -321,15 +346,15 @@ export const certificates: Certificate[] = [
     image: cert18,
     featured: false,
     verifiyId: "cert_73ssvyh2",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "18",
     courseName: "Full Real Project",
     courseNameAr: "مشروع حقيقي بالكامل",
-    description:
-      "End-to-end real-world application development experience.",
-    descriptionAr:
-      "خبرة تطوير تطبيق حقيقي متكامل من البداية إلى النهاية.",
+    description: "End-to-end real-world application development experience.",
+    descriptionAr: "خبرة تطوير تطبيق حقيقي متكامل من البداية إلى النهاية.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "Project",
@@ -338,6 +363,8 @@ export const certificates: Certificate[] = [
     image: cert19,
     featured: true,
     verifiyId: "cert_d66p1z6t",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "19",
@@ -345,8 +372,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "برمجة C# - المستوى الثاني",
     description:
       "Advanced C# programming and professional .NET development techniques.",
-    descriptionAr:
-      "برمجة C# متقدمة وتقنيات تطوير .NET الاحترافية.",
+    descriptionAr: "برمجة C# متقدمة وتقنيات تطوير .NET الاحترافية.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "C#",
@@ -355,6 +381,8 @@ export const certificates: Certificate[] = [
     image: cert20,
     featured: true,
     verifiyId: "cert_gygz98nz",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "20",
@@ -362,8 +390,7 @@ export const certificates: Certificate[] = [
     courseNameAr: "RESTful API",
     description:
       "Designing and building RESTful APIs following modern best practices.",
-    descriptionAr:
-      "تصميم وبناء RESTful APIs وفق أفضل الممارسات الحديثة.",
+    descriptionAr: "تصميم وبناء RESTful APIs وفق أفضل الممارسات الحديثة.",
     issuer: "Programming Advices",
     issuerAr: "Programming Advices",
     category: "Backend",
@@ -372,6 +399,8 @@ export const certificates: Certificate[] = [
     image: restfulApi,
     featured: true,
     verifiyId: "cert_338y04yv",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "21",
@@ -389,6 +418,8 @@ export const certificates: Certificate[] = [
     image: solidPrinciples,
     featured: true,
     verifiyId: "cert_jdxlrvhd",
+    instructor: "Mohammed Abu-hadhoud",
+    instructorAr: "محمد ابو هدهود",
   },
   {
     id: "22",
@@ -407,5 +438,7 @@ export const certificates: Certificate[] = [
     image: jonasJs,
     featured: true,
     verifiyId: "UC-07a22acb-7819-491a-9813-f963bbc7515f",
+    instructor: "Jonas Schmedtmann",
+    instructorAr:"جونس شميدتمان",
   },
 ];

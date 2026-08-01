@@ -63,7 +63,8 @@
     "copyId": "نسخ معرف التحقق",
     "copied": "تم النسخ!",
     "verifyCertificate": "التحقق من الشهادة",
-    "closeViewer": "إغلاق العارض"
+    "closeViewer": "إغلاق العارض",
+    "issuer": "المصدر"
   },
   "contact": {
     "title": "تواصل",
