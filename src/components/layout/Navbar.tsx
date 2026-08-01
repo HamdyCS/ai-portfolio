@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX, FiMoon, FiSun, FiDownload } from "react-icons/fi";
 import { LanguageToggle } from "../common/LanguageToggle";
 import { personalInfo } from "../../data/personal";
@@ -8,17 +9,18 @@ import { useAtom } from "jotai";
 import themeAtom from "../../atoms/themeAtom";
 
 const navItems = [
-  { key: "nav.projects", href: "#projects" },
-  { key: "nav.skills", href: "#skills" },
-  { key: "nav.certificates", href: "#certificates" },
-  { key: "nav.about", href: "#about" },
-  { key: "nav.contact", href: "#contact" },
+  { key: "nav.projects", href: "/#projects" },
+  { key: "nav.skills", href: "/#skills" },
+  { key: "nav.certificates", href: "/certificates" },
+  { key: "nav.about", href: "/#about" },
+  { key: "nav.contact", href: "/#contact" },
 ];
 
 export function Navbar() {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useAtom(themeAtom);
+  const location = useLocation();
 
   //handle theme change in local storage
   const handleThemeChange = (newTheme: "light" | "dark") => {
@@ -36,28 +38,37 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/80 shadow-sm backdrop-blur-md dark:border-outline-variant/30 dark:bg-surface/80">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-0 py-4">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="flex items-center gap-2 text-sm  md:text-lg  font-bold text-teal-700 text-nowrap dark:text-primary"
           aria-label={personalInfo.name}
         >
           <img src={DarkLogo} alt="DarkLogo" className="w-10 h-10" />
           {personalInfo.name}
-        </a>
+        </Link>
 
         <nav
           className="hidden items-center gap-6 text-sm md:flex"
           aria-label="Main navigation"
         >
-          {navItems.map((item) => (
-            <a
-              key={item.key}
-              href={item.href}
-              className="text-slate-500 transition-colors hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
-            >
-              {t(item.key)}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive =
+              item.href === "/certificates" &&
+              location.pathname === "/certificates";
+            return (
+              <Link
+                key={item.key}
+                to={item.href}
+                className={`transition-colors ${
+                  isActive
+                    ? "font-bold text-teal-700 dark:text-primary"
+                    : "text-slate-500 hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
+                }`}
+              >
+                {t(item.key)}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center md:gap-2 sm:gap-0">
@@ -102,16 +113,25 @@ export function Navbar() {
           className="border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-outline-variant/30 dark:bg-surface"
           aria-label="Mobile navigation"
         >
-          {navItems.map((item) => (
-            <a
-              key={item.key}
-              href={item.href}
-              className="block py-3 text-sm text-slate-500 transition-colors hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t(item.key)}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive =
+              item.href === "/certificates" &&
+              location.pathname === "/certificates";
+            return (
+              <Link
+                key={item.key}
+                to={item.href}
+                className={`block py-3 text-sm transition-colors ${
+                  isActive
+                    ? "font-bold text-teal-700 dark:text-primary"
+                    : "text-slate-500 hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(item.key)}
+              </Link>
+            );
+          })}
           <div className="flex justify-center gap-4 mt-2">
             <a
               href={`mailto:${personalInfo.email}`}

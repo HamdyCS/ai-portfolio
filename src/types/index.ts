@@ -2,6 +2,12 @@ export type SkillCategory = "backend" | "frontend" | "tools";
 export type ProjectCategory = "all" | "fullstack" | "backend" | "frontend";
 export type LanguageDirection = "ltr" | "rtl";
 export type ProjectFilterType = "all" | "fullstack" | "backend" | "frontend";
+export type CertCategory =
+  | "Backend"
+  | "Frontend"
+  | "Fullstack"
+  | "Software Design"
+  | "Fundamentals";
 
 export interface PersonalInfo {
   name: string;
@@ -53,7 +59,7 @@ export interface Certificate {
   instructorAr: string;
   issuer: string;
   issuerAr: string;
-  category: string;
+  category: CertCategory;
   verificationUrl: string;
   dateIssued: string;
   image?: string;

@@ -2,10 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Home } from "./pages/Home";
+import { Certificates } from "./pages/Certificates";
 import { useTranslation } from "react-i18next";
 import { useAtom } from "jotai";
 import themeAtom from "./atoms/themeAtom";
 import { useEffect } from "react";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   const { i18n } = useTranslation();
@@ -28,6 +30,8 @@ function App() {
       <main className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/certificates" element={<Certificates />} />
         </Routes>
       </main>
       <Footer />

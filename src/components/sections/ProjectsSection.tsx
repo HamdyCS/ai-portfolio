@@ -122,16 +122,15 @@ export function ProjectsSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+          <AnimatePresence mode="wait">
+            {filteredProjects.map((project, index) => (
               <motion.div
-                key={project.id}
+                key={`${project.id}-${activeFilter}-${index}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{
-                  duration: 0.5,
-                  ease: "easeInOut",
+                  duration: 0.35,
                 }}
                 className="project-card group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-outline-variant dark:bg-surface-container-low"
               >

@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FiAward,
   FiBook,
@@ -144,12 +145,12 @@ export function CertificatesSection() {
       </div>
 
       <div className="flex justify-center">
-        <a
-          href="#"
+        <Link
+          to="/certificates"
           className="flex items-center gap-2 rounded-lg border border-teal-300 bg-teal-50 px-8 py-4 font-bold text-teal-700 transition-all hover:bg-teal-100 dark:border-primary/30 dark:bg-primary/5 dark:text-primary dark:hover:bg-primary/10"
         >
           {t("certificates.viewAll")} <FiArrowRight />
-        </a>
+        </Link>
       </div>
 
       <CertificateViewerModal
