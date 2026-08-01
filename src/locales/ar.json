@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "projects": "المشاريع",
+    "skills": "المهارات",
+    "certificates": "الشهادات",
+    "about": "عني",
+    "contact": "تواصل"
+  },
+  "hero": {
+    "greeting": "مرحباً، أنا ",
+    "title": "{{title}}",
+    "summary": "{{summary}}",
+    "available": "متاح لفرص جديدة",
+    "viewProjects": "عرض المشاريع",
+    "contactMe": "تواصل معي",
+    "downloadCV": "تحميل السيرة الذاتية",
+    "techStack": "التقنيات",
+    "coreTechnologies": "التقنيات الأساسية",
+    "experience": "الخبرة",
+    "yearsBuildingWebApplications": "سنوات في بناء تطبيقات الويب",
+    "projects": "المشاريع",
+    "completedFullStackProjects": "مشاريع متكاملة مكتملة",
+    "specialization": "التخصص"
+  },
+  "stats": {
+    "experience": "+{{count}} سنوات في بناء تطبيقات الويب",
+    "projects": "+{{count}} مشاريع مكتملة متكاملة",
+    "specialization": "التخصص"
+  },
+  "skills": {
+    "title": "المهارات",
+    "backend": "هندسة الخلفية",
+    "backendDesc": "بناء أنظمة خلفية قابلة للتوسع باستخدام هندسة .NET الحديثة ومبادئ الكود النظيف وممارسات التطوير على مستوى المؤسسات.",
+    "frontend": "تطوير الواجهة الأمامية",
+    "frontendDesc": "إنشاء تطبيقات ويب حديثة ومتجاوبة وتفاعلية مع نظام بيئي React وهندسة واجهة أمامية قابلة للتوسع.",
+    "tools": "الأدوات",
+    "toolsDesc": "الأدوات اليومية وسير عمل التطوير المستخدم لبناء واختبار وصيانة التطبيقات المهنية.",
+    "engineeringFocus": "التركيز الهندسي",
+    "engineeringFocusDesc": "تصميم وتطوير تطبيقات متكاملة جاهزة للإنتاج مع التركيز على قابلية التوسع والقابلية للصيانة والأمان والهندسة البرمجية النظيفة.",
+    "currentlyExploring": "أتعلم حالياً"
+  },
+  "projects": {
+    "title": "المشاريع",
+    "subtitle": "اختيار من أكثر أعمالي التقنية تأثيراً.",
+    "all": "الكل",
+    "fullstack": "متكامل",
+    "backend": "خلفية",
+    "frontend": "واجهة أمامية",
+    "viewLive": "عرض مباشر",
+    "viewCode": "عرض الكود"
+  },
+  "certificates": {
+    "title": "الشهادات",
+    "subtitle": "اختيار من أكثر الدورات والشهادات قيمة التي عززت خبرتي في تطوير الويب المتكامل.",
+    "viewAll": "عرض جميع الشهادات",
+    "viewCertificate": "عرض الشهادة"
+  },
+  "contact": {
+    "title": "تواصل",
+    "subtitle": "دعنا نبني شيئاً رائعاً معاً.",
+    "description": "أنا مطور .NET متكامل شغوف ببناء تطبيقات الويب الآمنة والقابلة للتوسع وعالية الأداء باستخدام ASP.NET Core و React. أنا متاح للفرص الكاملة ومشاريع العمل الحر والتعاون.",
+    "heading1": "لنقم ببناء",
+    "heading2": "شيء عظيم",
+    "heading3": "معاً.",
+    "contactMe": "تواصل معي",
+    "linkedin": "لينكدإن",
+    "github": "جيتهب",
+    "email": "البريد الإلكتروني",
+    "whatsapp": "واتساب",
+    "basedIn": "في {{location}}",
+    "remote": "متاح للعمل عن بُعد",
+    "availableFor": "متاح لـ",
+    "availableForRoles": "بناء تطبيقات متكاملة قابلة للتوسع باستخدام .NET و React وتقنيات الويب الحديثة.",
+    "viewGitHub": "عرض GitHub",
+    "connectLinkedIn": "التواصل على LinkedIn",
+    "sendEmail": "إرسال بريد إلكتروني",
+    "gitHubProjects": "مشاريع GitHub",
+    "gitHubProjectsDesc": "استكشف مشاريعي الشخصية، والتطبيقات المتكاملة، وحلول الواجهة الخلفية، وكود المصدر المبني باستخدام تقنيات .NET الحديثة.",
+    "professionalNetwork": "الشبكة المهنية",
+    "professionalNetworkDesc": "تواصل معي على LinkedIn لمتابعة مسيرتي المهنية ومشاريعي وشهاداتي وتحديثات مسيرتي المهنية.",
+    "getInTouch": "تواصل معي",
+    "getInTouchDesc": "لا تتردد في التواصل معي بخصوص الفرص الكاملة، أو مشاريع العمل الحر، أو التعاون، أو أي أسئلة حول عملي."
+  },
+  "footer": {
+    "copyright": "© {{year}} {{name}}"
+  },
+  "common": {
+    "viewAll": "عرض الكل",
+    "learnMore": "اعرف المزيد",
+    "openInNew": "يفتح في تاب جديد"
+  }
+}

@@ -53,7 +53,7 @@ A potential client or collaborator explores Hamdy's project portfolio, viewing p
 **Acceptance Scenarios**:
 
 1. **Given** a visitor scrolls to the projects section, **When** they view project cards, **Then** each card shows a project image, title, description, and technology tags
-2. **Given** a visitor views the projects section, **When** they click a project link, **Then** they are directed to the project's live demo or repository
+2. **Given** a visitor views the projects section, **When** they click a project link, **Then** they are directed to the project's live demo or repository in a new tab
 3. **Given** a visitor views the projects section, **When** they see the filter tabs, **Then** they can filter by All, Full-Stack, Backend categories
 
 ---
@@ -85,7 +85,7 @@ A hiring manager reviews Hamdy's certifications to verify his educational backgr
 **Acceptance Scenarios**:
 
 1. **Given** a visitor scrolls to the certificates section, **When** they view certificate cards, **Then** each card shows course name, issuer, and category
-2. **Given** a visitor views a certificate card, **When** they click "View Certificate", **Then** they are directed to the certificate verification URL
+2. **Given** a visitor views a certificate card, **When** they click "View Certificate", **Then** they are directed to the certificate verification URL in a new tab
 3. **Given** a visitor views the certificates section, **When** they click "View All Certificates", **Then** they are navigated to the full certificates page
 
 ---
@@ -114,7 +114,7 @@ A hiring manager reviews Hamdy's certifications to verify his educational backgr
 - **FR-011**: System MUST support dark mode theme with consistent color palette
 - **FR-012**: System MUST use semantic HTML elements for accessibility (header, nav, main, section, footer)
 - **FR-013**: System MUST implement lazy loading for images and below-the-fold content
-- **FR-014**: System MUST support internationalization for all user-visible text
+- **FR-014**: System MUST support internationalization for all user-visible text using i18next, with Arabic and English languages. Language is auto-detected from browser preference and can be manually toggled via a button in the navigation. User choice is persisted in localStorage.
 - **FR-015**: System MUST animate section transitions using Framer Motion
 
 ### Key Entities
@@ -138,13 +138,32 @@ A hiring manager reviews Hamdy's certifications to verify his educational backgr
 - **SC-005**: Contact methods (email, LinkedIn, GitHub) are functional with zero broken links
 - **SC-006**: Page maintains visual consistency with the Stitch design system across all breakpoints
 
+## Clarifications
+
+### Session 2026-07-31
+
+- Q: How many projects/certificates/skills should be displayed and is there a backend? → A: All data is hardcoded/static in the project with no backend. Small volumes assumed (≤8 projects, ≤6 certificates, ≤15 skills per category). No pagination needed.
+- Q: Should external links (project demos, repos, certificates) open in new tab or same tab? → A: Always open in new tab with `target="_blank"` and `rel="noopener noreferrer"`.
+- Q: How should language switching work for Arabic/English? → A: Auto-detect from browser language, with manual toggle button in the navigation. Persist user choice in localStorage.
+- Q: What loading/skeleton states are needed? → A: No skeleton or loading indicators. All images and data are hardcoded/static, content renders immediately.
+- Q: What features are explicitly out of scope? → A: Blog, analytics tracking, CMS integration, admin dashboard, user authentication, and contact form backend are excluded. Portfolio stays focused on static presentation.
+
 ## Assumptions
 
 - The portfolio is a static frontend application with no backend authentication requirements
-- All content (projects, certificates, skills) is hardcoded or fetched from static data files
+- All content (projects, certificates, skills) is hardcoded in static data files within the project
 - The design follows the Stitch design system with dark theme, teal primary color, and rounded corners
 - Images are hosted externally (Google CDN) with fallback placeholders for broken images
 - Internationalization will support Arabic and English languages
 - The page will be implemented using React 19 with TypeScript strict mode
 - All animations will use Framer Motion with CSS animations only for micro-interactions
 - The implementation will follow the existing project structure under `src/components/sections/`
+
+## Out of Scope
+
+- Blog or article publishing system
+- Analytics tracking (Google Analytics, etc.)
+- CMS integration for dynamic content management
+- Admin dashboard for content editing
+- User authentication or login system
+- Contact form with backend submission (email sending)

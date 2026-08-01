@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "skills": "Skills",
+    "certificates": "Certificates",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm ",
+    "title": "{{title}}",
+    "summary": "{{summary}}",
+    "available": "Available for new opportunities",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "downloadCV": "Download CV",
+    "techStack": "Tech Stack",
+    "coreTechnologies": "Core Technologies",
+    "experience": "Experience",
+    "yearsBuildingWebApplications": "Years Building Web Applications",
+    "projects": "Projects",
+    "completedFullStackProjects": "Completed Full-Stack Projects",
+    "specialization": "Specialization"
+  },
+  "stats": {
+    "experience": "{{count}}+ Years Building Web Applications",
+    "projects": "{{count}}+ Completed Full-Stack Projects"
+  },
+  "skills": {
+    "title": "Skills",
+    "backend": "Backend Engineering",
+    "backendDesc": "Building scalable backend systems using modern .NET architecture, clean code principles, and enterprise-level development practices.",
+    "frontend": "Frontend Development",
+    "frontendDesc": "Creating modern, responsive, and interactive web applications with React ecosystem and scalable frontend architecture.",
+    "tools": "Tools",
+    "toolsDesc": "Daily tools and development workflow used for building, testing, and maintaining professional applications.",
+    "engineeringFocus": "Engineering Focus",
+    "engineeringFocusDesc": "Designing and developing production-ready full-stack applications with focus on scalability, maintainability, security, and clean software architecture.",
+    "currentlyExploring": "Currently Exploring"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Selection of my most impactful technical work.",
+    "all": "All",
+    "fullstack": "Full-Stack",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "viewLive": "View Live",
+    "viewCode": "View Code"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "A selection of the most valuable courses and certifications that have strengthened my expertise in Full-Stack Web Development.",
+    "viewAll": "View All Certificates",
+    "viewCertificate": "View Certificate"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "subtitle": "Let's build something great together.",
+    "heading1": "Let's build",
+    "heading2": "something great",
+    "heading3": "together.",
+    "description": "I'm a Full-Stack .NET Developer passionate about building secure, scalable, and high-performance web applications with ASP.NET Core and React. I'm open to full-time opportunities, freelance projects, and collaborations.",
+    "contactMe": "Contact Me",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "basedIn": "Based in {{location}}",
+    "remote": "Open to Remote Opportunities",
+    "availableFor": "Available for",
+    "availableForRoles": "Building scalable full-stack applications with .NET, React, and modern web technologies",
+    "viewGitHub": "View GitHub",
+    "connectLinkedIn": "Connect on LinkedIn",
+    "sendEmail": "Send Email",
+    "gitHubProjects": "GitHub Projects",
+    "gitHubProjectsDesc": "Explore my personal projects, full-stack applications, backend solutions, and source code built with modern .NET technologies.",
+    "professionalNetwork": "Professional Network",
+    "professionalNetworkDesc": "Connect with me on LinkedIn to follow my professional journey, projects, certifications, and career updates.",
+    "getInTouch": "Get In Touch",
+    "getInTouchDesc": "Feel free to reach out for full-time opportunities, freelance projects, collaborations, or any questions about my work."
+  },
+  "footer": {
+    "copyright": "© {{year}} {{name}}"
+  },
+  "common": {
+    "viewAll": "View All",
+    "learnMore": "Learn More",
+    "openInNew": "Opens in new tab"
+  }
+}
