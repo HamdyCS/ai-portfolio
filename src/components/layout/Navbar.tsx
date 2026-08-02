@@ -10,11 +10,13 @@ import themeAtom from "../../atoms/themeAtom";
 
 const navItems = [
   { key: "nav.projects", href: "/#projects" },
-  { key: "nav.skills", href: "/#skills" },
+  { key: "nav.skills", href: "/skills" },
   { key: "nav.certificates", href: "/certificates" },
   { key: "nav.about", href: "/#about" },
   { key: "nav.contact", href: "/#contact" },
 ];
+
+const routePages = ["/certificates", "/skills"];
 
 export function Navbar() {
   const { t } = useTranslation();
@@ -53,8 +55,8 @@ export function Navbar() {
         >
           {navItems.map((item) => {
             const isActive =
-              item.href === "/certificates" &&
-              location.pathname === "/certificates";
+              routePages.includes(item.href) &&
+              location.pathname === item.href;
             return (
               <Link
                 key={item.key}
@@ -115,8 +117,8 @@ export function Navbar() {
         >
           {navItems.map((item) => {
             const isActive =
-              item.href === "/certificates" &&
-              location.pathname === "/certificates";
+              routePages.includes(item.href) &&
+              location.pathname === item.href;
             return (
               <Link
                 key={item.key}

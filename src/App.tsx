@@ -3,6 +3,7 @@ import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Home } from "./pages/Home";
 import { Certificates } from "./pages/Certificates";
+import { Skills } from "./pages/Skills";
 import { NotFound } from "./pages/NotFound";
 import { useTranslation } from "react-i18next";
 import { useAtom } from "jotai";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/certificates" element={<Certificates />} />
+          <Route path="/skills" element={<Skills />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
