@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FiX } from "react-icons/fi";
+import { Icon } from "../../lib/Icon";
 
 const AUTO_REDIRECT_SECONDS = 10;
 
@@ -31,7 +31,7 @@ export function AutoRecovery({ onComplete }: AutoRecoveryProps) {
     <div className="mt-10 flex flex-col items-center gap-3">
       {cancelled ? (
         <p className="flex items-center gap-2 font-mono text-xs text-slate-500 dark:text-text-secondary">
-          <FiX className="text-sm" />
+          <Icon name="FiX" className="text-sm" />
           {t("notFound.redirectCancelled")}
         </p>
       ) : (

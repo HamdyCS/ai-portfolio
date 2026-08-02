@@ -1,123 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import {
-  FiTerminal,
-  FiCpu,
-  FiSettings,
-  FiCheckCircle,
-  FiKey,
-  FiAward,
-  FiGlobe,
-} from "react-icons/fi";
-import {
-  SiInsomnia,
-  SiMaildotru,
-  SiMui,
-  SiReactquery,
-  SiReactrouter,
-  SiFramer,
-  SiGitkraken,
-} from "react-icons/si";
-import type { IconType } from "react-icons";
+import { Icon } from "../lib/Icon";
+import { techIconClassName } from "../lib/icons";
 import { skills } from "../data/skills";
-
-const deviconClass: Record<string, string> = {
-  dotnet: "devicon-dotnetcore-plain colored",
-  "aspnet-core": "devicon-dotnetcore-plain colored",
-  csharp: "devicon-csharp-plain colored",
-  "ef-core": "devicon-entityframeworkcore-plain colored",
-  "sql-server": "devicon-microsoftsqlserver-plain colored",
-  redis: "devicon-redis-plain colored",
-  identity: "devicon-dotnetcore-plain colored",
-  automapper: "devicon-dotnetcore-plain colored",
-  mapster: "devicon-dotnetcore-plain colored",
-  react: "devicon-react-original colored",
-  typescript: "devicon-typescript-plain colored",
-  javascript: "devicon-javascript-plain colored",
-  html5: "devicon-html5-plain colored",
-  css3: "devicon-css3-plain colored",
-  tailwind: "devicon-tailwindcss-plain colored",
-  bootstrap: "devicon-bootstrap-plain colored",
-  "redux-toolkit": "devicon-redux-original colored",
-  vite: "devicon-vitejs-plain colored",
-  "visual-studio": "devicon-visualstudio-plain colored",
-  vscode: "devicon-vscode-plain colored",
-  git: "devicon-git-plain colored",
-  github: "devicon-github-plain colored",
-  postman: "devicon-postman-plain colored",
-  swagger: "devicon-swagger-plain colored",
-  ssms: "devicon-azuresqldatabase-plain colored",
-  "redis-insight": "devicon-redis-plain colored",
-};
-
-const siIcons: Record<string, { Icon: IconType; className: string }> = {
-  "rest-api": {
-    Icon: SiInsomnia,
-    className: "text-[#4000BF] dark:text-[#9A86FF]",
-  },
-  mailkit: {
-    Icon: SiMaildotru,
-    className: "text-[#30302E] dark:text-slate-200",
-  },
-  mui: { Icon: SiMui, className: "text-[#007FFF] dark:text-[#64B5F6]" },
-  "react-query": {
-    Icon: SiReactquery,
-    className: "text-[#FF4154] dark:text-[#FF6B7A]",
-  },
-  "react-router": {
-    Icon: SiReactrouter,
-    className: "text-[#CA4245] dark:text-[#E57373]",
-  },
-  "framer-motion": {
-    Icon: SiFramer,
-    className: "text-[#0055FF] dark:text-[#7AA2FF]",
-  },
-  gitkraken: {
-    Icon: SiGitkraken,
-    className: "text-[#179287] dark:text-[#5FCBC0]",
-  },
-};
-
-const fiIcons: Record<string, { Icon: IconType; className: string }> = {
-  jwt: { Icon: FiKey, className: "text-teal-700 dark:text-primary" },
-  fluentvalidation: {
-    Icon: FiCheckCircle,
-    className: "text-teal-700 dark:text-primary",
-  },
-  serilog: { Icon: FiTerminal, className: "text-teal-700 dark:text-primary" },
-};
-
-function SkillIcon({
-  skillId,
-  className = "",
-}: {
-  skillId: string;
-  className?: string;
-}) {
-  const dev = deviconClass[skillId];
-  if (dev) {
-    return (
-      <i
-        aria-hidden="true"
-        style={{ fontSize: "2rem" }}
-        className={`${dev} ${className}`}
-      />
-    );
-  }
-  const si = siIcons[skillId];
-  if (si) {
-    return (
-      <si.Icon aria-hidden="true" className={`${si.className} ${className}`} />
-    );
-  }
-  const fi = fiIcons[skillId];
-  if (fi) {
-    return (
-      <fi.Icon aria-hidden="true" className={`${fi.className} ${className}`} />
-    );
-  }
-  return null;
-}
 
 const backendSkills = skills.filter((s) => s.category === "backend");
 const frontendSkills = skills.filter((s) => s.category === "frontend");
@@ -155,7 +40,7 @@ export function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="gradient-text mb-4 text-4xl font-bold md:text-6xl"
+          className="mb-4 text-4xl font-bold md:text-6xl"
         >
           {t("skills.pageTitle")}
         </motion.h1>
@@ -183,7 +68,7 @@ export function Skills() {
         >
           <div>
             <div className="mb-6 flex items-center gap-3">
-              <FiTerminal className="text-3xl text-primary" />
+              <Icon name="FiTerminal" className="text-3xl text-primary" />
               <h2 className="text-2xl font-bold text-slate-900 dark:text-text-primary">
                 {t("skills.backendTitle")}
               </h2>
@@ -201,7 +86,11 @@ export function Skills() {
                       : ""
                   }`}
                 >
-                  <SkillIcon skillId={skill.id} className="h-8 w-8" />
+                  <Icon
+                    name={skill.id}
+                    className={techIconClassName}
+                    fontSize="2rem"
+                  />
                   <span
                     className={`text-center font-mono text-xs ${
                       skill.id === "rest-api" ? "text-primary" : ""
@@ -214,7 +103,7 @@ export function Skills() {
             </div>
           </div>
           <div className="mt-auto flex items-center gap-2 font-mono text-sm text-primary">
-            <FiAward className="text-xs" />
+            <Icon name="FiAward" className="text-xs" />
             <span>{t("skills.backendNote")}</span>
           </div>
         </motion.div>
@@ -224,7 +113,7 @@ export function Skills() {
           className="bento-card flex flex-col rounded-xl p-8 md:col-span-4 md:row-span-3 h-230 overflow-y-auto"
         >
           <div className="mb-6 flex items-center gap-3">
-            <FiGlobe className="text-3xl text-secondary" />
+            <Icon name="FiGlobe" className="text-3xl text-secondary" />
             <h2 className="text-2xl font-bold text-slate-900 dark:text-text-primary">
               {t("skills.frontendTitle")}
             </h2>
@@ -238,7 +127,11 @@ export function Skills() {
                 key={skill.id}
                 className="flex items-center gap-4 rounded-lg border border-slate-200/50 bg-slate-50 p-3 transition-colors hover:bg-slate-100 dark:border-outline-variant/10 dark:bg-surface-container-low dark:hover:bg-surface-high"
               >
-                <SkillIcon skillId={skill.id} className="h-8 w-8" />
+                <Icon
+                  name={skill.id}
+                  className={techIconClassName}
+                  fontSize="2rem"
+                />
                 <div>
                   <div className="text-sm font-bold text-slate-900 dark:text-text-primary">
                     {skill.name}
@@ -277,7 +170,7 @@ export function Skills() {
           <div className="absolute -mr-16 -mt-16 right-0 top-0 h-32 w-32 rounded-full bg-primary/5 blur-3xl transition-all duration-700 group-hover:bg-primary/10" />
           <div className="relative z-10">
             <div className="mb-6 flex items-center gap-3">
-              <FiCpu className="text-3xl text-tertiary" />
+              <Icon name="FiCpu" className="text-3xl text-tertiary" />
               <h2 className="text-2xl font-bold text-slate-900 dark:text-text-primary">
                 {t("skills.engineeringTitle")}
               </h2>
@@ -321,7 +214,7 @@ export function Skills() {
           <div className="mb-8 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
               <div className="mb-2 flex items-center gap-3">
-                <FiSettings className="text-3xl text-slate-900 dark:text-text-primary" />
+                <Icon name="FiSettings" className="text-3xl text-slate-900 dark:text-text-primary" />
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-text-primary">
                   {t("skills.toolsTitle")}
                 </h2>
@@ -337,9 +230,10 @@ export function Skills() {
                 key={skill.id}
                 className="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 p-4 transition-colors hover:border-primary/40 dark:border-outline-variant/20"
               >
-                <SkillIcon
-                  skillId={skill.id}
-                  className="h-8 w-8 grayscale transition-all group-hover:grayscale-0"
+                <Icon
+                  name={skill.id}
+                  className={`${techIconClassName} grayscale transition-all group-hover:grayscale-0`}
+                  fontSize="2rem"
                 />
                 <span className="font-mono text-sm text-slate-700 dark:text-text-secondary">
                   {skill.name}

@@ -1,14 +1,7 @@
 import { useRef, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import {
-  FiArrowRight,
-  FiDownload,
-  FiTerminal,
-  FiClock,
-  FiZap,
-  FiCheckCircle,
-} from "react-icons/fi";
+import { Icon } from "../../lib/Icon";
 import { personalInfo } from "../../data/personal";
 import HamdyBlackBG from "../../assets/HamdyBlackBG.png";
 
@@ -100,13 +93,13 @@ export function HeroSection() {
               className="flex items-center gap-2 rounded-lg bg-primary px-8 py-4 font-bold text-on-primary transition-all duration-200 hover:brightness-110 active:scale-95"
             >
               {t("hero.viewProjects")}
-              <FiArrowRight />
+              <Icon name="FiArrowRight" />
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
               className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest"
             >
-              <FiDownload className="text-[20px]" />
+              <Icon name="FiDownload" className="text-[20px]" />
               {t("hero.downloadCV")}
             </a>
           </div>
@@ -143,7 +136,7 @@ export function HeroSection() {
 
               <div className="hero-tilt-inner glass-card absolute -left-8 -top-4 max-w-[200px] rounded-xl border border-teal-200 p-4 shadow-xl dark:border-primary/20">
                 <div className="mb-2 flex items-center gap-2">
-                  <FiTerminal className="text-xs text-teal-700 dark:text-primary" />
+                  <Icon name="FiTerminal" className="text-xs text-teal-700 dark:text-primary" />
                   <span className="text-[10px] uppercase tracking-wider text-teal-700/70 dark:text-primary/70">
                     {t("hero.techStack")}
                   </span>
@@ -175,7 +168,7 @@ export function HeroSection() {
                   <span className="text-[10px] uppercase tracking-wider opacity-60">
                     {t("hero.experience")}
                   </span>
-                  <FiClock className="text-sm text-sky-700 dark:text-secondary" />
+                  <Icon name="FiClock" className="text-sm text-sky-700 dark:text-secondary" />
                 </div>
                 <div className="text-2xl font-extrabold text-sky-700 dark:text-secondary">
                   {personalInfo.yearsOfExperience}+
@@ -190,7 +183,7 @@ export function HeroSection() {
 
               <div className="hero-tilt-inner glass-card absolute -left-12 bottom-12 rounded-xl border border-slate-200/70 p-4 shadow-xl dark:border-outline-variant/30">
                 <div className="mb-2 flex items-center gap-2">
-                  <FiZap className="text-xs text-teal-700 dark:text-primary" />
+                  <Icon name="FiZap" className="text-xs text-teal-700 dark:text-primary" />
                   <span className="text-[10px] uppercase tracking-wider opacity-60">
                     {t("hero.projects")}
                   </span>
@@ -205,7 +198,7 @@ export function HeroSection() {
 
               <div className="hero-tilt-inner glass-card absolute -bottom-4 -right-8 rounded-xl border border-orange-200 p-4 shadow-xl dark:border-tertiary/20">
                 <div className="mb-2 flex items-center gap-2">
-                  <FiCheckCircle className="text-sm text-orange-700 dark:text-tertiary" />
+                  <Icon name="FiCheckCircle" className="text-sm text-orange-700 dark:text-tertiary" />
                   <span className="text-[10px] uppercase tracking-wider opacity-60">
                     {t("hero.specialization")}
                   </span>

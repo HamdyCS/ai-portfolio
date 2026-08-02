@@ -99,7 +99,7 @@ export const projects: Project[] = [
     image: bankist,
     technologies: ["HTML", "CSS", "JavaScript"],
     category: "frontend",
-    liveUrl: "https://hamdycs.github.io/mapty/",
+    liveUrl: "https://hamdycs.github.io/Bankist",
     repoUrl: "https://github.com/HamdyCS/Bankist",
     featured: false,
   },
@@ -209,7 +209,6 @@ export const projects: Project[] = [
     image: taskManagement,
     technologies: [
       "ASP.NET Core",
-      "Clean Architecture",
       "CQRS",
       "MediatR",
       "Entity Framework Core",

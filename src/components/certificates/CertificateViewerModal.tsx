@@ -1,18 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import {
-  MdVerified,
-  MdOutlinePerson,
-  MdOutlineCategory,
-  MdOutlineCalendarToday,
-  MdOutlineContentCopy,
-  MdOutlineCheck,
-  MdOutlineSecurity,
-  MdOutlineClose,
-} from "react-icons/md";
+import { Icon } from "../../lib/Icon";
 import type { Certificate } from "../../types";
-import { CgWebsite } from "react-icons/cg";
 
 interface CertificateViewerModalProps {
   certificate: Certificate | null;
@@ -114,7 +104,7 @@ export function CertificateViewerModal({
               onClick={onClose}
               aria-label={t("certificates.closeViewer")}
             >
-              <MdOutlineClose className="text-2xl" />
+              <Icon name="MdOutlineClose" className="text-2xl" />
             </button>
 
             <div className="flex w-full items-center justify-center bg-slate-50 p-6 md:w-3/5 md:p-8 dark:bg-black/40">
@@ -136,14 +126,14 @@ export function CertificateViewerModal({
                   onClick={onClose}
                   aria-label={t("certificates.closeViewer")}
                 >
-                  <MdOutlineClose className="text-2xl" />
+                  <Icon name="MdOutlineClose" className="text-2xl" />
                 </button>
               </div>
 
               <div className="flex-grow space-y-8">
                 <div>
                   <div className="mb-2 flex items-center gap-2 text-teal-600 dark:text-primary">
-                    <MdVerified className="text-sm" />
+                    <Icon name="MdVerified" className="text-sm" />
                     <span className="font-mono text-xs font-bold uppercase tracking-widest dark:font-medium">
                       {t("certificates.verifiedCredential")}
                     </span>
@@ -161,7 +151,7 @@ export function CertificateViewerModal({
                 <div className="grid grid-cols-1 gap-6">
                   <div className="flex items-start gap-4">
                     <div className="rounded-lg bg-slate-50 p-2 text-slate-600 dark:bg-surface-high dark:text-primary">
-                      <MdOutlinePerson className="text-2xl" />
+                      <Icon name="MdOutlinePerson" className="text-2xl" />
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:font-medium dark:text-text-secondary">
@@ -175,7 +165,7 @@ export function CertificateViewerModal({
 
                   <div className="flex items-start gap-4">
                     <div className="rounded-lg bg-slate-50 p-2 text-slate-600 dark:bg-surface-high dark:text-secondary">
-                      <CgWebsite className="text-2xl" />
+                      <Icon name="CgWebsite" className="text-2xl" />
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:font-medium dark:text-text-secondary">
@@ -189,7 +179,7 @@ export function CertificateViewerModal({
 
                   <div className="flex items-start gap-4">
                     <div className="rounded-lg bg-slate-50 p-2 text-slate-600 dark:bg-surface-high dark:text-secondary">
-                      <MdOutlineCategory className="text-2xl" />
+                      <Icon name="MdOutlineCategory" className="text-2xl" />
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:font-medium dark:text-text-secondary">
@@ -204,7 +194,7 @@ export function CertificateViewerModal({
                   {certificate.dateIssued && (
                     <div className="flex items-start gap-4">
                       <div className="rounded-lg bg-slate-50 p-2 text-slate-600 dark:bg-surface-high dark:text-tertiary">
-                        <MdOutlineCalendarToday className="text-2xl" />
+                        <Icon name="MdOutlineCalendarToday" className="text-2xl" />
                       </div>
                       <div>
                         <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:font-medium dark:text-text-secondary">
@@ -233,9 +223,9 @@ export function CertificateViewerModal({
                       aria-label={t("certificates.copyId")}
                     >
                       {copied ? (
-                        <MdOutlineCheck className="text-2xl" />
+                        <Icon name="MdOutlineCheck" className="text-2xl" />
                       ) : (
-                        <MdOutlineContentCopy className="text-2xl" />
+                        <Icon name="MdOutlineContentCopy" className="text-2xl" />
                       )}
                     </button>
                   </div>
@@ -249,7 +239,7 @@ export function CertificateViewerModal({
                   rel="noopener noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#2dd4bf] px-6 py-4 font-bold text-white shadow-lg shadow-teal-500/20 transition-all hover:bg-teal-500 active:scale-95 dark:text-on-primary dark:shadow-[0_0_20px_rgba(87,241,219,0.3)] dark:hover:bg-primary-light"
                 >
-                  <MdOutlineSecurity className="text-2xl" />
+                  <Icon name="MdOutlineSecurity" className="text-2xl" />
                   {t("certificates.verifyCertificate")}
                 </a>
                 <button

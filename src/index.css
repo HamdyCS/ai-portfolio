@@ -233,3 +233,46 @@ body {
   border-color: rgba(45, 212, 191, 0.6) !important;
   box-shadow: 0 10px 40px -10px rgba(45, 212, 191, 0.25) !important;
 }
+
+/* Projects archive page (design screen 34fcc55db9554d149c56b34fa968e44b) */
+.projects-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  transition: all 0.3s ease-out;
+}
+
+.dark .projects-card {
+  background: rgba(18, 33, 49, 0.4);
+  border: 1px solid rgba(60, 74, 70, 0.3);
+}
+
+.projects-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(45, 212, 191, 0.6);
+  box-shadow: 0 10px 40px -10px rgba(45, 212, 191, 0.25);
+}
+
+.dark .projects-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(87, 241, 219, 0.4);
+  box-shadow:
+    0 30px 60px -15px rgba(87, 241, 219, 0.2),
+    0 10px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+.project-spotlight {
+  background: radial-gradient(
+    circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(13, 148, 136, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+.dark .project-spotlight {
+  background: radial-gradient(
+    circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(87, 241, 219, 0.08) 0%,
+    transparent 70%
+  );
+}

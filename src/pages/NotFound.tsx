@@ -160,7 +160,7 @@ export function NotFound() {
             <Ripple>
               <Button
                 variant="secondary"
-                onClick={() => navigate("/#projects")}
+                onClick={() => navigate("/projects")}
                 className="hover:shadow-[0_12px_28px_-12px_rgba(45,212,191,0.4)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 {t("notFound.viewProjects")}

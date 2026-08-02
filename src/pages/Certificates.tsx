@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiCalendar, FiExternalLink, FiAward } from "react-icons/fi";
+import { Icon } from "../lib/Icon";
 import { certificates } from "../data/certificates";
 import type { CertCategory, Certificate } from "../types";
 import { CertificateViewerModal } from "../components/certificates/CertificateViewerModal";
@@ -145,7 +145,7 @@ export function Certificates() {
                       className="mt-1 shrink-0 text-slate-400 transition-colors hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
                       aria-label={t("common.openInNew")}
                     >
-                      <FiExternalLink className="text-[20px]" />
+                      <Icon name="FiExternalLink" className="text-[20px]" />
                     </a>
                   </div>
 
@@ -156,7 +156,7 @@ export function Certificates() {
 
                   {cert.dateIssued && (
                     <div className="mb-6 flex items-center gap-1.5 text-xs text-slate-400 dark:text-outline">
-                      <FiCalendar className="text-[16px]" />
+                      <Icon name="FiCalendar" className="text-[16px]" />
                       <span>{cert.dateIssued}</span>
                     </div>
                   )}
@@ -175,7 +175,7 @@ export function Certificates() {
                       className="cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-3 text-primary transition-colors hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-highest dark:text-primary-light dark:hover:bg-surface-bright"
                       aria-label={t("certificates.verifiedCredential")}
                     >
-                      <FiAward />
+                      <Icon name="FiAward" />
                     </button>
                   </div>
                 </div>

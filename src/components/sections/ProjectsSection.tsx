@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAtom } from "jotai";
-import { FiExternalLink, FiCode } from "react-icons/fi";
+import { Icon } from "../../lib/Icon";
+import { TechBadge } from "../common/TechBadge";
 import { projects } from "../../data/projects";
 import { projectFilterAtom } from "../../atoms/projectFilterAtom";
 import type { ProjectFilterType, Project } from "../../types";
@@ -12,63 +13,6 @@ const filters: { key: ProjectFilterType; labelKey: string }[] = [
   { key: "frontend", labelKey: "projects.frontend" },
 ];
 
-const tagColors = [
-  {
-    key: ".NET",
-    bg: "bg-violet-100 dark:bg-violet-500/10",
-    text: "text-violet-700 dark:text-violet-400",
-  },
-  {
-    key: "ASP.NET Core",
-    bg: "bg-violet-100 dark:bg-violet-500/10",
-    text: "text-violet-700 dark:text-violet-400",
-  },
-  {
-    key: "React",
-    bg: "bg-cyan-100 dark:bg-cyan-500/10",
-    text: "text-cyan-700 dark:text-cyan-400",
-  },
-  {
-    key: "TypeScript",
-    bg: "bg-blue-100 dark:bg-blue-500/10",
-    text: "text-blue-700 dark:text-blue-400",
-  },
-  {
-    key: "JavaScript",
-    bg: "bg-yellow-100 dark:bg-yellow-500/10",
-    text: "text-yellow-700 dark:text-yellow-400",
-  },
-  {
-    key: "HTML",
-    bg: "bg-orange-100 dark:bg-orange-500/10",
-    text: "text-orange-700 dark:text-orange-400",
-  },
-  {
-    key: "CSS",
-    bg: "bg-sky-100 dark:bg-sky-500/10",
-    text: "text-sky-700 dark:text-sky-400",
-  },
-  {
-    key: "Tailwind CSS",
-    bg: "bg-teal-100 dark:bg-teal-500/10",
-    text: "text-teal-700 dark:text-teal-400",
-  },
-  {
-    key: "Bootstrap",
-    bg: "bg-purple-100 dark:bg-purple-500/10",
-    text: "text-purple-700 dark:text-purple-400",
-  },
-  {
-    key: "Material UI",
-    bg: "bg-indigo-100 dark:bg-indigo-500/10",
-    text: "text-indigo-700 dark:text-indigo-400",
-  },
-  {
-    key: "SQL Server",
-    bg: "bg-red-100 dark:bg-red-500/10",
-    text: "text-red-700 dark:text-red-400",
-  },
-];
 const getLocalizedField = (
   project: Project,
   field: "title" | "description",
@@ -148,7 +92,7 @@ export function ProjectsSection() {
                         rel="noopener noreferrer"
                         className="rounded-full bg-primary p-3 text-on-primary transition-all hover:scale-110"
                       >
-                        <FiExternalLink />
+                        <Icon name="FiExternalLink" />
                       </a>
                     )}
                     {project.repoUrl && (
@@ -158,7 +102,7 @@ export function ProjectsSection() {
                         rel="noopener noreferrer"
                         className="rounded-full bg-white p-3 text-slate-900 transition-all hover:scale-110 dark:bg-surface dark:text-text-primary"
                       >
-                        <FiCode />
+                        <Icon name="FiCode" />
                       </a>
                     )}
                   </div>
@@ -166,23 +110,9 @@ export function ProjectsSection() {
 
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-4 flex gap-2">
-                    {project.technologies.slice(0, 2).map((tech) => {
-                      const tag = tagColors.find((t) => t.key === tech);
-                      const colors = tag
-                        ? { bg: tag.bg, text: tag.text }
-                        : {
-                            bg: "bg-teal-100 dark:bg-primary/10",
-                            text: "text-teal-700 dark:text-primary",
-                          };
-                      return (
-                        <span
-                          key={tech}
-                          className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${colors.bg} ${colors.text}`}
-                        >
-                          {tech}
-                        </span>
-                      );
-                    })}
+                    {project.technologies.slice(0, 2).map((tech) => (
+                      <TechBadge key={tech} tech={tech} />
+                    ))}
                   </div>
                   <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-teal-700 dark:group-hover:text-primary">
                     {getLocalizedField(project, "title", i18n.language)}

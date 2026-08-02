@@ -70,12 +70,18 @@
   "projects": {
     "title": "Projects",
     "subtitle": "Selection of my most impactful technical work.",
+    "pageTitle": "Projects",
+    "pageSubtitle": "A collection of real-world full-stack applications built with modern .NET technologies, focusing on clean architecture, scalability, security, and maintainability.",
+    "archiveLabel": "Archive 2024",
+    "featuredProduction": "Featured Production",
     "all": "All",
     "fullstack": "Full-Stack",
     "backend": "Backend",
     "frontend": "Frontend",
     "viewLive": "View Live",
-    "viewCode": "View Code"
+    "viewCode": "View Code",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code"
   },
   "certificates": {
     "title": "Certificates",

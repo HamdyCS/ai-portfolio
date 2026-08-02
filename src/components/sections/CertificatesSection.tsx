@@ -1,27 +1,19 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  FiAward,
-  FiBook,
-  FiCode,
-  FiBookOpen,
-  FiDatabase,
-  FiShield,
-  FiArrowRight,
-} from "react-icons/fi";
+import { Icon } from "../../lib/Icon";
 import { certificates } from "../../data/certificates";
 import type { Certificate } from "../../types";
 import { useMemo, useState } from "react";
 import { CertificateViewerModal } from "../certificates/CertificateViewerModal";
 
 const certIcons: Record<string, React.ReactNode> = {
-  "csharp-level2": <FiAward className="text-teal-700 dark:text-primary" />,
-  "solid-principles": <FiBook className="text-sky-700 dark:text-secondary" />,
-  "rest-api": <FiCode className="text-orange-700 dark:text-tertiary" />,
-  javascript: <FiBookOpen className="text-teal-700 dark:text-primary" />,
-  adonet: <FiDatabase className="text-sky-700 dark:text-secondary" />,
-  "tsql-level2": <FiShield className="text-orange-700 dark:text-tertiary" />,
+  "csharp-level2": <Icon name="FiAward" className="text-teal-700 dark:text-primary" />,
+  "solid-principles": <Icon name="FiBook" className="text-sky-700 dark:text-secondary" />,
+  "rest-api": <Icon name="FiCode" className="text-orange-700 dark:text-tertiary" />,
+  javascript: <Icon name="FiBookOpen" className="text-teal-700 dark:text-primary" />,
+  adonet: <Icon name="FiDatabase" className="text-sky-700 dark:text-secondary" />,
+  "tsql-level2": <Icon name="FiShield" className="text-orange-700 dark:text-tertiary" />,
 };
 
 const certColors: Record<string, { bg: string; text: string; link: string }> = {
@@ -121,7 +113,7 @@ export function CertificatesSection() {
               <div
                 className={`mb-4 flex h-12 w-12 items-center justify-center rounded-lg ${colors.bg}`}
               >
-                {certIcons[cert.id] || <FiAward className="text-primary" />}
+                {certIcons[cert.id] || <Icon name="FiAward" className="text-primary" />}
               </div>
               <h4 className="mb-1 text-lg font-bold">
                 {getLocalizedName(cert, "courseName", i18n.language)}
@@ -149,7 +141,7 @@ export function CertificatesSection() {
           to="/certificates"
           className="flex items-center gap-2 rounded-lg border border-teal-300 bg-teal-50 px-8 py-4 font-bold text-teal-700 transition-all hover:bg-teal-100 dark:border-primary/30 dark:bg-primary/5 dark:text-primary dark:hover:bg-primary/10"
         >
-          {t("certificates.viewAll")} <FiArrowRight />
+          {t("certificates.viewAll")} <Icon name="FiArrowRight" />
         </Link>
       </div>
 

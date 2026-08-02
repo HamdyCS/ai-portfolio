@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
-import { FiMenu, FiX, FiMoon, FiSun, FiDownload } from "react-icons/fi";
+import { Icon } from "../../lib/Icon";
 import { LanguageToggle } from "../common/LanguageToggle";
 import { personalInfo } from "../../data/personal";
 import DarkLogo from "../../assets/DarkLogo.png";
@@ -9,14 +9,14 @@ import { useAtom } from "jotai";
 import themeAtom from "../../atoms/themeAtom";
 
 const navItems = [
-  { key: "nav.projects", href: "/#projects" },
+  { key: "nav.projects", href: "/projects" },
   { key: "nav.skills", href: "/skills" },
   { key: "nav.certificates", href: "/certificates" },
   { key: "nav.about", href: "/#about" },
   { key: "nav.contact", href: "/#contact" },
 ];
 
-const routePages = ["/certificates", "/skills"];
+const routePages = ["/projects", "/certificates", "/skills"];
 
 export function Navbar() {
   const { t } = useTranslation();
@@ -78,7 +78,7 @@ export function Navbar() {
             href={`mailto:${personalInfo.email}`}
             className="hidden md:flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-4 py-2 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest text-[12px] "
           >
-            <FiDownload className="text-[14px]" />
+            <Icon name="FiDownload" className="text-[14px]" />
             {t("hero.downloadCV")}
           </a>
           <button
@@ -89,9 +89,9 @@ export function Navbar() {
             }
           >
             {theme === "dark" ? (
-              <FiSun className="text-lg" />
+              <Icon name="FiSun" className="text-lg" />
             ) : (
-              <FiMoon className="text-lg" />
+              <Icon name="FiMoon" className="text-lg" />
             )}
           </button>
           <LanguageToggle />
@@ -102,9 +102,9 @@ export function Navbar() {
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <FiX className="text-lg" />
+              <Icon name="FiX" className="text-lg" />
             ) : (
-              <FiMenu className="text-lg" />
+              <Icon name="FiMenu" className="text-lg" />
             )}
           </button>
         </div>
@@ -139,7 +139,7 @@ export function Navbar() {
               href={`mailto:${personalInfo.email}`}
               className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest"
             >
-              <FiDownload className="text-[20px]" />
+              <Icon name="FiDownload" className="text-[20px]" />
               {t("hero.downloadCV")}
             </a>
           </div>
