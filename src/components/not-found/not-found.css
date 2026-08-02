@@ -1,0 +1,342 @@
+/* Scoped 404 page styles. All animations use transform/opacity only (GPU friendly). */
+
+/* --- Technical grid --- */
+.nf-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 70% at 50% 35%,
+    black 30%,
+    transparent 72%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 70% at 50% 35%,
+    black 30%,
+    transparent 72%
+  );
+  animation: nf-grid-move 32s linear infinite;
+  will-change: transform;
+}
+
+.dark .nf-grid {
+  background-image:
+    linear-gradient(rgba(212, 228, 250, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 228, 250, 0.045) 1px, transparent 1px);
+}
+
+@keyframes nf-grid-move {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -48px, 0);
+  }
+}
+
+/* --- Gentle floating for the 404 --- */
+.nf-float {
+  animation: nf-float 7s ease-in-out infinite alternate;
+}
+
+@keyframes nf-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+/* --- Soft glow behind the number --- */
+.nf-glow {
+  background: radial-gradient(
+    circle,
+    rgba(45, 212, 191, 0.32) 0%,
+    rgba(56, 189, 248, 0.16) 45%,
+    transparent 72%
+  );
+  animation: nf-glow-pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes nf-glow-pulse {
+  from {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+/* --- Periodic glitch with RGB split + scanline distortion --- */
+.nf-glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.nf-glitch::before,
+.nf-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  clip-path: inset(0 0 0 0);
+  pointer-events: none;
+}
+
+.nf-glitch::before {
+  color: #22d3ee;
+  animation: nf-glitch-a 10s steps(1, end) infinite;
+  animation-delay: -8.15s;
+}
+
+.nf-glitch::after {
+  color: #fb7185;
+  animation: nf-glitch-b 10s steps(1, end) infinite;
+  animation-delay: -8.15s;
+}
+
+@keyframes nf-glitch-a {
+  0%,
+  90.8%,
+  93.6%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  91% {
+    opacity: 0.7;
+    transform: translate3d(-5px, 1px, 0);
+    clip-path: inset(8% 0 78% 0);
+  }
+  91.4% {
+    opacity: 0.55;
+    transform: translate3d(4px, -1px, 0);
+    clip-path: inset(55% 0 18% 0);
+  }
+  91.8% {
+    opacity: 0.6;
+    transform: translate3d(-3px, 0, 0);
+    clip-path: inset(32% 0 48% 0);
+  }
+  92.4% {
+    opacity: 0.5;
+    transform: translate3d(2px, 1px, 0);
+    clip-path: inset(72% 0 6% 0);
+  }
+  93% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes nf-glitch-b {
+  0%,
+  90.8%,
+  93.6%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  91% {
+    opacity: 0.7;
+    transform: translate3d(5px, -1px, 0);
+    clip-path: inset(62% 0 20% 0);
+  }
+  91.4% {
+    opacity: 0.55;
+    transform: translate3d(-4px, 1px, 0);
+    clip-path: inset(14% 0 70% 0);
+  }
+  91.8% {
+    opacity: 0.6;
+    transform: translate3d(3px, 0, 0);
+    clip-path: inset(44% 0 34% 0);
+  }
+  92.4% {
+    opacity: 0.5;
+    transform: translate3d(-2px, -1px, 0);
+    clip-path: inset(5% 0 80% 0);
+  }
+  93% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* --- Subtle CRT scanlines --- */
+.nf-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(148, 163, 184, 0.04) 0,
+    rgba(148, 163, 184, 0.04) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  animation: nf-scan 9s linear infinite;
+}
+
+.dark .nf-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(212, 228, 250, 0.035) 0,
+    rgba(212, 228, 250, 0.035) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+@keyframes nf-scan {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 4px, 0);
+  }
+}
+
+/* --- Low-contrast animated data lines --- */
+.nf-data-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(45, 212, 191, 0.25) 50%,
+    transparent
+  );
+  animation: nf-data 11s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes nf-data {
+  from {
+    transform: translate3d(-30px, 0, 0);
+    opacity: 0.25;
+  }
+  to {
+    transform: translate3d(30px, 0, 0);
+    opacity: 0.6;
+  }
+}
+
+/* --- Faint floating particles --- */
+.nf-particle {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(45, 212, 191, 0.4);
+  opacity: 0.45;
+  animation: nf-particle-float 9s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.dark .nf-particle {
+  background: rgba(87, 241, 219, 0.5);
+}
+
+@keyframes nf-particle-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -18px, 0);
+  }
+}
+
+/* --- Soft vignette --- */
+.nf-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 120% 90% at 50% 45%,
+    transparent 45%,
+    rgba(100, 116, 139, 0.1) 78%,
+    rgba(51, 65, 85, 0.16) 100%
+  );
+}
+
+.dark .nf-vignette {
+  background: radial-gradient(
+    ellipse 120% 90% at 50% 45%,
+    transparent 40%,
+    rgba(1, 15, 31, 0.35) 75%,
+    rgba(1, 15, 31, 0.7) 100%
+  );
+}
+
+/* --- Mouse parallax layers (driven by --nf-px/--nf-py) --- */
+.nf-parallax {
+  transform: translate3d(
+    calc(var(--nf-px, 0px) * 0.35),
+    calc(var(--nf-py, 0px) * 0.35),
+    0
+  );
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* --- Cursor-follow glow (driven by --nf-cx/--nf-cy) --- */
+.nf-cursor-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    260px circle at var(--nf-cx, 50%) var(--nf-cy, 50%),
+    rgba(45, 212, 191, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.nf-section:hover .nf-cursor-glow {
+  opacity: 1;
+}
+
+/* --- Auto recovery progress bar --- */
+.nf-progress-fill {
+  animation: nf-progress 10s linear forwards;
+}
+
+@keyframes nf-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* --- Accessibility: honor reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .nf-grid,
+  .nf-scanlines,
+  .nf-float,
+  .nf-glow,
+  .nf-data-line,
+  .nf-particle,
+  .nf-progress-fill,
+  .nf-glitch::before,
+  .nf-glitch::after {
+    animation: none !important;
+  }
+
+  .nf-parallax,
+  .nf-cursor-glow {
+    transition: none !important;
+  }
+}

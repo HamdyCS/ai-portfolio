@@ -3,11 +3,11 @@ import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Home } from "./pages/Home";
 import { Certificates } from "./pages/Certificates";
+import { NotFound } from "./pages/NotFound";
 import { useTranslation } from "react-i18next";
 import { useAtom } from "jotai";
 import themeAtom from "./atoms/themeAtom";
 import { useEffect } from "react";
-import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   const { i18n } = useTranslation();
@@ -32,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/certificates" element={<Certificates />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

@@ -102,6 +102,35 @@
   "footer": {
     "copyright": "© {{year}} {{name}}"
   },
+  "notFound": {
+    "title": "Route Not Found",
+    "description": "The endpoint you're looking for doesn't exist or may have been moved.",
+    "recoveryLine": "Let's get you back to the portfolio.",
+    "requestLabel": "REQUEST",
+    "requestPath": "GET /unknown-route",
+    "statusLabel": "Status",
+    "statusValue": "404 Not Found",
+    "latencyLabel": "Latency",
+    "latencyValue": "0.12 ms",
+    "systemLabel": "SYSTEM",
+    "runtimeValue": "Portfolio Runtime",
+    "recoveryLabel": "Recovery",
+    "recoveryValue": "Available",
+    "suggestionLabel": "Suggestion",
+    "suggestionValue": "Return to Home",
+    "returnPortfolio": "Return to Portfolio",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "autoRedirect": "Auto returning to Home in {{seconds}} seconds...",
+    "cancelRedirect": "Cancel redirect",
+    "redirectCancelled": "Redirect cancelled.",
+    "statusLine": {
+      "route": "GET /unknown-route",
+      "status": "STATUS: 404",
+      "server": "SERVER: Portfolio",
+      "uptime": "UPTIME: Online"
+    }
+  },
   "common": {
     "viewAll": "View All",
     "learnMore": "Learn More",

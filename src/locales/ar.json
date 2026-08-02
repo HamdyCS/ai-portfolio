@@ -103,6 +103,35 @@
   "footer": {
     "copyright": "© {{year}} {{name}}"
   },
+  "notFound": {
+    "title": "المسار غير موجود",
+    "description": "المنفذ الذي تبحث عنه غير موجود أو ربما تم نقله.",
+    "recoveryLine": "لنعيدك إلى المعرض.",
+    "requestLabel": "الطلب",
+    "requestPath": "GET /unknown-route",
+    "statusLabel": "الحالة",
+    "statusValue": "404 غير موجود",
+    "latencyLabel": "الكمون",
+    "latencyValue": "0.12 ms",
+    "systemLabel": "النظام",
+    "runtimeValue": "بيئة المعرض",
+    "recoveryLabel": "الاسترداد",
+    "recoveryValue": "متاح",
+    "suggestionLabel": "اقتراح",
+    "suggestionValue": "العودة للرئيسية",
+    "returnPortfolio": "العودة إلى المعرض",
+    "viewProjects": "عرض المشاريع",
+    "contactMe": "تواصل معي",
+    "autoRedirect": "العودة التلقائية إلى الرئيسية خلال {{seconds}} ثانية...",
+    "cancelRedirect": "إلغاء إعادة التوجيه",
+    "redirectCancelled": "تم إلغاء إعادة التوجيه.",
+    "statusLine": {
+      "route": "GET /unknown-route",
+      "status": "الحالة: 404",
+      "server": "الخادم: معرض الأعمال",
+      "uptime": "حالة التشغيل: متصل"
+    }
+  },
   "common": {
     "viewAll": "عرض الكل",
     "learnMore": "اعرف المزيد",
