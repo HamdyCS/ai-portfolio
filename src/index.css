@@ -276,3 +276,20 @@ body {
     transparent 70%
   );
 }
+
+@keyframes float-logo {
+  0%, 100% {
+    transform: translateY(0) scale(1.0);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.03);
+  }
+}
+
+.animate-float-logo {
+  animation: float-logo 4.5s ease-in-out infinite;
+}
+
+.logo-glow {
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, rgba(45, 212, 191, 0) 70%);
+}

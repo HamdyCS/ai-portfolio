@@ -6,6 +6,7 @@ import { TechBadge } from "../common/TechBadge";
 import { projects } from "../../data/projects";
 import { projectFilterAtom } from "../../atoms/projectFilterAtom";
 import type { ProjectFilterType, Project } from "../../types";
+import Container from "../layout/Container";
 
 const filters: { key: ProjectFilterType; labelKey: string }[] = [
   { key: "all", labelKey: "projects.all" },
@@ -36,9 +37,9 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="bg-slate-100/50 py-24  dark:bg-surface-container-lowest/50"
+      className="bg-slate-100/50 py-5 dark:bg-surface-container-lowest/50"
     >
-      <div className="mx-auto max-w-7xl px-6 md:px-0">
+      <Container>
         <div className="mb-12 flex flex-col items-end justify-between gap-6 md:flex-row md:items-end">
           <div>
             <h2 className="mb-2 text-2xl font-bold text-slate-900 md:text-3xl dark:text-text-primary">
@@ -125,7 +126,7 @@ export function ProjectsSection() {
             ))}
           </AnimatePresence>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

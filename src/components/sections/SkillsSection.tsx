@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Icon } from "../../lib/Icon";
 import { skills } from "../../data/skills";
+import Container from "../layout/Container";
 
 const backendSkills = skills.filter((s) => s.category === "backend");
 const frontendSkills = skills.filter((s) => s.category === "frontend");
@@ -26,9 +27,9 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="px-6 py-24 transition-all duration-1000 md:px-12"
+      className=" py-5 transition-all duration-1000 "
     >
-      <div className="mx-auto max-w-7xl">
+      <Container>
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-slate-900 md:text-3xl dark:text-text-primary">
             {t("skills.title")}
@@ -198,7 +199,7 @@ export function SkillsSection() {
             </div>
           </motion.div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 }

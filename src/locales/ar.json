@@ -171,5 +171,21 @@
     "viewAll": "عرض الكل",
     "learnMore": "اعرف المزيد",
     "openInNew": "يفتح في تاب جديد"
+  },
+  "about": {
+    "badge": "عني",
+    "greeting": "مرحباً، أنا",
+    "viewProjects": "عرض المشاريع",
+    "contactMe": "تواصل معي",
+    "whatIDo": "ماذا أفعل",
+    "cardBackendTitle": "تطوير الخلفية",
+    "cardBackendDesc": "بناء واجهات برمجية REST آمنة وقابلة للتوسع باستخدام ASP.NET Core.",
+    "cardFrontendTitle": "تطوير الواجهة الأمامية",
+    "cardFrontendDesc": "إنشاء واجهات مستخدم متجاوبة باستخدام React و TypeScript.",
+    "cardArchitectureTitle": "هندسة البرمجيات",
+    "cardArchitectureDesc": "تطبيق البنية النظيفة ومبادئ SOLID و CQRS.",
+    "cardDatabaseTitle": "تصميم قواعد البيانات",
+    "cardDatabaseDesc": "تصميم قواعد بيانات SQL Server فعالة باستخدام Entity Framework Core و Redis.",
+    "ctaHeading": "لنبنى شيئاً عظيماً معاً"
   }
 }

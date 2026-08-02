@@ -170,5 +170,21 @@
     "viewAll": "View All",
     "learnMore": "Learn More",
     "openInNew": "Opens in new tab"
+  },
+  "about": {
+    "badge": "ABOUT ME",
+    "greeting": "Hi, I'm",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "whatIDo": "What I Do",
+    "cardBackendTitle": "Backend Development",
+    "cardBackendDesc": "Building secure and scalable REST APIs with ASP.NET Core.",
+    "cardFrontendTitle": "Frontend Development",
+    "cardFrontendDesc": "Creating responsive user interfaces using React and TypeScript.",
+    "cardArchitectureTitle": "Software Architecture",
+    "cardArchitectureDesc": "Applying Clean Architecture, SOLID principles, and CQRS.",
+    "cardDatabaseTitle": "Database Design",
+    "cardDatabaseDesc": "Designing efficient SQL Server databases with Entity Framework Core and Redis caching.",
+    "ctaHeading": "Let's Build Something Great Together"
   }
 }
