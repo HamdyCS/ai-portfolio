@@ -45,17 +45,17 @@ const getLocalizedField = (
   return field === "title" ? project.title : project.description;
 };
 
-function updateSpot(e: MouseEvent<HTMLElement>) {
-  const rect = e.currentTarget.getBoundingClientRect();
-  e.currentTarget.style.setProperty(
-    "--spot-x",
-    `${((e.clientX - rect.left) / rect.width) * 100}%`,
-  );
-  e.currentTarget.style.setProperty(
-    "--spot-y",
-    `${((e.clientY - rect.top) / rect.height) * 100}%`,
-  );
-}
+// function updateSpot(e: MouseEvent<HTMLElement>) {
+//   const rect = e.currentTarget.getBoundingClientRect();
+//   e.currentTarget.style.setProperty(
+//     "--spot-x",
+//     `${((e.clientX - rect.left) / rect.width) * 100}%`,
+//   );
+//   e.currentTarget.style.setProperty(
+//     "--spot-y",
+//     `${((e.clientY - rect.top) / rect.height) * 100}%`,
+//   );
+// }
 
 function OverlayActions({
   project,
@@ -175,7 +175,7 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 24 }}
                 transition={{ duration: 0.35 }}
-                onMouseMove={updateSpot}
+                // onMouseMove={updateSpot}
                 className="projects-card group relative flex flex-col gap-6 overflow-hidden rounded-xl p-6 md:col-span-2 lg:flex-row lg:gap-8 lg:p-7 xl:col-span-3"
               >
                 <SpotlightLayer />
@@ -245,7 +245,7 @@ export function Projects() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.35 }}
-                onMouseMove={updateSpot}
+                // onMouseMove={updateSpot}
                 className="projects-card group relative flex flex-col gap-3 overflow-hidden rounded-xl p-4"
               >
                 <SpotlightLayer />

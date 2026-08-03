@@ -79,17 +79,35 @@ const techColors: Record<string, { bg: string; text: string }> = {
     bg: "bg-cyan-100 dark:bg-cyan-500/10",
     text: "text-cyan-700 dark:text-cyan-400",
   },
+
   Mapster: {
     bg: "bg-orange-100 dark:bg-orange-500/10",
     text: "text-orange-700 dark:text-orange-400",
   },
+
   FluentValidation: {
     bg: "bg-teal-100 dark:bg-teal-500/10",
     text: "text-teal-700 dark:text-teal-400",
   },
+
   Serilog: {
-    bg: "bg-slate-100 dark:bg-slate-500/10",
-    text: "text-slate-700 dark:text-slate-400",
+    bg: "bg-rose-100 dark:bg-rose-500/10",
+    text: "text-rose-700 dark:text-rose-400",
+  },
+
+  "3 Tier Architecture": {
+    bg: "bg-indigo-100 dark:bg-indigo-500/10",
+    text: "text-indigo-700 dark:text-indigo-400",
+  },
+
+  AutoMapper: {
+    bg: "bg-amber-100 dark:bg-amber-500/10",
+    text: "text-amber-700 dark:text-amber-400",
+  },
+
+  "React Query": {
+    bg: "bg-fuchsia-100 dark:bg-fuchsia-500/10",
+    text: "text-fuchsia-700 dark:text-fuchsia-400",
   },
 };
 
@@ -104,7 +122,11 @@ interface TechBadgeProps {
   className?: string;
 }
 
-export function TechBadge({ tech, size = "md", className = "" }: TechBadgeProps) {
+export function TechBadge({
+  tech,
+  size = "md",
+  className = "",
+}: TechBadgeProps) {
   const colors = techColors[tech] ?? fallbackColors;
   const padding = size === "sm" ? "px-2.5 py-0.5" : "px-3 py-1";
   return (
