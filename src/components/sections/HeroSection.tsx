@@ -5,6 +5,7 @@ import { Icon } from "../../lib/Icon";
 import { personalInfo } from "../../data/personal";
 import HamdyBlackBG from "../../assets/HamdyBlackBG.png";
 import Container from "../layout/Container";
+import { Link } from "react-router-dom";
 
 export function HeroSection() {
   const { t, i18n } = useTranslation();
@@ -90,13 +91,13 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#projects"
+              <Link
+                to="/projects"
                 className="flex items-center gap-2 rounded-lg bg-primary px-8 py-4 font-bold text-on-primary transition-all duration-200 hover:brightness-110 active:scale-95 w-50"
               >
                 {t("hero.viewProjects")}
                 <Icon name="FiArrowRight" />
-              </a>
+              </Link>
               <a
                 href={`mailto:${personalInfo.email}`}
                 className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest w-50"

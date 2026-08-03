@@ -8,6 +8,7 @@ import { projects } from "../data/projects";
 import { projectFilterAtom } from "../atoms/projectFilterAtom";
 import type { Project, ProjectCategory, ProjectFilterType } from "../types";
 import Container from "../components/layout/Container";
+import { Helmet } from "react-helmet";
 
 const filters: { key: ProjectFilterType; labelKey: string }[] = [
   { key: "all", labelKey: "projects.all" },
@@ -122,6 +123,13 @@ export function Projects() {
 
   return (
     <div className="pt-16 md:pt-24 md:px-2">
+      <Helmet>
+        <title>Projects | Hamdy Khaled</title>
+        <meta
+          name="description"
+          content="Browse my portfolio of full-stack and frontend projects built with ASP.NET Core, React, TypeScript, SQL Server, and modern web technologies."
+        />
+      </Helmet>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

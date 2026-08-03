@@ -16,7 +16,7 @@ export interface PersonalInfo {
   titleAr: string;
   summary: string;
   summaryAr: string;
-  profileImage: string;
+  // profileImage: string;
   email: string;
   linkedin: string;
   github: string;

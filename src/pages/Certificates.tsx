@@ -6,6 +6,7 @@ import { certificates } from "../data/certificates";
 import type { CertCategory, Certificate } from "../types";
 import { CertificateViewerModal } from "../components/certificates/CertificateViewerModal";
 import Container from "../components/layout/Container";
+import { Helmet } from "react-helmet";
 
 type FilterKey = "all" | CertCategory;
 
@@ -60,6 +61,13 @@ export function Certificates() {
 
   return (
     <div className="pb-24 pt-16 md:pt-24">
+      <Helmet>
+        <title>Certificates | Hamdy Khaled</title>
+        <meta
+          name="description"
+          content="View my professional certifications and completed courses covering .NET, JavaScript, React, software engineering, clean architecture, and backend development."
+        />
+      </Helmet>
       <Container>
         <div className="mb-16 text-center md:text-start">
           <motion.h1

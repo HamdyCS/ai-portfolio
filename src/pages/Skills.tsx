@@ -4,6 +4,7 @@ import { Icon } from "../lib/Icon";
 import { techIconClassName } from "../lib/icons";
 import { skills } from "../data/skills";
 import Container from "../components/layout/Container";
+import { Helmet } from "react-helmet";
 
 const backendSkills = skills.filter((s) => s.category === "backend");
 const frontendSkills = skills.filter((s) => s.category === "frontend");
@@ -36,6 +37,13 @@ export function Skills() {
 
   return (
     <div className="pb-24 pt-16 md:pt-24">
+      <Helmet>
+        <title>Skills | Hamdy Khaled</title>
+        <meta
+          name="description"
+          content="Discover my technical skills in ASP.NET Core, C#, React, TypeScript, SQL Server, Entity Framework Core, Tailwind CSS, and modern software architecture."
+        />
+      </Helmet>
       <Container>
         <div className="mb-12">
           <motion.h1

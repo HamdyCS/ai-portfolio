@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Icon } from "../lib/Icon";
 import { personalInfo } from "../data/personal";
 import Container from "../components/layout/Container";
-import { div } from "framer-motion/client";
+import { Helmet } from "react-helmet";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
@@ -65,32 +65,41 @@ function ContactTiltCard({ config }: { config: ContactCardConfig }) {
   const { t } = useTranslation();
 
   return (
-    <motion.div
-      variants={fadeInUp}
-      transition={{ duration: 0.4 }}
-      className={`glass-card group flex h-full flex-col rounded-xl p-8 transition duration-200 ease-out hover:shadow-[0_10px_40px_-10px_rgba(45,212,191,0.25)] dark:hover:border-primary/40 dark:hover:shadow-[0_10px_40px_-10px_rgba(87,241,219,0.2)] ${config.fullWidth ? "md:col-span-2" : ""}`}
-    >
-      <div
-        className={`mb-6 flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200/70 bg-slate-200 dark:border-outline-variant/50 dark:bg-surface-highest ${config.iconColor}`}
+    <div>
+      <Helmet>
+        <title>Contact | Hamdy Khaled</title>
+        <meta
+          name="description"
+          content="Get in touch with Hamdy Khaled for freelance opportunities, collaborations, or full-time Full Stack .NET development roles."
+        />
+      </Helmet>
+      <motion.div
+        variants={fadeInUp}
+        transition={{ duration: 0.4 }}
+        className={`glass-card group flex h-full flex-col rounded-xl p-8 transition duration-200 ease-out hover:shadow-[0_10px_40px_-10px_rgba(45,212,191,0.25)] dark:hover:border-primary/40 dark:hover:shadow-[0_10px_40px_-10px_rgba(87,241,219,0.2)] ${config.fullWidth ? "md:col-span-2" : ""}`}
       >
-        <Icon name={config.icon} className="text-lg" />
-      </div>
-      <h3 className="mb-4 text-xl font-bold text-slate-900 dark:text-text-primary">
-        {t(config.titleKey)}
-      </h3>
-      <p className="mb-8 flex-grow text-sm leading-relaxed text-slate-500 dark:text-text-secondary">
-        {t(config.descKey)}
-      </p>
-      <a
-        href={config.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 group-hover:gap-3 ${config.linkColor}`}
-      >
-        {t(config.linkKey)}
-        <Icon name="FiArrowRight" className="text-sm" />
-      </a>
-    </motion.div>
+        <div
+          className={`mb-6 flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200/70 bg-slate-200 dark:border-outline-variant/50 dark:bg-surface-highest ${config.iconColor}`}
+        >
+          <Icon name={config.icon} className="text-lg" />
+        </div>
+        <h3 className="mb-4 text-xl font-bold text-slate-900 dark:text-text-primary">
+          {t(config.titleKey)}
+        </h3>
+        <p className="mb-8 flex-grow text-sm leading-relaxed text-slate-500 dark:text-text-secondary">
+          {t(config.descKey)}
+        </p>
+        <a
+          href={config.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 group-hover:gap-3 ${config.linkColor}`}
+        >
+          {t(config.linkKey)}
+          <Icon name="FiArrowRight" className="text-sm" />
+        </a>
+      </motion.div>
+    </div>
   );
 }
 
@@ -142,11 +151,11 @@ export function Contact() {
 
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-wrap gap-4 pt-4 "
             >
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-on-primary shadow-lg shadow-primary/10 transition-transform duration-200 hover:scale-[1.02] active:scale-95"
+                className="flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-on-primary shadow-lg shadow-primary/10 transition-transform duration-200 hover:scale-[1.02] active:scale-95 w-45"
               >
                 <Icon name="FiMail" className="text-sm" />
                 {t("contact.contactMe")}
@@ -155,7 +164,7 @@ export function Contact() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-8 py-4 font-bold text-slate-900 transition-all duration-200 hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-high dark:text-text-primary dark:hover:bg-surface-highest"
+                className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-8 py-4 font-bold text-slate-900 transition-all duration-200 hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-high dark:text-text-primary dark:hover:bg-surface-highest w-45"
               >
                 <Icon name="FiLink" className="text-sm" />
                 {t("contact.linkedin")}

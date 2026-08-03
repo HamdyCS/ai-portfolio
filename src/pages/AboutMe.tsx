@@ -5,6 +5,7 @@ import { Icon } from "../lib/Icon";
 import { personalInfo } from "../data/personal";
 import DarkLogo from "../assets/DarkLogo.png";
 import Container from "../components/layout/Container";
+import { Helmet } from "react-helmet";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -71,6 +72,13 @@ export function AboutMe() {
 
   return (
     <div className="pb-20 pt-16 md:pt-24">
+      <Helmet>
+        <title>About | Hamdy Khaled</title>
+        <meta
+          name="description"
+          content="Learn more about Hamdy Khaled, a Full Stack .NET Developer passionate about building scalable web applications with clean architecture and modern frontend technologies."
+        />
+      </Helmet>
       <Container>
         {/* Hero Section */}
         <section className="grid items-center gap-12 md:grid-cols-2 md:min-h-[60vh]">
@@ -211,7 +219,7 @@ export function AboutMe() {
                 {t("about.viewProjects")}
               </Link>
               <Link
-                to="/#contact"
+                to="/contact"
                 className="rounded-xl border border-outline-variant px-8 py-3 text-lg font-bold text-slate-900 transition-all duration-200 hover:bg-slate-100 dark:text-text-primary dark:hover:bg-surface-highest"
               >
                 {t("about.contactMe")}
