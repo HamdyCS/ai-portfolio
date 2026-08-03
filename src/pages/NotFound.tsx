@@ -57,7 +57,7 @@ export function NotFound() {
 
   const handleRedirect = useCallback(() => {
     document.documentElement.style.scrollBehavior = "auto";
-    // navigate("/");
+    navigate("/");
     window.setTimeout(() => {
       document.documentElement.style.scrollBehavior = "";
     }, 600);
@@ -69,7 +69,6 @@ export function NotFound() {
       onMouseMove={handleMouseMove}
       className="nf-section relative flex min-h-[calc(100vh-5rem)] flex-col overflow-hidden"
     >
-      <NotFoundBackground />
       <div className="nf-cursor-glow" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-6 pb-16 pt-8 text-center md:px-12">
@@ -168,7 +167,7 @@ export function NotFound() {
             </Ripple>
           </Magnetic>
           <Link
-            to="/#contact"
+            to="/contact"
             className="rounded-md px-2 text-sm font-semibold text-slate-600 underline decoration-slate-300 underline-offset-4 transition-colors hover:text-teal-700 hover:decoration-teal-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:text-text-secondary dark:decoration-outline-variant dark:hover:text-primary dark:hover:decoration-primary"
           >
             {t("notFound.contactMe")}

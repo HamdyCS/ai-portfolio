@@ -13,10 +13,10 @@ const navItems = [
   { key: "nav.skills", href: "/skills" },
   { key: "nav.certificates", href: "/certificates" },
   { key: "nav.about", href: "/about" },
-  { key: "nav.contact", href: "/#contact" },
+  { key: "nav.contact", href: "/contact" },
 ];
 
-const routePages = ["/projects", "/certificates", "/skills", "/about"];
+const routePages = ["/projects", "/certificates", "/skills", "/about", "/contact"];
 
 export function Navbar() {
   const { t } = useTranslation();

@@ -18,7 +18,7 @@ export function ContactSection() {
           viewport={{ once: true }}
         >
           <div className="flex flex-col lg:flex-row">
-            <div className="flex flex-col justify-between bg-slate-100 p-8 md:p-12 lg:w-2/5 dark:bg-surface-container-lowest">
+            <div className="flex flex-col justify-between bg-slate-100 p-8 md:p-12 lg:w-2/5 dark:bg-surface-container-lowest ">
               <div>
                 <div className="mb-8 inline-flex items-center rounded-full bg-teal-100 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-teal-700 dark:bg-primary/10 dark:text-primary">
                   {t("contact.title")}
@@ -67,9 +67,6 @@ export function ContactSection() {
                         location: personalInfo.location,
                       })}
                     </p>
-                    {/* <p className="text-[10px] text-text-secondary">
-                    {t("contact.remote")}
-                  </p> */}
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

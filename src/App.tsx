@@ -7,6 +7,7 @@ import { Skills } from "./pages/Skills";
 import { Projects } from "./pages/Projects";
 import { NotFound } from "./pages/NotFound";
 import { AboutMe } from "./pages/AboutMe";
+import { Contact } from "./pages/Contact";
 import { useTranslation } from "react-i18next";
 import { useAtom } from "jotai";
 import themeAtom from "./atoms/themeAtom";
@@ -38,6 +39,7 @@ function App() {
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<AboutMe />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
