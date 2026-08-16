@@ -88,112 +88,117 @@ export function Certificates() {
           </motion.p>
         </div>
 
-        <div className="mb-12 flex flex-wrap items-center gap-3">
-          {filters.map((filter) => {
-            const isActive = activeFilter === filter.key;
-            return (
-              <button
-                key={filter.key}
-                type="button"
-                onClick={() => setActiveFilter(filter.key)}
-                className={`cursor-pointer rounded-full px-6 py-2 font-semibold transition-all ${
-                  isActive
-                    ? "bg-primary text-white shadow-sm dark:text-on-primary"
-                    : "border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 dark:border-transparent dark:bg-surface-high dark:text-text-secondary dark:shadow-none dark:hover:bg-surface-highest"
-                }`}
-              >
-                {t(filter.labelKey)}
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="wait">
-            {filteredCertificates.map((cert, index) => {
-              const badge = categoryBadges[cert.category];
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="mb-12 flex flex-wrap items-center gap-3">
+            {filters.map((filter) => {
+              const isActive = activeFilter === filter.key;
               return (
-                <motion.article
-                  key={`${cert.id}-${activeFilter}-${index}`}
-                  layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.35 }}
-                  className="glass-card card-hover group flex h-full flex-col overflow-hidden rounded-xl"
+                <button
+                  key={filter.key}
+                  type="button"
+                  onClick={() => setActiveFilter(filter.key)}
+                  className={`cursor-pointer rounded-full px-6 py-2 font-semibold transition-all ${
+                    isActive
+                      ? "bg-primary text-white shadow-sm dark:text-on-primary"
+                      : "border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 dark:border-transparent dark:bg-surface-high dark:text-text-secondary dark:shadow-none dark:hover:bg-surface-highest"
+                  }`}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setSelectedCert(cert)}
-                    className="relative block h-48 w-full cursor-pointer overflow-hidden text-start"
-                    aria-haspopup="dialog"
-                    aria-label={getLocalizedName(cert, i18n.language)}
-                  >
-                    <img
-                      src={cert.image}
-                      alt={getLocalizedName(cert, i18n.language)}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div
-                      className={`absolute end-4 top-4 rounded-full px-3 py-1 backdrop-blur-md ${badge}`}
-                    >
-                      <span className="font-mono text-[11px] font-medium uppercase tracking-wider">
-                        {t(categoryLabelKeys[cert.category])}
-                      </span>
-                    </div>
-                  </button>
-
-                  <div className="flex flex-grow flex-col p-6">
-                    <div className="mb-2 flex items-start justify-between gap-2">
-                      <h3 className="text-xl font-bold leading-tight text-slate-900 dark:text-text-primary">
-                        {getLocalizedName(cert, i18n.language)}
-                      </h3>
-                      <a
-                        href={cert.verificationUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-1 shrink-0 text-slate-400 transition-colors hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
-                        aria-label={t("common.openInNew")}
-                      >
-                        <Icon name="FiExternalLink" className="text-[20px]" />
-                      </a>
-                    </div>
-
-                    <p className="mb-4 text-sm text-slate-500 dark:text-text-secondary">
-                      {t("certificates.instructor")}:{" "}
-                      {getLocalizedInstructor(cert, i18n.language)}
-                    </p>
-
-                    {cert.dateIssued && (
-                      <div className="mb-6 flex items-center gap-1.5 text-xs text-slate-400 dark:text-outline">
-                        <Icon name="FiCalendar" className="text-[16px]" />
-                        <span>{cert.dateIssued}</span>
-                      </div>
-                    )}
-
-                    <div className="mt-auto flex gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setSelectedCert(cert)}
-                        className="flex-1 cursor-pointer rounded-lg border border-slate-200 bg-slate-50 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-highest dark:font-semibold dark:text-primary-light dark:hover:bg-surface-bright"
-                      >
-                        {t("certificates.viewDetails")}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedCert(cert)}
-                        className="cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-3 text-primary transition-colors hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-highest dark:text-primary-light dark:hover:bg-surface-bright"
-                        aria-label={t("certificates.verifiedCredential")}
-                      >
-                        <Icon name="FiAward" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.article>
+                  {t(filter.labelKey)}
+                </button>
               );
             })}
-          </AnimatePresence>
-        </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <AnimatePresence mode="wait">
+              {filteredCertificates.map((cert, index) => {
+                const badge = categoryBadges[cert.category];
+                return (
+                  <motion.article
+                    key={`${cert.id}-${activeFilter}-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="glass-card card-hover group flex h-full flex-col overflow-hidden rounded-xl"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setSelectedCert(cert)}
+                      className="relative block h-48 w-full cursor-pointer overflow-hidden text-start"
+                      aria-haspopup="dialog"
+                      aria-label={getLocalizedName(cert, i18n.language)}
+                    >
+                      <img
+                        src={cert.image}
+                        alt={getLocalizedName(cert, i18n.language)}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div
+                        className={`absolute end-4 top-4 rounded-full px-3 py-1 backdrop-blur-md ${badge}`}
+                      >
+                        <span className="font-mono text-[11px] font-medium uppercase tracking-wider">
+                          {t(categoryLabelKeys[cert.category])}
+                        </span>
+                      </div>
+                    </button>
+
+                    <div className="flex flex-grow flex-col p-6">
+                      <div className="mb-2 flex items-start justify-between gap-2">
+                        <h3 className="text-xl font-bold leading-tight text-slate-900 dark:text-text-primary">
+                          {getLocalizedName(cert, i18n.language)}
+                        </h3>
+                        <a
+                          href={cert.verificationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 shrink-0 text-slate-400 transition-colors hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
+                          aria-label={t("common.openInNew")}
+                        >
+                          <Icon name="FiExternalLink" className="text-[20px]" />
+                        </a>
+                      </div>
+
+                      <p className="mb-4 text-sm text-slate-500 dark:text-text-secondary">
+                        {t("certificates.instructor")}:{" "}
+                        {getLocalizedInstructor(cert, i18n.language)}
+                      </p>
+
+                      {cert.dateIssued && (
+                        <div className="mb-6 flex items-center gap-1.5 text-xs text-slate-400 dark:text-outline">
+                          <Icon name="FiCalendar" className="text-[16px]" />
+                          <span>{cert.dateIssued}</span>
+                        </div>
+                      )}
+
+                      <div className="mt-auto flex gap-3">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedCert(cert)}
+                          className="flex-1 cursor-pointer rounded-lg border border-slate-200 bg-slate-50 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-highest dark:font-semibold dark:text-primary-light dark:hover:bg-surface-bright"
+                        >
+                          {t("certificates.viewDetails")}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedCert(cert)}
+                          className="cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-3 text-primary transition-colors hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-highest dark:text-primary-light dark:hover:bg-surface-bright"
+                          aria-label={t("certificates.verifiedCredential")}
+                        >
+                          <Icon name="FiAward" />
+                        </button>
+                      </div>
+                    </div>
+                  </motion.article>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+        </motion.div>
 
         <CertificateViewerModal
           certificate={selectedCert}
