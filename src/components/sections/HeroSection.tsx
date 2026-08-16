@@ -172,18 +172,18 @@ export function HeroSection() {
                 <div className="hero-tilt-inner glass-card absolute -right-2 top-0 rounded-xl border border-sky-200 p-4 shadow-xl dark:border-secondary/20">
                   <div className="mb-1 flex items-start justify-between">
                     <span className="text-[10px] uppercase tracking-wider opacity-60">
-                      {t("hero.experience")}
+                      {t("hero.currentFocus")}
                     </span>
                     <Icon
                       name="FiClock"
                       className="text-sm text-sky-700 dark:text-secondary"
                     />
                   </div>
-                  <div className="text-2xl font-extrabold text-sky-700 dark:text-secondary">
-                    {personalInfo.yearsOfExperience}+
+                  <div className="text-[15px] font-extrabold text-sky-700 dark:text-secondary">
+                    {t("hero.fullStack")}
                   </div>
                   <div className="mb-2 text-[10px] text-slate-500 dark:text-text-secondary">
-                    {t("hero.yearsBuildingWebApplications")}
+                    {t("hero.buildingScalable")}
                   </div>
                   <div className="h-1 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-surface">
                     <div className="h-full w-full bg-sky-500 dark:bg-secondary" />
