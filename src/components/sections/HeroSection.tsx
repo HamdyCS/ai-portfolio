@@ -6,6 +6,7 @@ import { personalInfo } from "../../data/personal";
 import HamdyBlackBG from "../../assets/HamdyBlackBG.png";
 import Container from "../layout/Container";
 import { Link } from "react-router-dom";
+import cv from "../../assets/cv/hamdy-khaled-fullstack-developer-cv.pdf";
 
 export function HeroSection() {
   const { t, i18n } = useTranslation();
@@ -99,7 +100,8 @@ export function HeroSection() {
                 <Icon name="FiArrowRight" />
               </Link>
               <a
-                href={`mailto:${personalInfo.email}`}
+                href={cv}
+                download="hamdy-khaled-fullstack-developer-cv"
                 className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest w-50"
               >
                 <Icon name="FiDownload" className="text-[20px]" />

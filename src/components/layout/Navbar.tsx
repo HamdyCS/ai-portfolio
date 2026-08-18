@@ -7,6 +7,7 @@ import { personalInfo } from "../../data/personal";
 import DarkLogo from "../../assets/DarkLogo.png";
 import { useAtom } from "jotai";
 import themeAtom from "../../atoms/themeAtom";
+import cv from "../../assets/cv/hamdy-khaled-fullstack-developer-cv.pdf";
 
 const navItems = [
   { key: "nav.projects", href: "/projects" },
@@ -16,7 +17,13 @@ const navItems = [
   { key: "nav.contact", href: "/contact" },
 ];
 
-const routePages = ["/projects", "/certificates", "/skills", "/about", "/contact"];
+const routePages = [
+  "/projects",
+  "/certificates",
+  "/skills",
+  "/about",
+  "/contact",
+];
 
 export function Navbar() {
   const { t } = useTranslation();
@@ -76,7 +83,9 @@ export function Navbar() {
 
           <div className="flex items-center md:gap-2 sm:gap-0">
             <a
-              href={`mailto:${personalInfo.email}`}
+              href={cv}
+              target="_blank"
+              download="hamdy-khaled-fullstack-developer-cv"
               className="hidden md:flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-4 py-2 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest text-[12px] "
             >
               <Icon name="FiDownload" className="text-[14px]" />
@@ -137,8 +146,9 @@ export function Navbar() {
             })}
             <div className="flex justify-center gap-4 mt-2">
               <a
-                href={`mailto:${personalInfo.email}`}
-                className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest"
+                href={cv}
+                download="hamdy-khaled-fullstack-developer-cv"
+                className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-4 py-2 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest text-[12px]"
               >
                 <Icon name="FiDownload" className="text-[20px]" />
                 {t("hero.downloadCV")}
