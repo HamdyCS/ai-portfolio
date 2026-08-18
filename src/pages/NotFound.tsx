@@ -4,12 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "../components/common/Button";
 import { GlitchNumber } from "../components/not-found/GlitchNumber";
-import { NotFoundBackground } from "../components/not-found/NotFoundBackground";
 import { DiagnosticCard } from "../components/not-found/DiagnosticCard";
 import { Magnetic } from "../components/not-found/Magnetic";
 import { Ripple } from "../components/not-found/Ripple";
-import { AutoRecovery } from "../components/not-found/AutoRecovery";
 import "../components/not-found/not-found.css";
+import { AutoRecovery } from "../components/not-found/AutoRecovery";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 

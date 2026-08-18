@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAtom } from "jotai";
-import type { MouseEvent } from "react";
 import { Icon } from "../lib/Icon";
 import { TechBadge } from "../components/common/TechBadge";
 import { projects } from "../data/projects";
