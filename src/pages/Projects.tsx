@@ -115,7 +115,8 @@ export function Projects() {
   //     .sort((a, b) => b.technologies.length - a.technologies.length)[0] ??
   //   projects[0];
 
-  const featuredProject = projects.find((project) => project.featured);
+  const featuredProject =
+    projects.find((project) => project.featured) || projects[0];
 
   //sort all projects by the length of their technologies array
   const filteredGridProjects =
