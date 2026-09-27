@@ -31,8 +31,13 @@ export function ProjectsSection() {
 
   const filteredProjects =
     activeFilter === "all"
-      ? projects.filter((p) => p.featured)
-      : projects.filter((p) => p.category === activeFilter && p.featured);
+      ? projects
+          .sort((a, b) => b.technologies.length - a.technologies.length)
+          .slice(0, 3)
+      : projects
+          .filter((p) => p.category === activeFilter)
+          .sort((a, b) => b.technologies.length - a.technologies.length)
+          .slice(0, 3);
 
   return (
     <section
