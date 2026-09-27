@@ -109,6 +109,38 @@ const techColors: Record<string, { bg: string; text: string }> = {
     bg: "bg-fuchsia-100 dark:bg-fuchsia-500/10",
     text: "text-fuchsia-700 dark:text-fuchsia-400",
   },
+  Vite: {
+    bg: "bg-purple-100 dark:bg-purple-500/10",
+    text: "text-purple-700 dark:text-purple-400",
+  },
+  Formik: {
+    bg: "bg-sky-100 dark:bg-sky-500/10",
+    text: "text-sky-700 dark:text-sky-400",
+  },
+  Yup: {
+    bg: "bg-green-100 dark:bg-green-500/10",
+    text: "text-green-700 dark:text-green-400",
+  },
+  "Chart.js": {
+    bg: "bg-pink-100 dark:bg-pink-500/10",
+    text: "text-pink-700 dark:text-pink-400",
+  },
+  "Framer Motion": {
+    bg: "bg-neutral-100 dark:bg-neutral-500/10",
+    text: "text-neutral-700 dark:text-neutral-400",
+  },
+  i18next: {
+    bg: "bg-blue-100 dark:bg-blue-500/10",
+    text: "text-blue-700 dark:text-blue-400",
+  },
+  Sonner: {
+    bg: "bg-zinc-100 dark:bg-zinc-500/10",
+    text: "text-zinc-700 dark:text-zinc-400",
+  },
+  "date-fns": {
+    bg: "bg-emerald-100 dark:bg-emerald-500/10",
+    text: "text-emerald-700 dark:text-emerald-400",
+  },
 };
 
 const fallbackColors = {

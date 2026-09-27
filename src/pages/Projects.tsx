@@ -108,17 +108,24 @@ export function Projects() {
   const { t, i18n } = useTranslation();
   const [activeFilter, setActiveFilter] = useAtom(projectFilterAtom);
 
-  //sort all projects by the length of their technologies array
-  const featuredProject =
-    projects
-      .filter((p) => p.featured)
-      .sort((a, b) => b.technologies.length - a.technologies.length)[0] ??
-    projects[0];
+  // //sort all projects by the length of their technologies array
+  // const featuredProject =
+  //   projects
+  //     .filter((p) => p.featured)
+  //     .sort((a, b) => b.technologies.length - a.technologies.length)[0] ??
+  //   projects[0];
 
+  const featuredProject = projects.find((project) => project.featured);
+
+  //sort all projects by the length of their technologies array
   const filteredGridProjects =
     activeFilter === "all"
-      ? projects.filter((project) => project.id !== featuredProject.id)
-      : projects.filter((project) => project.category === activeFilter);
+      ? projects
+          .filter((project) => project.id !== featuredProject.id)
+          .sort((a, b) => b.technologies.length - a.technologies.length)
+      : projects
+          .filter((project) => project.category === activeFilter)
+          .sort((a, b) => b.technologies.length - a.technologies.length);
 
   return (
     <div className="pt-16 md:pt-24 md:px-2">

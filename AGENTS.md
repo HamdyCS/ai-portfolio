@@ -71,6 +71,11 @@ Use **react-icons** consistently.
 
 Framer Motion for most animations; CSS only for very small effects.
 
+## API Calls
+
+- When calling APIs, use `authApi` (not `api` from `@Desktop/files/projects/e-commerce/src/api/Axios.ts`).
+- The `authApi` instance includes request/response interceptors for automatic token refresh and error handling.
+
 ## General Conventions
 
 - Mobile-first responsive. Semantic HTML, keyboard accessibility, proper heading hierarchy, alt text.

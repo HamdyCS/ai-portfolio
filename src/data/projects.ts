@@ -12,6 +12,7 @@ import DVLD from "../assets/projects/DVLD.png";
 import ecommerceDashboard from "../assets/projects/e-commerce-nageeb-darwish-project-4.png";
 import ecommerceFrontend from "../assets/projects/ecommerce-frontend.png";
 import taskManagement from "../assets/projects/task-management.jpg";
+import WorkPilot from "../assets/projects/work-pilot-task-managments.png";
 
 export const projects: Project[] = [
   {
@@ -36,7 +37,7 @@ export const projects: Project[] = [
     ],
     category: "backend",
     repoUrl: "https://github.com/HamdyCS/Amazon_E_Commerce_Project",
-    featured: true,
+    featured: false,
   },
   {
     id: "2",
@@ -207,7 +208,7 @@ export const projects: Project[] = [
     ],
     category: "frontend",
     repoUrl: "https://github.com/HamdyCS/e-commerce",
-    featured: true,
+    featured: false,
   },
   {
     id: "13",
@@ -235,5 +236,37 @@ export const projects: Project[] = [
     liveUrl: "",
     repoUrl: "https://github.com/HamdyCS/TaskManagments",
     featured: true,
+  },
+  {
+    id: "14",
+    title: "WorkPilot — Task Management Frontend",
+    titleAr: "WorkPilot — واجهة نظام إدارة المهام",
+    description:
+      "A production-grade task management frontend built with React 19, TypeScript, and Vite. It provides workspace, project, and task management with Kanban boards, role-based dashboards (user + admin), JWT cookie authentication with automatic token refresh, real-time SignalR notifications, report charts with PDF export, Arabic RTL support, dark mode, and a full TanStack Query + Redux Toolkit state architecture.",
+    descriptionAr:
+      "واجهة أمامية احترافية لنظام إدارة المهام مبنية باستخدام React 19 وTypeScript وVite. توفر إدارة مساحات العمل والمشاريع والمهام مع لوحات Kanban، ولوحات تحكم حسب الدور (مستخدم + مشرف)، ومصادقة JWT عبر cookies مع تجديد تلقائي للتوكن، وإشعارات لحظية عبر SignalR، وتقارير رسوم بيانية مع تصدير PDF، ودعم اللغة العربية RTL، والوضع الداكن، ومعمارية كاملة TanStack Query + Redux Toolkit.",
+    image: WorkPilot,
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "React Query",
+      "React Router",
+      "Axios",
+      "Formik",
+      "Yup",
+      "Chart.js",
+      "Framer Motion",
+      "i18next",
+      "SignalR",
+      "Sonner",
+      "date-fns",
+    ],
+    category: "frontend",
+    liveUrl: "",
+    repoUrl: "https://github.com/HamdyCS/task-managments-frontend",
+    featured: false,
   },
 ];
