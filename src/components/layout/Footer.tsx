@@ -17,7 +17,7 @@ export function Footer() {
       <Container>
         <div className=" flex  flex-col items-center gap-6 md:flex-row md:justify-between">
           <div className="flex flex-col items-center gap-2 md:items-start">
-            <span className="text-lg font-bold text-foreground">
+            <span className="text-lg font-bold text-primary-ink">
               {personalInfo.name}
             </span>
             <p className="text-xs text-muted-foreground">

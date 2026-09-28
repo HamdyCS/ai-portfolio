@@ -53,9 +53,9 @@ const contactCards: ContactCardConfig[] = [
     descKey: "contact.getInTouchDesc",
     linkKey: "contact.sendEmail",
     href: `mailto:${personalInfo.email}`,
-    iconColor: "text-tertiary-ink",
+    iconColor: "text-secondary-ink",
     linkColor:
-      "text-tertiary-hot group-hover:underline",
+      "text-primary-ink group-hover:underline",
     fullWidth: true,
   },
 ];

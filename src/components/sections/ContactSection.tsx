@@ -142,7 +142,7 @@ export function ContactSection() {
                   <div className={`mb-4 ${iconContainerClassName}`}>
                     <Icon
                       name="FiMail"
-                      className="text-lg text-tertiary-ink"
+                      className="text-lg text-secondary-ink"
                     />
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-foreground">

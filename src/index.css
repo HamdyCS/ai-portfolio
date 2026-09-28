@@ -11,7 +11,7 @@
   --radius: 0.5rem;
   --animate-float-logo: float-logo 4.5s ease-in-out infinite;
 
-  --color-primary: #2dd4bf;
+  /* --color-primary: #2dd4bf; */
   --color-primary-light: #3cddc7;
   --color-primary-dark: #00574d;
   --color-secondary: #38bdf8;
@@ -39,6 +39,7 @@
 --------------------------------------------------------------------------- */
 @theme inline {
   /* surfaces */
+  --color-primary: var(--color-primary);
   --color-background: var(--t-background);
   --color-foreground: var(--t-foreground);
   --color-card: var(--t-card);
@@ -185,6 +186,7 @@
 --------------------------------------------------------------------------- */
 :root {
   /* surfaces */
+  --color-primary: #2dd4bf;
   --t-background: oklch(98.4% 0.003 247.858);
   --t-foreground: oklch(20.8% 0.042 265.755);
   --t-card: #ffffff;
@@ -292,7 +294,7 @@
   --t-sky-ink: oklch(50% 0.134 242.749);
   --t-teal-ink: oklch(51.1% 0.096 186.391);
   --t-purple-ink: oklch(49.6% 0.265 301.924);
-  --t-indigo-ink: oklch(45.7% 0.24  277.023);
+  --t-indigo-ink: oklch(45.7% 0.24 277.023);
   --t-red-ink: oklch(50.5% 0.213 27.518);
   --t-pink-ink: oklch(52.5% 0.223 3.958);
   --t-rose-ink: oklch(51.4% 0.222 16.935);
@@ -316,9 +318,12 @@
   --t-brand-axios: #5a29e4;
 
   /* shadows */
-  --t-shadow-chip: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --t-shadow-cta: 0 10px 15px -3px rgb(0 186 167 / 0.2), 0 4px 6px -4px rgb(0 186 167 / 0.2);
-  --t-shadow-viewer: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --t-shadow-chip:
+    0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --t-shadow-cta:
+    0 10px 15px -3px rgb(0 186 167 / 0.2), 0 4px 6px -4px rgb(0 186 167 / 0.2);
+  --t-shadow-viewer:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --t-shadow-glow: 0 10px 40px -10px rgb(45 212 191 / 0.25);
 
   /* component internals */
@@ -326,9 +331,11 @@
   --t-glass-edge: rgb(148 163 184 / 0.3);
   --t-bento-bg: rgb(255 255 255 / 0.7);
   --t-bento-edge: rgb(0 0 0 / 0.05);
-  --t-bento-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --t-bento-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
   --t-bento-bg-hover: rgb(255 255 255 / 0.9);
-  --t-bento-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --t-bento-shadow-hover:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --t-badge-bg: rgb(255 255 255 / 0.5);
   --t-badge-edge: rgb(0 0 0 / 0.05);
   --t-gradient-fill: linear-gradient(135deg, #006b5f 0%, #00a6e0 100%);
@@ -391,26 +398,26 @@
   /* -----------------------------------------------------------------------
      Surfaces
   ----------------------------------------------------------------------- */
-
-  --t-background: #0B0B0C;
-  --t-foreground: #F3F1ED;
+  --color-primary: #d8b45a;
+  --t-background: #0b0b0c;
+  --t-foreground: #f3f1ed;
 
   --t-card: #131313;
   --t-card-dim: #111111;
 
-  --t-muted: #1A1A1B;
-  --t-well: #0B0B0C;
+  --t-muted: #1a1a1b;
+  --t-well: #0b0b0c;
 
   --t-inset: #151515;
-  --t-inset-hover: #1C1C1D;
+  --t-inset-hover: #1c1c1d;
   --t-inset-active: #222223;
 
   --t-quiet: #111111;
-  --t-deep: #0B0B0C;
+  --t-deep: #0b0b0c;
 
   /* Gold accent */
-  --t-accent: #D8B45A;
-  --t-chip: #1A1A1A;
+  --t-accent: #d8b45a;
+  --t-chip: #1a1a1a;
   --t-plate: #151515;
 
   --t-overlay: rgb(11 11 12 / 0.6);
@@ -420,48 +427,46 @@
 
   --t-ripple: rgb(255 255 255 / 0.2);
 
-  --t-gauge: #D8B45A;
-  --t-cta-hover: #E5C368;
-
+  --t-gauge: #d8b45a;
+  --t-cta-hover: #e5c368;
 
   /* -----------------------------------------------------------------------
      Text
   ----------------------------------------------------------------------- */
 
-  --t-muted-foreground: #9A9997;
-  --t-subtle: #9A9997;
+  --t-muted-foreground: #9a9997;
+  --t-subtle: #9a9997;
 
   /* Main gold */
-  --t-primary-ink: #D8B45A;
-  --t-primary-bright: #E5C368;
-  --t-primary-lift: #E5C368;
+  --t-primary-ink: #d8b45a;
+  --t-primary-bright: #e5c368;
+  --t-primary-lift: #e5c368;
 
   /* Keep secondary accents neutral */
-  --t-secondary-ink: #F3F1ED;
-  --t-tertiary-ink: #D8B45A;
-  --t-tertiary-hot: #E5C368;
+  --t-secondary-ink: #f3f1ed;
+  --t-tertiary-ink: #d8b45a;
+  --t-tertiary-hot: #e5c368;
 
-  --t-alt: #F3F1ED;
-  --t-alt-muted: #9A9997;
+  --t-alt: #f3f1ed;
+  --t-alt-muted: #9a9997;
 
-  --t-cell-teal: #D8B45A;
-  --t-cell-sky: #D8B45A;
-  --t-cell-orange: #D8B45A;
+  --t-cell-teal: #d8b45a;
+  --t-cell-sky: #d8b45a;
+  --t-cell-orange: #d8b45a;
 
-  --t-cell-bg: #1A1A1A;
+  --t-cell-bg: #1a1a1a;
 
-  --t-on-vivid: #0B0B0C;
-  --t-action-ink: #F3F1ED;
-
+  --t-on-vivid: #0b0b0c;
+  --t-action-ink: #f3f1ed;
 
   /* -----------------------------------------------------------------------
      Borders
   ----------------------------------------------------------------------- */
 
-  --t-border: #29292A;
-  --t-input: #3A3A3B;
+  --t-border: #29292a;
+  --t-input: #3a3a3b;
 
-  --t-hairline: rgb(255 255 255 / 0.10);
+  --t-hairline: rgb(255 255 255 / 0.1);
   --t-hairline-soft: rgb(255 255 255 / 0.06);
 
   --t-glassline: rgb(255 255 255 / 0.08);
@@ -474,48 +479,45 @@
 
   --t-chip-edge: rgb(255 255 255 / 0.08);
 
-  --t-underline: #29292A;
-  --t-underline-hot: #D8B45A;
-
+  --t-underline: #29292a;
+  --t-underline-hot: #d8b45a;
 
   /* -----------------------------------------------------------------------
      Accent edges / glows
   ----------------------------------------------------------------------- */
 
-  --t-teal-edge: rgb(216 180 90 / 0.30);
+  --t-teal-edge: rgb(216 180 90 / 0.3);
   --t-teal-edge-soft: rgb(216 180 90 / 0.15);
-  --t-teal-edge-hover: rgb(216 180 90 / 0.50);
+  --t-teal-edge-hover: rgb(216 180 90 / 0.5);
 
-  --t-sky-edge: rgb(255 255 255 / 0.10);
-  --t-sky-edge-hover: rgb(216 180 90 / 0.40);
+  --t-sky-edge: rgb(255 255 255 / 0.1);
+  --t-sky-edge-hover: rgb(216 180 90 / 0.4);
 
-  --t-orange-edge: rgb(216 180 90 / 0.20);
-  --t-orange-edge-hover: rgb(216 180 90 / 0.50);
+  --t-orange-edge: rgb(216 180 90 / 0.2);
+  --t-orange-edge-hover: rgb(216 180 90 / 0.5);
 
-  --t-orange-bar: #D8B45A;
+  --t-orange-bar: #d8b45a;
 
-  --t-brand-glow: rgb(216 180 90 / 0.40);
-  --t-brand-glow-soft: rgb(216 180 90 / 0.20);
+  --t-brand-glow: rgb(216 180 90 / 0.4);
+  --t-brand-glow-soft: rgb(216 180 90 / 0.2);
 
-  --t-brand-outline: #D8B45A;
-
+  --t-brand-outline: #d8b45a;
 
   /* -----------------------------------------------------------------------
      Soft brand washes
   ----------------------------------------------------------------------- */
 
-  --t-brand-soft: rgb(216 180 90 / 0.10);
+  --t-brand-soft: rgb(216 180 90 / 0.1);
   --t-brand-soft-dim: rgb(216 180 90 / 0.05);
   --t-brand-soft-hover: rgb(216 180 90 / 0.14);
 
   --t-secondary-soft: rgb(255 255 255 / 0.06);
-  --t-secondary-soft-hover: rgb(255 255 255 / 0.10);
+  --t-secondary-soft-hover: rgb(255 255 255 / 0.1);
 
-  --t-tertiary-soft: rgb(216 180 90 / 0.10);
+  --t-tertiary-soft: rgb(216 180 90 / 0.1);
 
   --t-blob-teal: rgb(216 180 90 / 0.05);
   --t-blob-sky: rgb(255 255 255 / 0.03);
-
 
   /* -----------------------------------------------------------------------
      Hue washes
@@ -543,110 +545,98 @@
   --t-neutral-wash: rgb(255 255 255 / 0.04);
   --t-zinc-wash: rgb(255 255 255 / 0.04);
 
-
   /* -----------------------------------------------------------------------
      Hue inks
   ----------------------------------------------------------------------- */
 
-  --t-violet-ink: #D8B45A;
-  --t-cyan-ink: #F3F1ED;
-  --t-blue-ink: #F3F1ED;
-  --t-yellow-ink: #D8B45A;
-  --t-orange-ink: #D8B45A;
-  --t-sky-ink: #F3F1ED;
-  --t-teal-ink: #D8B45A;
-  --t-purple-ink: #D8B45A;
-  --t-indigo-ink: #D8B45A;
-  --t-red-ink: #F3F1ED;
-  --t-pink-ink: #F3F1ED;
-  --t-rose-ink: #F3F1ED;
-  --t-slate-ink: #9A9997;
-  --t-emerald-ink: #D8B45A;
-  --t-lime-ink: #D8B45A;
-  --t-amber-ink: #D8B45A;
-  --t-fuchsia-ink: #D8B45A;
-  --t-green-ink: #D8B45A;
-  --t-neutral-ink: #F3F1ED;
-  --t-zinc-ink: #9A9997;
-
+  --t-violet-ink: #d8b45a;
+  --t-cyan-ink: #f3f1ed;
+  --t-blue-ink: #f3f1ed;
+  --t-yellow-ink: #d8b45a;
+  --t-orange-ink: #d8b45a;
+  --t-sky-ink: #f3f1ed;
+  --t-teal-ink: #d8b45a;
+  --t-purple-ink: #d8b45a;
+  --t-indigo-ink: #d8b45a;
+  --t-red-ink: #f3f1ed;
+  --t-pink-ink: #f3f1ed;
+  --t-rose-ink: #f3f1ed;
+  --t-slate-ink: #9a9997;
+  --t-emerald-ink: #d8b45a;
+  --t-lime-ink: #d8b45a;
+  --t-amber-ink: #d8b45a;
+  --t-fuchsia-ink: #d8b45a;
+  --t-green-ink: #d8b45a;
+  --t-neutral-ink: #f3f1ed;
+  --t-zinc-ink: #9a9997;
 
   /* -----------------------------------------------------------------------
      Brand icons
      Keep actual technology brand colors.
   ----------------------------------------------------------------------- */
 
-  --t-brand-insomnia: #9A86FF;
-  --t-brand-mail: #F3F1ED;
-  --t-brand-mui: #64B5F6;
-  --t-brand-reactquery: #FF6B7A;
-  --t-brand-router: #E57373;
-  --t-brand-framer: #7AA2FF;
-  --t-brand-gitkraken: #5FCBC0;
-  --t-brand-axios: #9B7BFF;
-
+  --t-brand-insomnia: #9a86ff;
+  --t-brand-mail: #f3f1ed;
+  --t-brand-mui: #64b5f6;
+  --t-brand-reactquery: #ff6b7a;
+  --t-brand-router: #e57373;
+  --t-brand-framer: #7aa2ff;
+  --t-brand-gitkraken: #5fcbc0;
+  --t-brand-axios: #9b7bff;
 
   /* -----------------------------------------------------------------------
      Shadows
   ----------------------------------------------------------------------- */
 
   --t-shadow-chip:
-    0 1px 3px 0 rgb(0 0 0 / 0.35),
-    0 1px 2px -1px rgb(0 0 0 / 0.35);
+    0 1px 3px 0 rgb(0 0 0 / 0.35), 0 1px 2px -1px rgb(0 0 0 / 0.35);
 
-  --t-shadow-cta:
-    0 4px 20px rgb(216 180 90 / 0.25);
+  --t-shadow-cta: 0 4px 20px rgb(216 180 90 / 0.25);
 
-  --t-shadow-viewer:
-    0 25px 50px -12px rgb(0 0 0 / 0.45);
+  --t-shadow-viewer: 0 25px 50px -12px rgb(0 0 0 / 0.45);
 
-  --t-shadow-glow:
-    0 10px 40px -10px rgb(216 180 90 / 0.20);
-
+  --t-shadow-glow: 0 10px 40px -10px rgb(216 180 90 / 0.2);
 
   /* -----------------------------------------------------------------------
      Component internals
   ----------------------------------------------------------------------- */
 
-  --t-glass-bg: rgb(19 19 19 / 0.70);
+  --t-glass-bg: rgb(19 19 19 / 0.7);
   --t-glass-edge: rgb(255 255 255 / 0.08);
 
   --t-bento-bg: rgb(255 255 255 / 0.04);
   --t-bento-edge: rgb(255 255 255 / 0.08);
 
-  --t-bento-shadow:
-    0 10px 30px -15px rgb(0 0 0 / 0.50);
+  --t-bento-shadow: 0 10px 30px -15px rgb(0 0 0 / 0.5);
 
   --t-bento-bg-hover: rgb(255 255 255 / 0.06);
 
-  --t-bento-shadow-hover:
-    0 15px 35px -15px rgb(0 0 0 / 0.60);
+  --t-bento-shadow-hover: 0 15px 35px -15px rgb(0 0 0 / 0.6);
 
   --t-badge-bg: rgb(255 255 255 / 0.04);
   --t-badge-edge: rgb(216 180 90 / 0.15);
 
-  --t-gradient-fill:
-    linear-gradient(135deg, #D8B45A 0%, #E5C368 100%);
+  --t-gradient-fill: linear-gradient(135deg, #d8b45a 0%, #e5c368 100%);
 
   --t-hero-glow: rgb(216 180 90 / 0.06);
   --t-spot-glow: rgb(216 180 90 / 0.04);
 
-  --t-projects-bg: rgb(19 19 19 / 0.70);
+  --t-projects-bg: rgb(19 19 19 / 0.7);
   --t-projects-edge: rgb(255 255 255 / 0.08);
-  --t-projects-edge-hover: rgb(216 180 90 / 0.30);
+  --t-projects-edge-hover: rgb(216 180 90 / 0.3);
 
   --t-projects-glow:
-    0 30px 60px -15px rgb(216 180 90 / 0.15),
-    0 10px 20px -10px rgb(0 0 0 / 0.50);
+    0 30px 60px -15px rgb(216 180 90 / 0.15), 0 10px 20px -10px rgb(0 0 0 / 0.5);
 
-  --t-viewer-bg: rgb(19 19 19 / 0.70);
+  --t-viewer-bg: rgb(19 19 19 / 0.7);
   --t-viewer-backdrop: blur(12px);
 
   --t-floaty-bw: 1px;
-  --t-floaty-bg: rgb(11 11 12 / 0.80);
-  --t-floaty-ink: #D8B45A;
+  --t-floaty-bg: rgb(11 11 12 / 0.8);
+  --t-floaty-ink: #d8b45a;
 
-  --t-scrollbar-track: #0B0B0C;
-  --t-scrollbar-thumb: #29292A;
+  --t-scrollbar-track: #0b0b0c;
+  --t-scrollbar-thumb: #29292a;
 
   --t-label-weight: 500;
   --t-label-weight-600: 600;
@@ -918,7 +908,7 @@ body {
 }
 
 /* On dark mode set section-header text color to primary-ink */
-.dark .page-title{
+.dark .page-title {
   @apply dark:text-primary-ink;
 }
 
