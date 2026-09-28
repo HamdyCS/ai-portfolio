@@ -145,7 +145,7 @@ export function Projects() {
           className="mb-10 md:mb-14"
         >
           <div className="max-w-4xl">
-            <h1 className="mb-6 text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl">
+            <h1 className="mb-6 text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl page-title">
               {t("projects.pageTitle")}
             </h1>
             <p className="text-base font-light leading-relaxed text-muted-foreground md:text-lg">

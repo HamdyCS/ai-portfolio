@@ -86,7 +86,7 @@ export function Skills() {
         >
           <motion.h1
             variants={headerFade}
-            className="mb-4 text-4xl font-bold md:text-6xl"
+            className="mb-4 text-4xl font-bold md:text-6xl page-title"
           >
             {t("skills.pageTitle")}
           </motion.h1>

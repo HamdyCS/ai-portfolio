@@ -89,18 +89,18 @@ export function AboutMe() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1 font-mono text-xs tracking-widest text-primary">
+            <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-primary-ink">
               {t("about.badge")}
             </span>
 
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl">
               {t("about.greeting")}{" "}
-              <span className="text-primary">
+              <span className="text-primary-ink">
                 {isAr ? personalInfo.nameAr : personalInfo.name}
               </span>
             </h1>
 
-            <h2 className="text-xl font-bold text-secondary md:text-2xl">
+            <h2 className="text-xl font-bold text-secondary-ink md:text-2xl">
               {isAr ? personalInfo.titleAr : personalInfo.title}
             </h2>
 
