@@ -77,7 +77,7 @@ export function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: reduce ? 0 : 0.7, duration: 0.6, ease: EASE }}
-          className="mt-10 text-3xl font-bold tracking-tight text-slate-900 md:text-5xl dark:text-text-primary"
+          className="mt-10 text-3xl font-bold tracking-tight text-foreground md:text-5xl"
         >
           {t("notFound.title")}
         </motion.h1>
@@ -86,7 +86,7 @@ export function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: reduce ? 0 : 0.82, duration: 0.6, ease: EASE }}
-          className="mt-4 max-w-xl text-base leading-relaxed text-slate-500 md:text-lg dark:text-text-secondary"
+          className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg"
         >
           {t("notFound.description")}
         </motion.p>
@@ -95,7 +95,7 @@ export function NotFound() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: reduce ? 0 : 0.92, duration: 0.6 }}
-          className="mt-3 text-sm font-semibold text-teal-700 dark:text-primary"
+          className="mt-3 text-sm font-semibold text-primary-ink"
         >
           {t("notFound.recoveryLine")}
         </motion.p>
@@ -167,7 +167,7 @@ export function NotFound() {
           </Magnetic>
           <Link
             to="/contact"
-            className="rounded-md px-2 text-sm font-semibold text-slate-600 underline decoration-slate-300 underline-offset-4 transition-colors hover:text-teal-700 hover:decoration-teal-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:text-text-secondary dark:decoration-outline-variant dark:hover:text-primary dark:hover:decoration-primary"
+            className="rounded-md px-2 text-sm font-semibold text-muted-foreground underline decoration-underline underline-offset-4 transition-colors hover:text-primary-ink hover:decoration-underline-hot focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             {t("notFound.contactMe")}
           </Link>
@@ -186,13 +186,13 @@ export function NotFound() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: reduce ? 0 : 1.7, duration: 0.6 }}
-        className="w-full border-t border-slate-200 bg-slate-100 py-5 dark:border-outline-variant dark:bg-surface-container-lowest"
+        className="w-full border-t border-border bg-well py-5"
       >
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-2 px-6 md:justify-between">
           {statusLineKeys.map((key) => (
             <span
               key={key}
-              className="font-mono text-[11px] tracking-wider text-slate-500 dark:text-text-secondary"
+              className="font-mono text-[11px] tracking-wider text-muted-foreground"
             >
               {t(`notFound.statusLine.${key}`)}
             </span>

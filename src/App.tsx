@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div
-      className="min-h-screen bg-slate-50 overflow-x-hidden dark:bg-background"
+      className="min-h-screen bg-background overflow-x-hidden"
       dir={i18n.dir()}
     >
       <Navbar />

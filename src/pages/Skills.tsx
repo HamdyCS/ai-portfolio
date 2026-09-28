@@ -93,7 +93,7 @@ export function Skills() {
 
           <motion.p
             variants={headerFade}
-            className="max-w-2xl text-lg leading-relaxed text-slate-500 dark:text-text-secondary"
+            className="max-w-2xl text-lg leading-relaxed text-muted-foreground"
           >
             {t("skills.pageSubtitle")}
           </motion.p>
@@ -119,12 +119,12 @@ export function Skills() {
               >
                 <Icon name="FiTerminal" className="text-3xl text-primary" />
 
-                <h2 className="text-2xl font-bold text-slate-900 dark:text-text-primary">
+                <h2 className="text-2xl font-bold text-foreground">
                   {t("skills.backendTitle")}
                 </h2>
               </motion.div>
 
-              <p className="mb-8 max-w-xl text-slate-500 dark:text-text-secondary">
+              <p className="mb-8 max-w-xl text-muted-foreground">
                 {t("skills.backendDesc")}
               </p>
 
@@ -148,7 +148,7 @@ export function Skills() {
                         damping: 15,
                       },
                     }}
-                    className={`tech-badge flex flex-col items-center justify-center gap-2 rounded-lg p-4 transition-colors hover:bg-slate-100! dark:hover:bg-surface-high! ${
+                    className={`tech-badge flex flex-col items-center justify-center gap-2 rounded-lg p-4 transition-colors hover:bg-muted! ${
                       skill.id === "rest-api"
                         ? "border-primary/20 bg-primary/5"
                         : ""
@@ -201,12 +201,12 @@ export function Skills() {
             >
               <Icon name="FiGlobe" className="text-3xl text-secondary" />
 
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-text-primary">
+              <h2 className="text-2xl font-bold text-foreground">
                 {t("skills.frontendTitle")}
               </h2>
             </motion.div>
 
-            <p className="mb-6 text-sm text-slate-500 dark:text-text-secondary">
+            <p className="mb-6 text-sm text-muted-foreground">
               {t("skills.frontendDesc")}
             </p>
 
@@ -225,7 +225,7 @@ export function Skills() {
                     x: 6,
                     transition: { type: "spring", stiffness: 300, damping: 20 },
                   }}
-                  className="flex items-center gap-4 rounded-lg border border-slate-200/50 bg-slate-50 p-3 transition-colors hover:bg-slate-100 dark:border-outline-variant/10 dark:bg-surface-container-low dark:hover:bg-surface-high"
+                  className="flex items-center gap-4 rounded-lg border border-faintline bg-deep p-3 transition-colors hover:bg-muted"
                 >
                   <Icon
                     name={skill.id}
@@ -234,11 +234,11 @@ export function Skills() {
                   />
 
                   <div>
-                    <div className="text-sm font-bold text-slate-900 dark:text-text-primary">
+                    <div className="text-sm font-bold text-foreground">
                       {skill.name}
                     </div>
 
-                    <div className="text-xs text-slate-500 dark:text-text-secondary">
+                    <div className="text-xs text-muted-foreground">
                       {t(`skills.tags.${skill.id}`)}
                     </div>
                   </div>
@@ -246,8 +246,8 @@ export function Skills() {
               ))}
             </motion.div>
 
-            <div className="mt-8 border-t border-slate-200 pt-6 dark:border-outline-variant/20">
-              <div className="mb-4 font-mono text-xs uppercase tracking-widest text-slate-700 dark:text-tertiary">
+            <div className="mt-8 border-t border-hairline pt-6">
+              <div className="mb-4 font-mono text-xs uppercase tracking-widest text-alt">
                 {t("skills.coreCompetencies")}
               </div>
 
@@ -266,7 +266,7 @@ export function Skills() {
                       key={id}
                       variants={itemFade}
                       whileHover={{ scale: 1.08 }}
-                      className="whitespace-nowrap rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-[10px] text-slate-600 dark:border-outline-variant dark:bg-surface-highest dark:text-text-secondary"
+                      className="whitespace-nowrap rounded-full border border-border bg-chip px-3 py-1 text-[10px] text-muted-foreground"
                     >
                       {skill.name}
                     </motion.span>
@@ -302,7 +302,7 @@ export function Skills() {
               >
                 <Icon name="FiCpu" className="text-3xl text-tertiary" />
 
-                <h2 className="text-2xl font-bold text-slate-900 dark:text-text-primary">
+                <h2 className="text-2xl font-bold text-foreground">
                   {t("skills.engineeringTitle")}
                 </h2>
               </motion.div>
@@ -315,34 +315,34 @@ export function Skills() {
                 className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
               >
                 <motion.div variants={itemFade}>
-                  <div className="mb-2 flex items-center gap-2 font-bold text-slate-900 dark:text-text-primary">
+                  <div className="mb-2 flex items-center gap-2 font-bold text-foreground">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                     {t("skills.principleCleanArch")}
                   </div>
 
-                  <p className="text-xs leading-relaxed text-slate-500 dark:text-text-secondary">
+                  <p className="text-xs leading-relaxed text-muted-foreground">
                     {t("skills.principleCleanArchDesc")}
                   </p>
                 </motion.div>
 
                 <motion.div variants={itemFade}>
-                  <div className="mb-2 flex items-center gap-2 font-bold text-slate-900 dark:text-text-primary">
+                  <div className="mb-2 flex items-center gap-2 font-bold text-foreground">
                     <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
                     {t("skills.principleSolid")}
                   </div>
 
-                  <p className="text-xs leading-relaxed text-slate-500 dark:text-text-secondary">
+                  <p className="text-xs leading-relaxed text-muted-foreground">
                     {t("skills.principleSolidDesc")}
                   </p>
                 </motion.div>
 
                 <motion.div variants={itemFade}>
-                  <div className="mb-2 flex items-center gap-2 font-bold text-slate-900 dark:text-text-primary">
+                  <div className="mb-2 flex items-center gap-2 font-bold text-foreground">
                     <span className="h-1.5 w-1.5 rounded-full bg-tertiary" />
                     {t("skills.principleRest")}
                   </div>
 
-                  <p className="text-xs leading-relaxed text-slate-500 dark:text-text-secondary">
+                  <p className="text-xs leading-relaxed text-muted-foreground">
                     {t("skills.principleRestDesc")}
                   </p>
                 </motion.div>
@@ -368,15 +368,15 @@ export function Skills() {
                 <div className="mb-2 flex items-center gap-3">
                   <Icon
                     name="FiSettings"
-                    className="text-3xl text-slate-900 dark:text-text-primary"
+                    className="text-3xl text-foreground"
                   />
 
-                  <h2 className="text-2xl font-bold text-slate-900 dark:text-text-primary">
+                  <h2 className="text-2xl font-bold text-foreground">
                     {t("skills.toolsTitle")}
                   </h2>
                 </div>
 
-                <p className="text-sm text-slate-500 dark:text-text-secondary">
+                <p className="text-sm text-muted-foreground">
                   {t("skills.toolsDesc")}
                 </p>
               </motion.div>
@@ -398,7 +398,7 @@ export function Skills() {
                     borderColor: "var(--color-primary)",
                     transition: { type: "spring", stiffness: 300, damping: 18 },
                   }}
-                  className="group flex flex-col items-center gap-3 rounded-xl border border-slate-200 p-4 transition-colors hover:border-primary/40 dark:border-outline-variant/20"
+                  className="group flex flex-col items-center gap-3 rounded-xl border border-hairline p-4 transition-colors hover:border-primary/40"
                 >
                   <Icon
                     name={skill.id}
@@ -406,7 +406,7 @@ export function Skills() {
                     fontSize="2rem"
                   />
 
-                  <span className="font-mono text-sm text-slate-700 dark:text-text-secondary">
+                  <span className="font-mono text-sm text-alt-muted">
                     {skill.name}
                   </span>
                 </motion.div>

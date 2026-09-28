@@ -1,151 +1,151 @@
 const techColors: Record<string, { bg: string; text: string }> = {
   ".NET": {
-    bg: "bg-violet-100 dark:bg-violet-500/10",
-    text: "text-violet-700 dark:text-violet-400",
+    bg: "bg-violet-wash",
+    text: "text-violet-ink",
   },
   "ASP.NET Core": {
-    bg: "bg-violet-100 dark:bg-violet-500/10",
-    text: "text-violet-700 dark:text-violet-400",
+    bg: "bg-violet-wash",
+    text: "text-violet-ink",
   },
   React: {
-    bg: "bg-cyan-100 dark:bg-cyan-500/10",
-    text: "text-cyan-700 dark:text-cyan-400",
+    bg: "bg-cyan-wash",
+    text: "text-cyan-ink",
   },
   TypeScript: {
-    bg: "bg-blue-100 dark:bg-blue-500/10",
-    text: "text-blue-700 dark:text-blue-400",
+    bg: "bg-blue-wash",
+    text: "text-blue-ink",
   },
   JavaScript: {
-    bg: "bg-yellow-100 dark:bg-yellow-500/10",
-    text: "text-yellow-700 dark:text-yellow-400",
+    bg: "bg-yellow-wash",
+    text: "text-yellow-ink",
   },
   HTML: {
-    bg: "bg-orange-100 dark:bg-orange-500/10",
-    text: "text-orange-700 dark:text-orange-400",
+    bg: "bg-orange-wash",
+    text: "text-orange-ink",
   },
   CSS: {
-    bg: "bg-sky-100 dark:bg-sky-500/10",
-    text: "text-sky-700 dark:text-sky-400",
+    bg: "bg-sky-wash",
+    text: "text-sky-ink",
   },
   "Tailwind CSS": {
-    bg: "bg-teal-100 dark:bg-teal-500/10",
-    text: "text-teal-700 dark:text-teal-400",
+    bg: "bg-teal-wash",
+    text: "text-teal-ink",
   },
   Bootstrap: {
-    bg: "bg-purple-100 dark:bg-purple-500/10",
-    text: "text-purple-700 dark:text-purple-400",
+    bg: "bg-purple-wash",
+    text: "text-purple-ink",
   },
   "Material UI": {
-    bg: "bg-indigo-100 dark:bg-indigo-500/10",
-    text: "text-indigo-700 dark:text-indigo-400",
+    bg: "bg-indigo-wash",
+    text: "text-indigo-ink",
   },
   "SQL Server": {
-    bg: "bg-red-100 dark:bg-red-500/10",
-    text: "text-red-700 dark:text-red-400",
+    bg: "bg-red-wash",
+    text: "text-red-ink",
   },
   "Redux Toolkit": {
-    bg: "bg-pink-100 dark:bg-pink-500/10",
-    text: "text-pink-700 dark:text-pink-400",
+    bg: "bg-pink-wash",
+    text: "text-pink-ink",
   },
   "React Router": {
-    bg: "bg-rose-100 dark:bg-rose-500/10",
-    text: "text-rose-700 dark:text-rose-400",
+    bg: "bg-rose-wash",
+    text: "text-rose-ink",
   },
   Axios: {
-    bg: "bg-slate-100 dark:bg-slate-500/10",
-    text: "text-slate-700 dark:text-slate-400",
+    bg: "bg-slate-wash",
+    text: "text-slate-ink",
   },
   CQRS: {
-    bg: "bg-emerald-100 dark:bg-emerald-500/10",
-    text: "text-emerald-700 dark:text-emerald-400",
+    bg: "bg-emerald-wash",
+    text: "text-emerald-ink",
   },
   MediatR: {
-    bg: "bg-lime-100 dark:bg-lime-500/10",
-    text: "text-lime-700 dark:text-lime-400",
+    bg: "bg-lime-wash",
+    text: "text-lime-ink",
   },
   "Entity Framework Core": {
-    bg: "bg-blue-100 dark:bg-blue-500/10",
-    text: "text-blue-700 dark:text-blue-400",
+    bg: "bg-blue-wash",
+    text: "text-blue-ink",
   },
   Redis: {
-    bg: "bg-amber-100 dark:bg-amber-500/10",
-    text: "text-amber-700 dark:text-amber-400",
+    bg: "bg-amber-wash",
+    text: "text-amber-ink",
   },
   SignalR: {
-    bg: "bg-fuchsia-100 dark:bg-fuchsia-500/10",
-    text: "text-fuchsia-700 dark:text-fuchsia-400",
+    bg: "bg-fuchsia-wash",
+    text: "text-fuchsia-ink",
   },
   JWT: {
-    bg: "bg-cyan-100 dark:bg-cyan-500/10",
-    text: "text-cyan-700 dark:text-cyan-400",
+    bg: "bg-cyan-wash",
+    text: "text-cyan-ink",
   },
 
   Mapster: {
-    bg: "bg-orange-100 dark:bg-orange-500/10",
-    text: "text-orange-700 dark:text-orange-400",
+    bg: "bg-orange-wash",
+    text: "text-orange-ink",
   },
 
   FluentValidation: {
-    bg: "bg-teal-100 dark:bg-teal-500/10",
-    text: "text-teal-700 dark:text-teal-400",
+    bg: "bg-teal-wash",
+    text: "text-teal-ink",
   },
 
   Serilog: {
-    bg: "bg-rose-100 dark:bg-rose-500/10",
-    text: "text-rose-700 dark:text-rose-400",
+    bg: "bg-rose-wash",
+    text: "text-rose-ink",
   },
 
   "3 Tier Architecture": {
-    bg: "bg-indigo-100 dark:bg-indigo-500/10",
-    text: "text-indigo-700 dark:text-indigo-400",
+    bg: "bg-indigo-wash",
+    text: "text-indigo-ink",
   },
 
   AutoMapper: {
-    bg: "bg-amber-100 dark:bg-amber-500/10",
-    text: "text-amber-700 dark:text-amber-400",
+    bg: "bg-amber-wash",
+    text: "text-amber-ink",
   },
 
   "React Query": {
-    bg: "bg-fuchsia-100 dark:bg-fuchsia-500/10",
-    text: "text-fuchsia-700 dark:text-fuchsia-400",
+    bg: "bg-fuchsia-wash",
+    text: "text-fuchsia-ink",
   },
   Vite: {
-    bg: "bg-purple-100 dark:bg-purple-500/10",
-    text: "text-purple-700 dark:text-purple-400",
+    bg: "bg-purple-wash",
+    text: "text-purple-ink",
   },
   Formik: {
-    bg: "bg-sky-100 dark:bg-sky-500/10",
-    text: "text-sky-700 dark:text-sky-400",
+    bg: "bg-sky-wash",
+    text: "text-sky-ink",
   },
   Yup: {
-    bg: "bg-green-100 dark:bg-green-500/10",
-    text: "text-green-700 dark:text-green-400",
+    bg: "bg-green-wash",
+    text: "text-green-ink",
   },
   "Chart.js": {
-    bg: "bg-pink-100 dark:bg-pink-500/10",
-    text: "text-pink-700 dark:text-pink-400",
+    bg: "bg-pink-wash",
+    text: "text-pink-ink",
   },
   "Framer Motion": {
-    bg: "bg-neutral-100 dark:bg-neutral-500/10",
-    text: "text-neutral-700 dark:text-neutral-400",
+    bg: "bg-neutral-wash",
+    text: "text-neutral-ink",
   },
   i18next: {
-    bg: "bg-blue-100 dark:bg-blue-500/10",
-    text: "text-blue-700 dark:text-blue-400",
+    bg: "bg-blue-wash",
+    text: "text-blue-ink",
   },
   Sonner: {
-    bg: "bg-zinc-100 dark:bg-zinc-500/10",
-    text: "text-zinc-700 dark:text-zinc-400",
+    bg: "bg-zinc-wash",
+    text: "text-zinc-ink",
   },
   "date-fns": {
-    bg: "bg-emerald-100 dark:bg-emerald-500/10",
-    text: "text-emerald-700 dark:text-emerald-400",
+    bg: "bg-emerald-wash",
+    text: "text-emerald-ink",
   },
 };
 
 const fallbackColors = {
-  bg: "bg-teal-100 dark:bg-primary/10",
-  text: "text-teal-700 dark:text-primary",
+  bg: "bg-brand-soft-hover",
+  text: "text-primary-ink",
 };
 
 interface TechBadgeProps {

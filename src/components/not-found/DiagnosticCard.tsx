@@ -28,20 +28,20 @@ export function DiagnosticCard({ title, value, rows, delay }: DiagnosticCardProp
       <Card hover={!reduce} className="h-full">
         <div className="mb-3 flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-primary" />
-          <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-teal-700 dark:text-primary">
+          <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-primary-ink">
             {title}
           </span>
         </div>
-        <p className="mb-4 font-mono text-sm text-slate-900 dark:text-text-primary">
+        <p className="mb-4 font-mono text-sm text-foreground">
           {value}
         </p>
-        <dl className="space-y-2.5 border-t border-slate-200 pt-4 dark:border-outline-variant/40">
+        <dl className="space-y-2.5 border-t border-hairline pt-4">
           {rows.map((row) => (
             <div key={row.label} className="flex items-center justify-between gap-4">
-              <dt className="text-[11px] uppercase tracking-wider text-slate-500 dark:text-text-secondary">
+              <dt className="text-[11px] uppercase tracking-wider text-muted-foreground">
                 {row.label}
               </dt>
-              <dd className="font-mono text-xs text-slate-900 dark:text-text-primary">
+              <dd className="font-mono text-xs text-foreground">
                 {row.value}
               </dd>
             </div>

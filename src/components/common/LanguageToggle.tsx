@@ -19,7 +19,7 @@ export function LanguageToggle() {
   return (
     <button
       onClick={toggleLanguage}
-      className="rounded-lg p-2 text-teal-700 transition-all duration-200 hover:bg-slate-200/50 active:scale-95 dark:text-primary dark:hover:bg-surface-highest/50"
+      className="rounded-lg p-2 text-primary-ink transition-all duration-200 hover:bg-accent/50 active:scale-95"
       aria-label="Toggle language"
     >
       <Icon name="FiGlobe" className="text-lg" />

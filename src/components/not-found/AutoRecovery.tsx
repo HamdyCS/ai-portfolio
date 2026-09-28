@@ -30,7 +30,7 @@ export function AutoRecovery({ onComplete }: AutoRecoveryProps) {
   return (
     <div className="mt-10 flex flex-col items-center gap-3">
       {cancelled ? (
-        <p className="flex items-center gap-2 font-mono text-xs text-slate-500 dark:text-text-secondary">
+        <p className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
           <Icon name="FiX" className="text-sm" />
           {t("notFound.redirectCancelled")}
         </p>
@@ -38,17 +38,17 @@ export function AutoRecovery({ onComplete }: AutoRecoveryProps) {
         <>
           <p
             aria-live="polite"
-            className="font-mono text-xs text-slate-500 dark:text-text-secondary"
+            className="font-mono text-xs text-muted-foreground"
           >
             {t("notFound.autoRedirect", { seconds: secondsLeft })}
           </p>
-          <div className="h-1 w-full max-w-xs overflow-hidden rounded-full bg-slate-200 dark:bg-surface-high">
+          <div className="h-1 w-full max-w-xs overflow-hidden rounded-full bg-muted">
             <div className="nf-progress-fill h-full rounded-full bg-primary" />
           </div>
           <button
             type="button"
             onClick={() => setCancelled(true)}
-            className="rounded-md text-xs font-semibold text-slate-500 underline-offset-4 transition-colors hover:text-teal-700 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:text-text-secondary dark:hover:text-primary"
+            className="rounded-md text-xs font-semibold text-muted-foreground underline-offset-4 transition-colors hover:text-primary-ink hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             aria-label={t("notFound.cancelRedirect")}
           >
             {t("notFound.cancelRedirect")}

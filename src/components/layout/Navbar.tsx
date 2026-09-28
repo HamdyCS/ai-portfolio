@@ -45,12 +45,12 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/80 shadow-sm backdrop-blur-md dark:border-outline-variant/30 dark:bg-surface/80">
+    <nav className="fixed top-0 z-50 w-full border-b border-hairline bg-card/80 shadow-sm backdrop-blur-md">
       <div className="container px-3 mx-auto w-full md:max-w-7xl">
         <div className="flex items-center justify-between py-4">
           <Link
             to="/"
-            className="flex items-center gap-2 text-sm  md:text-lg  font-bold text-teal-700 text-nowrap dark:text-primary"
+            className="flex items-center gap-2 text-sm  md:text-lg  font-bold text-primary-ink text-nowrap"
             aria-label={personalInfo.name}
           >
             <img src={DarkLogo} alt="DarkLogo" className="w-10 h-10" />
@@ -71,8 +71,8 @@ export function Navbar() {
                   to={item.href}
                   className={`transition-colors ${
                     isActive
-                      ? "font-bold text-teal-700 dark:text-primary"
-                      : "text-slate-500 hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
+                      ? "font-bold text-primary-ink"
+                      : "text-muted-foreground hover:text-primary-ink"
                   }`}
                 >
                   {t(item.key)}
@@ -86,13 +86,13 @@ export function Navbar() {
               href={cv}
               target="_blank"
               download="hamdy-khaled-fullstack-developer-cv"
-              className="hidden md:flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-4 py-2 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest text-[12px] "
+              className="hidden md:flex items-center justify-center gap-2 rounded-lg border border-input px-4 py-2 font-bold text-foreground transition-all hover:bg-accent text-[12px] "
             >
               <Icon name="FiDownload" className="text-[14px]" />
               {t("hero.downloadCV")}
             </a>
             <button
-              className="rounded-lg p-2 text-teal-700 transition-all duration-200 hover:bg-slate-200/50 active:scale-95 dark:text-primary dark:hover:bg-surface-highest/50"
+              className="rounded-lg p-2 text-primary-ink transition-all duration-200 hover:bg-accent/50 active:scale-95"
               aria-label="Toggle dark mode"
               onClick={() =>
                 handleThemeChange(theme === "light" ? "dark" : "light")
@@ -106,7 +106,7 @@ export function Navbar() {
             </button>
             <LanguageToggle />
             <button
-              className="rounded-lg p-2 text-slate-900 md:hidden dark:text-text-primary"
+              className="rounded-lg p-2 text-foreground md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
@@ -122,7 +122,7 @@ export function Navbar() {
 
         {isMenuOpen && (
           <nav
-            className="border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-outline-variant/30 dark:bg-surface"
+            className="border-t border-hairline bg-card px-4 py-4 md:hidden"
             aria-label="Mobile navigation"
           >
             {navItems.map((item) => {
@@ -135,8 +135,8 @@ export function Navbar() {
                   to={item.href}
                   className={`block py-3 text-sm transition-colors ${
                     isActive
-                      ? "font-bold text-teal-700 dark:text-primary"
-                      : "text-slate-500 hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
+                      ? "font-bold text-primary-ink"
+                      : "text-muted-foreground hover:text-primary-ink"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -148,7 +148,7 @@ export function Navbar() {
               <a
                 href={cv}
                 download="hamdy-khaled-fullstack-developer-cv"
-                className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-4 py-2 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest text-[12px]"
+                className="flex items-center justify-center gap-2 rounded-lg border border-input px-4 py-2 font-bold text-foreground transition-all hover:bg-accent text-[12px]"
               >
                 <Icon name="FiDownload" className="text-[20px]" />
                 {t("hero.downloadCV")}

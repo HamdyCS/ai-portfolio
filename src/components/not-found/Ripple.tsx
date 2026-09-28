@@ -44,7 +44,7 @@ export function Ripple({ children }: RippleProps) {
         {ripples.map((ripple) => (
           <motion.span
             key={ripple.id}
-            className="absolute rounded-full bg-slate-900/10 dark:bg-white/20"
+            className="absolute rounded-full bg-ripple"
             style={{
               left: ripple.left,
               top: ripple.top,

@@ -33,7 +33,7 @@ export function Button({
   const variants = {
     primary: "bg-[#2dd4bf] text-[#051424] hover:bg-[#3cddc7]",
     secondary:
-      "border border-teal-600 text-teal-700 hover:bg-teal-50 dark:border-[#2dd4bf] dark:text-[#2dd4bf] dark:hover:bg-[rgba(45,212,191,0.1)]",
+      "border border-brand-outline text-primary-ink hover:bg-brand-soft",
   };
 
   const classes = `${baseStyles} ${sizeStyles[size]} ${variants[variant]} ${className}`;

@@ -15,7 +15,7 @@ export function GlitchNumber() {
       <div className="nf-glow absolute left-1/2 top-1/2 -z-10 h-52 w-52 rounded-full blur-3xl md:h-80 md:w-80" />
       <div className="nf-float relative">
         <span
-          className="nf-glitch block select-none font-mono font-extrabold leading-none tracking-tighter text-slate-900 dark:text-text-primary"
+          className="nf-glitch block select-none font-mono font-extrabold leading-none tracking-tighter text-foreground"
           data-text="404"
           aria-hidden="true"
           style={{ fontSize: "clamp(7rem, 22vw, 15rem)" }}

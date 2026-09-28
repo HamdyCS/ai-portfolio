@@ -33,8 +33,8 @@ const contactCards: ContactCardConfig[] = [
     descKey: "contact.gitHubProjectsDesc",
     linkKey: "contact.viewGitHub",
     href: personalInfo.github,
-    iconColor: "text-slate-900 dark:text-text-primary",
-    linkColor: "text-teal-700 group-hover:underline dark:text-primary",
+    iconColor: "text-foreground",
+    linkColor: "text-primary-ink group-hover:underline",
     fullWidth: false,
   },
   {
@@ -43,8 +43,8 @@ const contactCards: ContactCardConfig[] = [
     descKey: "contact.professionalNetworkDesc",
     linkKey: "contact.connectLinkedIn",
     href: personalInfo.linkedin,
-    iconColor: "text-sky-700 dark:text-secondary",
-    linkColor: "text-sky-700 group-hover:underline dark:text-secondary",
+    iconColor: "text-secondary-ink",
+    linkColor: "text-secondary-ink group-hover:underline",
     fullWidth: false,
   },
   {
@@ -53,9 +53,9 @@ const contactCards: ContactCardConfig[] = [
     descKey: "contact.getInTouchDesc",
     linkKey: "contact.sendEmail",
     href: `mailto:${personalInfo.email}`,
-    iconColor: "text-orange-700 dark:text-tertiary",
+    iconColor: "text-tertiary-ink",
     linkColor:
-      "text-orange-700 group-hover:underline dark:text-tertiary-container",
+      "text-tertiary-hot group-hover:underline",
     fullWidth: true,
   },
 ];
@@ -75,17 +75,17 @@ function ContactTiltCard({ config }: { config: ContactCardConfig }) {
       <motion.div
         variants={fadeInUp}
         transition={{ duration: 0.4 }}
-        className={`glass-card group flex h-full flex-col rounded-xl p-8 transition duration-200 ease-out hover:shadow-[0_10px_40px_-10px_rgba(45,212,191,0.25)] dark:hover:border-primary/40 dark:hover:shadow-[0_10px_40px_-10px_rgba(87,241,219,0.2)] ${config.fullWidth ? "md:col-span-2" : ""}`}
+        className={`glass-card group flex h-full flex-col rounded-xl p-8 transition duration-200 ease-out hover:shadow-glow ${config.fullWidth ? "md:col-span-2" : ""}`}
       >
         <div
-          className={`mb-6 flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200/70 bg-slate-200 dark:border-outline-variant/50 dark:bg-surface-highest ${config.iconColor}`}
+          className={`mb-6 flex h-10 w-10 items-center justify-center rounded-lg border border-well-edge bg-accent ${config.iconColor}`}
         >
           <Icon name={config.icon} className="text-lg" />
         </div>
-        <h3 className="mb-4 text-xl font-bold text-slate-900 dark:text-text-primary">
+        <h3 className="mb-4 text-xl font-bold text-foreground">
           {t(config.titleKey)}
         </h3>
-        <p className="mb-8 flex-grow text-sm leading-relaxed text-slate-500 dark:text-text-secondary">
+        <p className="mb-8 flex-grow text-sm leading-relaxed text-muted-foreground">
           {t(config.descKey)}
         </p>
         <a
@@ -112,8 +112,8 @@ export function Contact() {
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       >
-        <div className="absolute left-[-10%] top-[-10%] h-[50%] w-[50%] rounded-full bg-teal-200/30 blur-[120px] dark:bg-primary/5" />
-        <div className="absolute bottom-[-10%] right-[-10%] h-[40%] w-[40%] rounded-full bg-sky-200/30 blur-[120px] dark:bg-secondary/5" />
+        <div className="absolute left-[-10%] top-[-10%] h-[50%] w-[50%] rounded-full bg-blob-teal blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] h-[40%] w-[40%] rounded-full bg-blob-sky blur-[120px]" />
       </div>
 
       <Container>
@@ -125,17 +125,17 @@ export function Contact() {
             className="flex flex-col gap-8"
           >
             <motion.div variants={fadeInUp}>
-              <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-teal-700 dark:text-primary">
+              <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-primary-ink">
                 {t("contact.title")}
               </span>
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
-              className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-5xl dark:text-text-primary"
+              className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl"
             >
               {t("contact.heading1")}{" "}
-              <span className="text-teal-600 dark:text-primary">
+              <span className="text-primary-ink">
                 {t("contact.heading2")}
               </span>{" "}
               {t("contact.heading3")}
@@ -143,7 +143,7 @@ export function Contact() {
 
             <motion.p
               variants={fadeInUp}
-              className="max-w-lg text-lg leading-relaxed text-slate-500 dark:text-text-secondary"
+              className="max-w-lg text-lg leading-relaxed text-muted-foreground"
             >
               {t("contact.pageDescription")}
             </motion.p>
@@ -163,7 +163,7 @@ export function Contact() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-8 py-4 font-bold text-slate-900 transition-all duration-200 hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-high dark:text-text-primary dark:hover:bg-surface-highest w-45"
+                className="flex items-center gap-3 rounded-lg border border-hairline bg-inset px-8 py-4 font-bold text-foreground transition-all duration-200 hover:bg-chip w-45"
               >
                 <Icon name="FiLink" className="text-sm" />
                 {t("contact.linkedin")}
@@ -172,33 +172,33 @@ export function Contact() {
 
             <motion.div
               variants={fadeInUp}
-              className="mt-12 flex flex-col gap-8 border-t border-slate-200 pt-12 dark:border-outline-variant/20"
+              className="mt-12 flex flex-col gap-8 border-t border-hairline pt-12"
             >
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-teal-700 dark:border-outline-variant/30 dark:bg-surface-high dark:text-primary">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-muted text-primary-ink">
                   <Icon name="FiMapPin" className="text-lg" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-text-primary">
+                  <h3 className="font-bold text-foreground">
                     {t("contact.basedIn", {
                       location: isAr
                         ? personalInfo.locationAr
                         : personalInfo.location,
                     })}
                   </h3>
-                  <p className="text-sm text-slate-500 dark:text-text-secondary"></p>
+                  <p className="text-sm text-muted-foreground"></p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-sky-700 dark:border-outline-variant/30 dark:bg-surface-high dark:text-secondary">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-muted text-secondary-ink">
                   <Icon name="FiStar" className="text-lg" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-text-primary">
+                  <h3 className="font-bold text-foreground">
                     {t("contact.availableFor")}
                   </h3>
-                  <p className="text-sm text-slate-500 dark:text-text-secondary">
+                  <p className="text-sm text-muted-foreground">
                     {t("contact.availableForRoles")}
                   </p>
                 </div>

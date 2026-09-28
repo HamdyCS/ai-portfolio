@@ -193,16 +193,16 @@ export const iconMap: Record<string, IconEntry> = {
   "redis-insight": dev("devicon-redis-plain colored"),
 
   // ---- skill icons (by id, no devicon -> react-icons) ----
-  "rest-api": reactIcon(SiInsomnia, "text-[#4000BF] dark:text-[#9A86FF]"),
-  mailkit: reactIcon(SiMaildotru, "text-[#30302E] dark:text-slate-200"),
-  mui: reactIcon(SiMui, "text-[#007FFF] dark:text-[#64B5F6]"),
-  "react-query": reactIcon(SiReactquery, "text-[#FF4154] dark:text-[#FF6B7A]"),
-  "react-router": reactIcon(SiReactrouter, "text-[#CA4245] dark:text-[#E57373]"),
-  "framer-motion": reactIcon(SiFramer, "text-[#0055FF] dark:text-[#7AA2FF]"),
-  gitkraken: reactIcon(SiGitkraken, "text-[#179287] dark:text-[#5FCBC0]"),
-  jwt: reactIcon(FiKey, "text-teal-700 dark:text-primary"),
-  fluentvalidation: reactIcon(FiCheckCircle, "text-teal-700 dark:text-primary"),
-  serilog: reactIcon(FiTerminal, "text-teal-700 dark:text-primary"),
+  "rest-api": reactIcon(SiInsomnia, "text-brand-insomnia"),
+  mailkit: reactIcon(SiMaildotru, "text-brand-mail"),
+  mui: reactIcon(SiMui, "text-brand-mui"),
+  "react-query": reactIcon(SiReactquery, "text-brand-reactquery"),
+  "react-router": reactIcon(SiReactrouter, "text-brand-router"),
+  "framer-motion": reactIcon(SiFramer, "text-brand-framer"),
+  gitkraken: reactIcon(SiGitkraken, "text-brand-gitkraken"),
+  jwt: reactIcon(FiKey, "text-primary-ink"),
+  fluentvalidation: reactIcon(FiCheckCircle, "text-primary-ink"),
+  serilog: reactIcon(FiTerminal, "text-primary-ink"),
 
   // ---- display-name aliases (skills + project techs, devicon) ----
   ".NET": dev("devicon-dotnetcore-plain colored"),
@@ -233,16 +233,16 @@ export const iconMap: Record<string, IconEntry> = {
   "Redis Insight": dev("devicon-redis-plain colored"),
 
   // ---- project tech icons (react-icons) ----
-  "Clean Architecture": reactIcon(FiLayers, "text-teal-700 dark:text-[#57f1db]"),
-  CQRS: reactIcon(FiShuffle, "text-teal-700 dark:text-[#57f1db]"),
-  MediatR: reactIcon(FiSend, "text-teal-700 dark:text-[#57f1db]"),
-  SignalR: reactIcon(FiActivity, "text-teal-700 dark:text-[#57f1db]"),
-  JWT: reactIcon(FiKey, "text-teal-700 dark:text-[#57f1db]"),
-  FluentValidation: reactIcon(FiCheckCircle, "text-teal-700 dark:text-[#57f1db]"),
-  Serilog: reactIcon(FiTerminal, "text-teal-700 dark:text-[#57f1db]"),
-  "Material UI": reactIcon(SiMui, "text-[#007FFF] dark:text-[#64B5F6]"),
-  "React Router": reactIcon(SiReactrouter, "text-[#CA4245] dark:text-[#E57373]"),
-  Axios: reactIcon(SiAxios, "text-[#5A29E4] dark:text-[#9B7BFF]"),
+  "Clean Architecture": reactIcon(FiLayers, "text-primary-bright"),
+  CQRS: reactIcon(FiShuffle, "text-primary-bright"),
+  MediatR: reactIcon(FiSend, "text-primary-bright"),
+  SignalR: reactIcon(FiActivity, "text-primary-bright"),
+  JWT: reactIcon(FiKey, "text-primary-bright"),
+  FluentValidation: reactIcon(FiCheckCircle, "text-primary-bright"),
+  Serilog: reactIcon(FiTerminal, "text-primary-bright"),
+  "Material UI": reactIcon(SiMui, "text-brand-mui"),
+  "React Router": reactIcon(SiReactrouter, "text-brand-router"),
+  Axios: reactIcon(SiAxios, "text-brand-axios"),
 
   // ---- skill section overrides (react-icons) ----
   "JWT Authentication": reactIcon(FiKey, "text-2xl text-primary"),
@@ -256,4 +256,4 @@ export const techIconClassName = "h-8 w-8";
 export const socialIconClassName =
   "text-lg grayscale transition-all duration-300 group-hover:grayscale-0";
 export const iconContainerClassName =
-  "flex h-10 w-10 items-center justify-center rounded-lg bg-slate-200 dark:bg-surface-highest";
+  "flex h-10 w-10 items-center justify-center rounded-lg bg-accent";

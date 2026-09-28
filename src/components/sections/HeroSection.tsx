@@ -53,7 +53,7 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <motion.div
-              className="inline-flex items-center rounded-full border border-teal-300 bg-teal-50 px-3 py-1 text-sm font-medium text-teal-700 dark:border-primary/30 dark:bg-primary/5 dark:text-primary"
+              className="inline-flex items-center rounded-full border border-teal-edge bg-brand-soft-dim px-3 py-1 text-sm font-medium text-primary-ink"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -63,16 +63,16 @@ export function HeroSection() {
             </motion.div>
 
             <div className="space-y-4">
-              <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 md:text-7xl dark:text-text-primary">
+              <h1 className="text-5xl font-extrabold tracking-tight text-foreground md:text-7xl">
                 {t("hero.greeting")}
-                <span className="text-teal-600 dark:text-primary">
+                <span className="text-primary-ink">
                   {i18n.language == "ar"
                     ? personalInfo.nameAr
                     : personalInfo.name}
                 </span>
               </h1>
 
-              <h2 className="text-2xl font-semibold text-sky-700 md:text-3xl dark:text-secondary">
+              <h2 className="text-2xl font-semibold text-secondary-ink md:text-3xl">
                 {t("hero.title", {
                   title:
                     i18n.language == "ar"
@@ -81,7 +81,7 @@ export function HeroSection() {
                 })}
               </h2>
 
-              <p className="max-w-lg text-lg leading-relaxed text-slate-500 dark:text-text-secondary">
+              <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
                 {t("hero.summary", {
                   summary:
                     i18n.language == "ar"
@@ -102,7 +102,7 @@ export function HeroSection() {
               <a
                 href={cv}
                 download="hamdy-khaled-fullstack-developer-cv"
-                className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-200 dark:border-outline dark:text-text-primary dark:hover:bg-surface-highest w-50"
+                className="flex items-center justify-center gap-2 rounded-lg border border-input px-8 py-4 font-bold text-foreground transition-all hover:bg-accent w-50"
               >
                 <Icon name="FiDownload" className="text-[20px]" />
                 {t("hero.downloadCV")}
@@ -130,22 +130,22 @@ export function HeroSection() {
               <div className="relative flex aspect-square w-full items-center justify-center">
                 <div className="hero-magnetic-glow" />
 
-                <div className="hero-tilt-inner relative h-4/5 w-4/5 overflow-hidden rounded-2xl border border-slate-200/70 shadow-2xl dark:border-outline-variant/30">
+                <div className="hero-tilt-inner relative h-4/5 w-4/5 overflow-hidden rounded-2xl border border-glassline shadow-2xl">
                   <img
                     alt="Hamdy Khaled Portrait"
                     className="h-full w-full object-cover transition-all duration-500 grayscale hover:grayscale-0"
                     src={HamdyBlackBG}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-50/80 to-transparent dark:from-background/80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 </div>
 
-                <div className="hero-tilt-inner glass-card absolute -left-8 -top-4 max-w-[200px] rounded-xl border border-teal-200 p-4 shadow-xl dark:border-primary/20">
+                <div className="hero-tilt-inner glass-card absolute -left-8 -top-4 max-w-[200px] rounded-xl border border-teal-edge-soft p-4 shadow-xl">
                   <div className="mb-2 flex items-center gap-2">
                     <Icon
                       name="FiTerminal"
-                      className="text-xs text-teal-700 dark:text-primary"
+                      className="text-xs text-primary-ink"
                     />
-                    <span className="text-[10px] uppercase tracking-wider text-teal-700/70 dark:text-primary/70">
+                    <span className="text-[10px] uppercase tracking-wider text-primary-ink/70">
                       {t("hero.techStack")}
                     </span>
                   </div>
@@ -162,7 +162,7 @@ export function HeroSection() {
                     ].map((tech) => (
                       <li
                         key={tech}
-                        className="flex items-center gap-2 text-[10px] text-slate-500 dark:text-text-secondary"
+                        className="flex items-center gap-2 text-[10px] text-muted-foreground"
                       >
                         <span className="h-1 w-1 rounded-full bg-primary" />
                         {tech}
@@ -171,50 +171,50 @@ export function HeroSection() {
                   </ul>
                 </div>
 
-                <div className="hero-tilt-inner glass-card absolute -right-2 top-0 rounded-xl border border-sky-200 p-4 shadow-xl dark:border-secondary/20">
+                <div className="hero-tilt-inner glass-card absolute -right-2 top-0 rounded-xl border border-sky-edge p-4 shadow-xl">
                   <div className="mb-1 flex items-start justify-between">
                     <span className="text-[10px] uppercase tracking-wider opacity-60">
                       {t("hero.currentFocus")}
                     </span>
                     <Icon
                       name="FiClock"
-                      className="text-sm text-sky-700 dark:text-secondary"
+                      className="text-sm text-secondary-ink"
                     />
                   </div>
-                  <div className="text-[15px] font-extrabold text-sky-700 dark:text-secondary">
+                  <div className="text-[15px] font-extrabold text-secondary-ink">
                     {t("hero.fullStack")}
                   </div>
-                  <div className="mb-2 text-[10px] text-slate-500 dark:text-text-secondary">
+                  <div className="mb-2 text-[10px] text-muted-foreground">
                     {t("hero.buildingScalable")}
                   </div>
-                  <div className="h-1 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-surface">
-                    <div className="h-full w-full bg-sky-500 dark:bg-secondary" />
+                  <div className="h-1 w-full overflow-hidden rounded-full bg-plate">
+                    <div className="h-full w-full bg-secondary" />
                   </div>
                 </div>
 
-                <div className="hero-tilt-inner glass-card absolute -left-12 bottom-12 rounded-xl border border-slate-200/70 p-4 shadow-xl dark:border-outline-variant/30">
+                <div className="hero-tilt-inner glass-card absolute -left-12 bottom-12 rounded-xl border border-glassline p-4 shadow-xl">
                   <div className="mb-2 flex items-center gap-2">
                     <Icon
                       name="FiZap"
-                      className="text-xs text-teal-700 dark:text-primary"
+                      className="text-xs text-primary-ink"
                     />
                     <span className="text-[10px] uppercase tracking-wider opacity-60">
                       {t("hero.projects")}
                     </span>
                   </div>
-                  <div className="text-2xl font-extrabold text-teal-600 dark:text-primary">
+                  <div className="text-2xl font-extrabold text-primary-ink">
                     {personalInfo.projectCount}+
                   </div>
-                  <div className="text-[10px] text-slate-500 dark:text-text-secondary">
+                  <div className="text-[10px] text-muted-foreground">
                     {t("hero.completedFullStackProjects")}
                   </div>
                 </div>
 
-                <div className="hero-tilt-inner glass-card absolute -bottom-4 -right-8 rounded-xl border border-orange-200 p-4 shadow-xl dark:border-tertiary/20">
+                <div className="hero-tilt-inner glass-card absolute -bottom-4 -right-8 rounded-xl border border-orange-edge p-4 shadow-xl">
                   <div className="mb-2 flex items-center gap-2">
                     <Icon
                       name="FiCheckCircle"
-                      className="text-sm text-orange-700 dark:text-tertiary"
+                      className="text-sm text-tertiary-ink"
                     />
                     <span className="text-[10px] uppercase tracking-wider opacity-60">
                       {t("hero.specialization")}
@@ -224,7 +224,7 @@ export function HeroSection() {
                     {personalInfo.specializations.map((spec) => (
                       <li
                         key={spec}
-                        className="flex items-center gap-2 text-[10px] text-slate-500 dark:text-text-secondary"
+                        className="flex items-center gap-2 text-[10px] text-muted-foreground"
                       >
                         <span className="h-1 w-1 rounded-full bg-tertiary" />
                         {spec}

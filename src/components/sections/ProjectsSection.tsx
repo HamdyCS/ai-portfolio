@@ -42,19 +42,19 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="bg-slate-100/50 py-5 dark:bg-surface-container-lowest/50"
+      className="bg-well/50 py-5"
     >
       <Container>
         <div className="mb-12 flex flex-col items-end justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <h2 className="mb-2 text-2xl font-bold text-slate-900 md:text-3xl dark:text-text-primary">
+            <h2 className="mb-2 text-2xl font-bold text-foreground md:text-3xl">
               {t("projects.title")}
             </h2>
-            <p className="text-slate-500 dark:text-text-secondary">
+            <p className="text-muted-foreground">
               {t("projects.subtitle")}
             </p>
           </div>
-          <div className="flex rounded-full border border-slate-200 bg-white p-1 dark:border-outline-variant dark:bg-surface">
+          <div className="flex rounded-full border border-border bg-card p-1">
             {filters.map((filter) => (
               <button
                 key={filter.key}
@@ -62,7 +62,7 @@ export function ProjectsSection() {
                 className={`rounded-full px-6 py-2 text-sm font-bold transition-all ${
                   activeFilter === filter.key
                     ? "bg-primary text-on-primary"
-                    : "text-slate-500 hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
+                    : "text-muted-foreground hover:text-primary-ink"
                 }`}
               >
                 {t(filter.labelKey)}
@@ -82,7 +82,7 @@ export function ProjectsSection() {
                 transition={{
                   duration: 0.35,
                 }}
-                className="project-card group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-outline-variant dark:bg-surface-container-low"
+                className="project-card group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card-dim"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
@@ -90,7 +90,7 @@ export function ProjectsSection() {
                     src={project.image}
                     alt={project.title}
                   />
-                  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-white/40 opacity-0 transition-opacity group-hover:opacity-100 dark:bg-surface/40">
+                  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-card/40 opacity-0 transition-opacity group-hover:opacity-100">
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
@@ -106,7 +106,7 @@ export function ProjectsSection() {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-full bg-white p-3 text-slate-900 transition-all hover:scale-110 dark:bg-surface dark:text-text-primary"
+                        className="rounded-full bg-card p-3 text-foreground transition-all hover:scale-110"
                       >
                         <Icon name="FiCode" />
                       </a>
@@ -120,10 +120,10 @@ export function ProjectsSection() {
                       <TechBadge key={tech} tech={tech} />
                     ))}
                   </div>
-                  <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-teal-700 dark:group-hover:text-primary">
+                  <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-primary-ink">
                     {getLocalizedField(project, "title", i18n.language)}
                   </h3>
-                  <p className="mb-6 text-sm leading-relaxed text-slate-500 dark:text-text-secondary">
+                  <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
                     {getLocalizedField(project, "description", i18n.language)}
                   </p>
                 </div>

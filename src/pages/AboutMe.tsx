@@ -93,7 +93,7 @@ export function AboutMe() {
               {t("about.badge")}
             </span>
 
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-6xl dark:text-text-primary">
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl">
               {t("about.greeting")}{" "}
               <span className="text-primary">
                 {isAr ? personalInfo.nameAr : personalInfo.name}
@@ -104,7 +104,7 @@ export function AboutMe() {
               {isAr ? personalInfo.titleAr : personalInfo.title}
             </h2>
 
-            <p className="max-w-xl text-lg leading-relaxed text-slate-500 dark:text-text-secondary">
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
               {isAr ? personalInfo.summaryAr : personalInfo.summary}
             </p>
 
@@ -117,7 +117,7 @@ export function AboutMe() {
               </Link>
               <Link
                 to="/#contact"
-                className="rounded-lg border border-outline-variant px-8 py-3 font-bold text-slate-900 transition-all duration-200 hover:bg-slate-100 dark:text-text-primary dark:hover:bg-surface-highest"
+                className="rounded-lg border border-outline-variant px-8 py-3 font-bold text-foreground transition-all duration-200 hover:bg-chip"
               >
                 {t("about.contactMe")}
               </Link>
@@ -148,7 +148,7 @@ export function AboutMe() {
         {/* What I Do Section */}
         <section className="mt-24">
           <motion.h2
-            className="mb-10 text-center text-3xl font-bold text-slate-900 dark:text-text-primary"
+            className="mb-10 text-center text-3xl font-bold text-foreground"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
@@ -172,17 +172,17 @@ export function AboutMe() {
                   key={card.titleKey}
                   variants={fadeInUp}
                   transition={{ duration: 0.4 }}
-                  className={`glass-card group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/60 hover:shadow-[0_10px_40px_-10px_rgba(45,212,191,0.25)] dark:hover:border-primary/40 dark:hover:shadow-[0_10px_40px_-10px_rgba(87,241,219,0.2)]`}
+                  className={`glass-card group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:border-brand-glow hover:shadow-glow`}
                 >
                   <div
                     className={`mb-4 flex h-10 w-10 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110 ${colors.iconBg}`}
                   >
                     <Icon name={card.icon} className={colors.iconText} />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-text-primary">
+                  <h3 className="mb-2 text-lg font-bold text-foreground">
                     {t(card.titleKey)}
                   </h3>
-                  <p className="text-sm leading-relaxed text-slate-500 dark:text-text-secondary">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     {t(card.descKey)}
                   </p>
                 </motion.div>
@@ -192,7 +192,7 @@ export function AboutMe() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-24 transition-all duration-300 hover:-translate-y-2 hover:border-primary/60 hover:shadow-[0_10px_40px_-10px_rgba(45,212,191,0.25)] dark:hover:border-primary/40 dark:hover:shadow-[0_10px_40px_-10px_rgba(87,241,219,0.2)]">
+        <section className="mt-24 transition-all duration-300 hover:-translate-y-2 hover:border-brand-glow hover:shadow-glow">
           <motion.div
             className="glass-card relative overflow-hidden rounded-3xl p-10 text-center"
             variants={fadeInUp}
@@ -208,7 +208,7 @@ export function AboutMe() {
                   "radial-gradient(circle at center, #57f1db 0%, transparent 70%)",
               }}
             />
-            <h2 className="relative z-10 mb-6 text-3xl font-bold text-slate-900 md:text-4xl dark:text-text-primary">
+            <h2 className="relative z-10 mb-6 text-3xl font-bold text-foreground md:text-4xl">
               {t("about.ctaHeading")}
             </h2>
             <div className="relative z-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -220,7 +220,7 @@ export function AboutMe() {
               </Link>
               <Link
                 to="/contact"
-                className="rounded-xl border border-outline-variant px-8 py-3 text-lg font-bold text-slate-900 transition-all duration-200 hover:bg-slate-100 dark:text-text-primary dark:hover:bg-surface-highest"
+                className="rounded-xl border border-outline-variant px-8 py-3 text-lg font-bold text-foreground transition-all duration-200 hover:bg-chip"
               >
                 {t("about.contactMe")}
               </Link>

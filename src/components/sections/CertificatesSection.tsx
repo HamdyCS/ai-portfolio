@@ -10,55 +10,55 @@ import Container from "../layout/Container";
 
 const certIcons: Record<string, React.ReactNode> = {
   "csharp-level2": (
-    <Icon name="FiAward" className="text-teal-700 dark:text-primary" />
+    <Icon name="FiAward" className="text-primary-ink" />
   ),
   "solid-principles": (
-    <Icon name="FiBook" className="text-sky-700 dark:text-secondary" />
+    <Icon name="FiBook" className="text-secondary-ink" />
   ),
   "rest-api": (
-    <Icon name="FiCode" className="text-orange-700 dark:text-tertiary" />
+    <Icon name="FiCode" className="text-tertiary-ink" />
   ),
   javascript: (
-    <Icon name="FiBookOpen" className="text-teal-700 dark:text-primary" />
+    <Icon name="FiBookOpen" className="text-primary-ink" />
   ),
   adonet: (
-    <Icon name="FiDatabase" className="text-sky-700 dark:text-secondary" />
+    <Icon name="FiDatabase" className="text-secondary-ink" />
   ),
   "tsql-level2": (
-    <Icon name="FiShield" className="text-orange-700 dark:text-tertiary" />
+    <Icon name="FiShield" className="text-tertiary-ink" />
   ),
 };
 
 const certColors: Record<string, { bg: string; text: string; link: string }> = {
   "csharp-level2": {
-    bg: "bg-teal-100 dark:bg-primary/10",
-    text: "text-teal-700 dark:text-primary",
-    link: "text-teal-700 dark:text-primary",
+    bg: "bg-brand-soft-hover",
+    text: "text-primary-ink",
+    link: "text-primary-ink",
   },
   "solid-principles": {
-    bg: "bg-sky-100 dark:bg-secondary/10",
-    text: "text-sky-700 dark:text-secondary",
-    link: "text-sky-700 dark:text-secondary",
+    bg: "bg-secondary-soft-hover",
+    text: "text-secondary-ink",
+    link: "text-secondary-ink",
   },
   "rest-api": {
-    bg: "bg-orange-100 dark:bg-tertiary/10",
-    text: "text-orange-700 dark:text-tertiary",
-    link: "text-orange-700 dark:text-tertiary",
+    bg: "bg-tertiary-soft",
+    text: "text-tertiary-ink",
+    link: "text-tertiary-ink",
   },
   javascript: {
-    bg: "bg-teal-100 dark:bg-primary/10",
-    text: "text-teal-700 dark:text-primary",
-    link: "text-teal-700 dark:text-primary",
+    bg: "bg-brand-soft-hover",
+    text: "text-primary-ink",
+    link: "text-primary-ink",
   },
   adonet: {
-    bg: "bg-sky-100 dark:bg-secondary/10",
-    text: "text-sky-700 dark:text-secondary",
-    link: "text-sky-700 dark:text-secondary",
+    bg: "bg-secondary-soft-hover",
+    text: "text-secondary-ink",
+    link: "text-secondary-ink",
   },
   "tsql-level2": {
-    bg: "bg-orange-100 dark:bg-tertiary/10",
-    text: "text-orange-700 dark:text-tertiary",
-    link: "text-orange-700 dark:text-tertiary",
+    bg: "bg-tertiary-soft",
+    text: "text-tertiary-ink",
+    link: "text-tertiary-ink",
   },
 };
 
@@ -86,10 +86,10 @@ export function CertificatesSection() {
     <section id="certificates" className="transition-all duration-1000 ">
       <Container>
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-2xl font-bold text-slate-900 md:text-3xl dark:text-text-primary">
+          <h2 className="mb-4 text-2xl font-bold text-foreground md:text-3xl">
             {t("certificates.title")}
           </h2>
-          <p className="mx-auto max-w-2xl text-slate-500 dark:text-text-secondary">
+          <p className="mx-auto max-w-2xl text-muted-foreground">
             {t("certificates.subtitle")}
           </p>
         </div>
@@ -97,14 +97,14 @@ export function CertificatesSection() {
         <div className="mb-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featuredCertificates.map((cert, index) => {
             const colors = certColors[cert.id] || {
-              bg: "bg-teal-100 dark:bg-primary/10",
-              text: "text-teal-700 dark:text-primary",
-              link: "text-teal-700 dark:text-primary",
+              bg: "bg-brand-soft-hover",
+              text: "text-primary-ink",
+              link: "text-primary-ink",
             };
             return (
               <motion.div
                 key={cert.id}
-                className="cert-card card-hover cursor-pointer rounded-xl border border-slate-200 bg-white p-6 dark:border-outline-variant dark:bg-surface"
+                className="cert-card card-hover cursor-pointer rounded-xl border border-border bg-card p-6"
                 role="button"
                 tabIndex={0}
                 onClick={() => setSelectedCert(cert)}
@@ -134,7 +134,7 @@ export function CertificatesSection() {
                 <p className={`mb-1 text-xs ${colors.text}`}>
                   {getLocalizedName(cert, "issuer", i18n.language)}
                 </p>
-                <p className="mb-4 text-xs text-slate-500 dark:text-text-secondary">
+                <p className="mb-4 text-xs text-muted-foreground">
                   {cert.category}
                 </p>
                 <button
@@ -152,7 +152,7 @@ export function CertificatesSection() {
         <div className="flex justify-center">
           <Link
             to="/certificates"
-            className="flex items-center gap-2 rounded-lg border border-teal-300 bg-teal-50 px-8 py-4 font-bold text-teal-700 transition-all hover:bg-teal-100 dark:border-primary/30 dark:bg-primary/5 dark:text-primary dark:hover:bg-primary/10"
+            className="flex items-center gap-2 rounded-lg border border-teal-edge bg-brand-soft-dim px-8 py-4 font-bold text-primary-ink transition-all hover:bg-brand-soft-hover"
           >
             {t("certificates.viewAll")} <Icon name="FiArrowRight" />
           </Link>

@@ -31,7 +31,7 @@ export function SkillsSection() {
     >
       <Container>
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 md:text-3xl dark:text-text-primary">
+          <h2 className="text-2xl font-bold text-foreground md:text-3xl">
             {t("skills.title")}
           </h2>
           <div className="mt-2 h-1 w-20 rounded-full bg-primary" />
@@ -45,16 +45,16 @@ export function SkillsSection() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="glass-card rounded-xl p-8 transition-colors hover:border-teal-300 md:col-span-2 card-hover dark:hover:border-primary/50"
+            className="glass-card rounded-xl p-8 transition-colors hover:border-teal-edge-hover md:col-span-2 card-hover"
             variants={item}
           >
             <div className="mb-6 flex items-center gap-4 ">
-              <div className="rounded-lg bg-teal-50 p-3 dark:bg-primary/10">
-                <Icon name="FiTerminal" className="text-xl text-teal-700 dark:text-primary" />
+              <div className="rounded-lg bg-brand-soft p-3">
+                <Icon name="FiTerminal" className="text-xl text-primary-ink" />
               </div>
               <h3 className="text-xl font-bold">{t("skills.backend")}</h3>
             </div>
-            <p className="mb-6 leading-relaxed text-slate-500 dark:text-text-secondary">
+            <p className="mb-6 leading-relaxed text-muted-foreground">
               {t("skills.backendDesc")}
             </p>
             <div className="flex flex-wrap gap-3">
@@ -68,15 +68,15 @@ export function SkillsSection() {
                     className="h-10 w-10 transition-transform group-hover:scale-110"
                     fontSize="30px"
                     fallback={
-                      <div className="flex h-10 w-10 items-center justify-center rounded bg-teal-50 dark:bg-primary/10">
+                      <div className="flex h-10 w-10 items-center justify-center rounded bg-brand-soft">
                         <Icon
                           name="FiTerminal"
-                          className="text-teal-700 dark:text-primary"
+                          className="text-primary-ink"
                         />
                       </div>
                     }
                   />
-                  <span className="text-[10px] text-slate-500 dark:text-text-secondary">
+                  <span className="text-[10px] text-muted-foreground">
                     {skill.name}
                   </span>
                 </div>
@@ -85,16 +85,16 @@ export function SkillsSection() {
           </motion.div>
 
           <motion.div
-            className="glass-card rounded-xl p-8 transition-colors hover:border-sky-300 md:col-span-2 card-hover dark:hover:border-secondary/50"
+            className="glass-card rounded-xl p-8 transition-colors hover:border-sky-edge-hover md:col-span-2 card-hover"
             variants={item}
           >
             <div className="mb-6 flex items-center gap-4">
-              <div className="rounded-lg bg-sky-50 p-3 dark:bg-secondary/10">
-                <Icon name="FiGlobe" className="text-xl text-sky-700 dark:text-secondary" />
+              <div className="rounded-lg bg-secondary-soft p-3">
+                <Icon name="FiGlobe" className="text-xl text-secondary-ink" />
               </div>
               <h3 className="text-xl font-bold">{t("skills.frontend")}</h3>
             </div>
-            <p className="mb-6 leading-relaxed text-slate-500 dark:text-text-secondary">
+            <p className="mb-6 leading-relaxed text-muted-foreground">
               {t("skills.frontendDesc")}
             </p>
             <div className="flex flex-wrap gap-3">
@@ -108,15 +108,15 @@ export function SkillsSection() {
                     className="h-10 w-10 transition-transform group-hover:scale-110"
                     fontSize="30px"
                     fallback={
-                      <div className="flex h-10 w-10 items-center justify-center rounded bg-sky-50 dark:bg-secondary/10">
+                      <div className="flex h-10 w-10 items-center justify-center rounded bg-secondary-soft">
                         <Icon
                           name="FiGlobe"
-                          className="text-sky-700 dark:text-secondary"
+                          className="text-secondary-ink"
                         />
                       </div>
                     }
                   />
-                  <span className="text-[10px] text-slate-500 dark:text-text-secondary">
+                  <span className="text-[10px] text-muted-foreground">
                     {skill.name}
                   </span>
                 </div>
@@ -125,18 +125,18 @@ export function SkillsSection() {
           </motion.div>
 
           <motion.div
-            className="glass-card rounded-xl border-l-4 border-l-orange-400 p-8 md:col-span-1 card-hover dark:border-l-tertiary"
+            className="glass-card rounded-xl border-l-4 border-l-orange-bar p-8 md:col-span-1 card-hover"
             variants={item}
           >
             <h3 className="mb-4 text-xl font-bold">{t("skills.tools")}</h3>
-            <p className="mb-6 text-sm leading-relaxed text-slate-500 dark:text-text-secondary">
+            <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
               {t("skills.toolsDesc")}
             </p>
             <ul className="space-y-4">
               {toolSkills.map((tool) => (
                 <li
                   key={tool.id}
-                  className="flex items-center gap-3 text-sm text-slate-500 group dark:text-text-secondary"
+                  className="flex items-center gap-3 text-sm text-muted-foreground group"
                 >
                   <Icon
                     name={tool.name}
@@ -163,39 +163,39 @@ export function SkillsSection() {
               <h3 className="mb-4 text-2xl font-bold">
                 {t("skills.engineeringFocus")}
               </h3>
-              <p className="mb-6 leading-relaxed text-slate-500 dark:text-text-secondary">
+              <p className="mb-6 leading-relaxed text-muted-foreground">
                 {t("skills.engineeringFocusDesc")}
               </p>
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                <div className="flex items-center gap-2 text-xs font-medium text-teal-700 dark:text-primary">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary-ink">
                   <Icon name="FiLayout" className="text-sm" /> Clean Architecture
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-teal-700 dark:text-primary">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary-ink">
                   <Icon name="FiShare2" className="text-sm" /> CQRS & MediatR
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-teal-700 dark:text-primary">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary-ink">
                   <Icon name="FiTerminal" className="text-sm" /> REST API Design
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-teal-700 dark:text-primary">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary-ink">
                   <Icon name="FiKey" className="text-sm" /> Auth & Authorization
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-teal-700 dark:text-primary">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary-ink">
                   <Icon name="FiCpu" className="text-sm" /> Database Optimization
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-teal-700 dark:text-primary">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary-ink">
                   <Icon name="FiZap" className="text-sm" /> Caching Strategies
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-teal-700 dark:text-primary">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary-ink">
                   <Icon name="FiGitBranch" className="text-sm" /> Background Services
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-teal-700 dark:text-primary">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary-ink">
                   <Icon name="FiCheckCircle" className="text-sm" /> System Design
                 </div>
               </div>
             
             </div>
-            <div className="flex h-32 w-full items-center justify-center rounded-lg border border-teal-200 bg-teal-50 md:w-48 dark:border-primary/20 dark:bg-primary/5">
-              <Icon name="FiZap" className="text-6xl text-teal-600/30 dark:text-primary/30" />
+            <div className="flex h-32 w-full items-center justify-center rounded-lg border border-teal-edge-soft bg-brand-soft-dim md:w-48">
+              <Icon name="FiZap" className="text-6xl text-primary-ink/30" />
             </div>
           </motion.div>
         </motion.div>

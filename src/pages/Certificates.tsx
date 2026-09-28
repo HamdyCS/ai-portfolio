@@ -21,15 +21,15 @@ const filters: { key: FilterKey; labelKey: string }[] = [
 
 const categoryBadges: Record<CertCategory, string> = {
   Backend:
-    "border border-transparent bg-teal-500/90 text-white dark:border-primary/30 dark:bg-primary/20 dark:text-primary",
+    "catbtn-teal",
   Frontend:
-    "border border-transparent bg-orange-500/90 text-white dark:border-tertiary/30 dark:bg-tertiary/20 dark:text-tertiary",
+    "catbtn-orange",
   Fullstack:
-    "border border-transparent bg-sky-500/90 text-white dark:border-secondary/30 dark:bg-secondary/20 dark:text-secondary",
+    "catbtn-sky",
   "Software Design":
-    "border border-transparent bg-violet-500/90 text-white dark:border-violet-500/30 dark:bg-violet-500/20 dark:text-violet-300",
+    "catbtn-violet",
   Fundamentals:
-    "border border-transparent bg-slate-500/90 text-white dark:border-slate-400/30 dark:bg-slate-400/20 dark:text-slate-300",
+    "catbtn-slate",
 };
 
 const categoryLabelKeys: Record<CertCategory, string> = {
@@ -74,7 +74,7 @@ export function Certificates() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-4 text-4xl font-bold tracking-tight text-slate-900 md:text-6xl dark:text-text-primary"
+            className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl"
           >
             {t("certificates.pageTitle")}
           </motion.h1>
@@ -82,7 +82,7 @@ export function Certificates() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-500 md:mx-0 md:text-xl dark:text-text-secondary"
+            className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:mx-0 md:text-xl"
           >
             {t("certificates.pageSubtitle")}
           </motion.p>
@@ -103,8 +103,8 @@ export function Certificates() {
                   onClick={() => setActiveFilter(filter.key)}
                   className={`cursor-pointer rounded-full px-6 py-2 font-semibold transition-all ${
                     isActive
-                      ? "bg-primary text-white shadow-sm dark:text-on-primary"
-                      : "border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 dark:border-transparent dark:bg-surface-high dark:text-text-secondary dark:shadow-none dark:hover:bg-surface-highest"
+                      ? "bg-primary text-on-vivid shadow-sm"
+                      : "border border-chip-edge bg-inset text-muted-foreground shadow-chip hover:bg-inset-hover"
                   }`}
                 >
                   {t(filter.labelKey)}
@@ -149,27 +149,27 @@ export function Certificates() {
 
                     <div className="flex flex-grow flex-col p-6">
                       <div className="mb-2 flex items-start justify-between gap-2">
-                        <h3 className="text-xl font-bold leading-tight text-slate-900 dark:text-text-primary">
+                        <h3 className="text-xl font-bold leading-tight text-foreground">
                           {getLocalizedName(cert, i18n.language)}
                         </h3>
                         <a
                           href={cert.verificationUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-1 shrink-0 text-slate-400 transition-colors hover:text-teal-700 dark:text-text-secondary dark:hover:text-primary"
+                          className="mt-1 shrink-0 text-subtle transition-colors hover:text-primary-ink"
                           aria-label={t("common.openInNew")}
                         >
                           <Icon name="FiExternalLink" className="text-[20px]" />
                         </a>
                       </div>
 
-                      <p className="mb-4 text-sm text-slate-500 dark:text-text-secondary">
+                      <p className="mb-4 text-sm text-muted-foreground">
                         {t("certificates.instructor")}:{" "}
                         {getLocalizedInstructor(cert, i18n.language)}
                       </p>
 
                       {cert.dateIssued && (
-                        <div className="mb-6 flex items-center gap-1.5 text-xs text-slate-400 dark:text-outline">
+                        <div className="mb-6 flex items-center gap-1.5 text-xs text-subtle">
                           <Icon name="FiCalendar" className="text-[16px]" />
                           <span>{cert.dateIssued}</span>
                         </div>
@@ -179,14 +179,14 @@ export function Certificates() {
                         <button
                           type="button"
                           onClick={() => setSelectedCert(cert)}
-                          className="flex-1 cursor-pointer rounded-lg border border-slate-200 bg-slate-50 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-highest dark:font-semibold dark:text-primary-light dark:hover:bg-surface-bright"
+                          className="flex-1 cursor-pointer rounded-lg border border-hairline bg-inset-hover py-2.5 text-sm font-bold text-primary-lift transition-colors hover:bg-inset-active label-strong-600"
                         >
                           {t("certificates.viewDetails")}
                         </button>
                         <button
                           type="button"
                           onClick={() => setSelectedCert(cert)}
-                          className="cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-3 text-primary transition-colors hover:bg-slate-100 dark:border-outline-variant/30 dark:bg-surface-highest dark:text-primary-light dark:hover:bg-surface-bright"
+                          className="cursor-pointer rounded-lg border border-hairline bg-inset-hover px-3 text-primary-lift transition-colors hover:bg-inset-active"
                           aria-label={t("certificates.verifiedCredential")}
                         >
                           <Icon name="FiAward" />

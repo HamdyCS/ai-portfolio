@@ -17,13 +17,13 @@ const filters: { key: ProjectFilterType; labelKey: string }[] = [
 ];
 
 const categoryBadge: Record<ProjectCategory, string> = {
-  all: "border-slate-500/40 bg-slate-500/10 text-slate-700 dark:border-slate-400/30 dark:bg-slate-400/20 dark:text-slate-300",
+  all: "pill-all",
   backend:
-    "border-sky-500/40 bg-sky-500/10 text-sky-700 dark:border-[#7bd0ff]/30 dark:bg-[#7bd0ff]/20 dark:text-[#7bd0ff]",
+    "pill-sky",
   frontend:
-    "border-teal-500/40 bg-teal-500/10 text-teal-700 dark:border-[#57f1db]/30 dark:bg-[#57f1db]/20 dark:text-[#57f1db]",
+    "pill-teal",
   fullstack:
-    "border-violet-500/40 bg-violet-500/10 text-violet-700 dark:border-violet-400/30 dark:bg-violet-400/20 dark:text-violet-300",
+    "pill-violet",
 };
 
 const categoryLabelKey: Record<ProjectCategory, string> = {
@@ -66,7 +66,7 @@ function OverlayActions({
   const { t } = useTranslation();
   const isLg = size === "lg";
   const button =
-    "flex items-center justify-center rounded-full bg-white text-teal-700 shadow-lg transition-transform hover:scale-110 dark:border dark:border-[#57f1db]/30 dark:bg-[rgba(1,15,31,0.8)] dark:text-[#57f1db]";
+    "floaty-btn flex items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110";
   return (
     <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
       {project.liveUrl && (
@@ -148,13 +148,13 @@ export function Projects() {
             <h1 className="mb-6 text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl">
               {t("projects.pageTitle")}
             </h1>
-            <p className="text-base font-light leading-relaxed text-slate-500 md:text-lg dark:text-text-secondary">
+            <p className="text-base font-light leading-relaxed text-muted-foreground md:text-lg">
               {t("projects.pageSubtitle")}
             </p>
           </div>
 
           <div className="mt-8">
-            <div className="flex w-fit flex-nowrap rounded-full border border-slate-200 bg-white p-1 dark:border-outline-variant dark:bg-surface">
+            <div className="flex w-fit flex-nowrap rounded-full border border-border bg-card p-1">
               {filters.map((filter) => (
                 <button
                   key={filter.key}
@@ -163,7 +163,7 @@ export function Projects() {
                   className={`cursor-pointer rounded-full px-4 py-1.5 text-xs font-bold transition-all md:px-6 md:py-2 md:text-sm ${
                     activeFilter === filter.key
                       ? "bg-primary text-on-primary"
-                      : "text-slate-500 hover:text-teal-700 dark:text-text-secondary dark:hover:text-[#57f1db]"
+                      : "text-muted-foreground hover:text-primary-bright"
                   }`}
                 >
                   {t(filter.labelKey)}
@@ -186,7 +186,7 @@ export function Projects() {
                 className="projects-card group relative flex flex-col gap-6 overflow-hidden rounded-xl p-6 md:col-span-2 lg:flex-row lg:gap-8 lg:p-7 xl:col-span-3"
               >
                 <SpotlightLayer />
-                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-slate-200 lg:w-3/5 dark:bg-[#122131]">
+                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-plate lg:w-3/5">
                   <img
                     src={featuredProject.image}
                     alt={getLocalizedField(
@@ -194,9 +194,9 @@ export function Projects() {
                       "title",
                       i18n.language,
                     )}
-                    className="h-full w-full object-cover transition-all duration-300 ease-out group-hover:scale-[1.05] group-hover:brightness-75 dark:group-hover:brightness-[0.4]"
+                    className="h-full w-full object-cover transition-all duration-300 ease-out group-hover:scale-[1.05] group-hover:media-dim"
                   />
-                  <span className="absolute start-4 top-4 rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-teal-700 backdrop-blur-xl dark:border-[#57f1db]/30 dark:bg-[#57f1db]/20 dark:text-[#57f1db]">
+                  <span className="pill-teal absolute start-4 top-4 rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur-xl">
                     {t("projects.featuredProduction")}
                   </span>
                   <OverlayActions project={featuredProject} size="lg" />
@@ -207,10 +207,10 @@ export function Projects() {
                       <TechBadge key={tech} tech={tech} />
                     ))}
                   </div>
-                  <h3 className="mb-2 text-xl font-bold tracking-tight text-slate-900 lg:text-2xl dark:text-text-primary">
+                  <h3 className="mb-2 text-xl font-bold tracking-tight text-foreground lg:text-2xl">
                     {getLocalizedField(featuredProject, "title", i18n.language)}
                   </h3>
-                  <p className="mb-5 line-clamp-3 text-sm font-light leading-relaxed text-slate-500 dark:text-text-secondary">
+                  <p className="mb-5 line-clamp-3 text-sm font-light leading-relaxed text-muted-foreground">
                     {getLocalizedField(
                       featuredProject,
                       "description",
@@ -223,7 +223,7 @@ export function Projects() {
                         href={featuredProject.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-bold text-teal-700 transition-all hover:gap-3 md:text-base dark:text-[#57f1db]"
+                        className="flex items-center gap-2 text-sm font-bold text-primary-bright transition-all hover:gap-3 md:text-base"
                       >
                         {t("projects.liveDemo")}
                         <Icon name="FiExternalLink" className="h-4 w-4" />
@@ -234,7 +234,7 @@ export function Projects() {
                         href={featuredProject.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-slate-900 md:text-base dark:text-text-secondary dark:hover:text-text-primary"
+                        className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground md:text-base"
                       >
                         {t("projects.sourceCode")}
                         <Icon name="FiTerminal" className="h-4 w-4" />
@@ -256,11 +256,11 @@ export function Projects() {
                 className="projects-card group relative flex flex-col gap-3 overflow-hidden rounded-xl p-4"
               >
                 <SpotlightLayer />
-                <div className="relative aspect-video w-full overflow-hidden rounded-md bg-slate-200 dark:bg-[#122131]">
+                <div className="relative aspect-video w-full overflow-hidden rounded-md bg-plate">
                   <img
                     src={project.image}
                     alt={getLocalizedField(project, "title", i18n.language)}
-                    className="h-full w-full object-cover transition-all duration-300 ease-out group-hover:scale-[1.05] group-hover:brightness-75 dark:group-hover:brightness-[0.4]"
+                    className="h-full w-full object-cover transition-all duration-300 ease-out group-hover:scale-[1.05] group-hover:media-dim"
                   />
                   <span
                     className={`absolute start-3 top-3 rounded-full border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest backdrop-blur-md ${categoryBadge[project.category]}`}
@@ -275,10 +275,10 @@ export function Projects() {
                       <TechBadge key={tech} tech={tech} size="sm" />
                     ))}
                   </div>
-                  <h3 className="mb-1 text-base font-bold text-slate-900 dark:text-text-primary">
+                  <h3 className="mb-1 text-base font-bold text-foreground">
                     {getLocalizedField(project, "title", i18n.language)}
                   </h3>
-                  <p className="mb-3 line-clamp-2 text-xs leading-relaxed text-slate-500 dark:text-text-secondary">
+                  <p className="mb-3 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
                     {getLocalizedField(project, "description", i18n.language)}
                   </p>
                   <div className="mt-auto flex flex-wrap items-center gap-4">
@@ -287,7 +287,7 @@ export function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs font-bold text-teal-700 hover:underline dark:text-[#57f1db]"
+                        className="text-xs font-bold text-primary-bright hover:underline"
                       >
                         {t("projects.liveDemo")}
                       </a>
@@ -297,7 +297,7 @@ export function Projects() {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-slate-500 transition-colors hover:text-slate-900 dark:text-text-secondary dark:hover:text-text-primary"
+                        className="text-xs text-muted-foreground transition-colors hover:text-foreground"
                       >
                         {t("projects.sourceCode")}
                       </a>
