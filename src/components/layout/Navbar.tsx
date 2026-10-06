@@ -85,7 +85,7 @@ export function Navbar() {
             <a
               href={cv}
               target="_blank"
-              download="hamdy-khaled-fullstack-developer-cv"
+              download="hamdy-khaled-fullstack-developer-cv.pdf"
               className="hidden md:flex items-center justify-center gap-2 rounded-lg border border-input px-4 py-2 font-bold text-foreground transition-all hover:bg-accent text-[12px] "
             >
               <Icon name="FiDownload" className="text-[14px]" />
