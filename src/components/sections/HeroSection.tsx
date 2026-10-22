@@ -101,7 +101,7 @@ export function HeroSection() {
               </Link>
               <a
                 href={cv}
-                download="hamdy-khaled-fullstack-developer-cv"
+                download="hamdy-khaled-fullstack-developer-cv.pdf"
                 className="flex items-center justify-center gap-2 rounded-lg border border-input px-8 py-4 font-bold text-foreground transition-all hover:bg-accent w-50"
               >
                 <Icon name="FiDownload" className="text-[20px]" />
@@ -194,10 +194,7 @@ export function HeroSection() {
 
                 <div className="hero-tilt-inner glass-card absolute -left-12 bottom-12 rounded-xl border border-glassline p-4 shadow-xl">
                   <div className="mb-2 flex items-center gap-2">
-                    <Icon
-                      name="FiZap"
-                      className="text-xs text-primary-ink"
-                    />
+                    <Icon name="FiZap" className="text-xs text-primary-ink" />
                     <span className="text-[10px] uppercase tracking-wider opacity-60">
                       {t("hero.projects")}
                     </span>
